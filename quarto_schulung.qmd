@@ -1,0 +1,212 @@
+---
+title: "Quarto Schulung"
+author: "Nils Ratnaweera, Dominic Lüönd"
+date: 02/13/2024
+format: 
+  revealjs:
+    theme: dark
+    logo: images/zhaw_lsfm_iunr_blau.jpg
+    smaller: true
+    css: style.css
+---
+
+## Ablauf
+
+- Einführung Markup und Markdown
+- Einführung Pandoc und Quarto
+- HTML publizieren
+- Collaboration
+
+## Ziele
+
+- Warum sollen wir Markdown und Quarto verwenden
+- Basics von Quarto kennenlernen
+- Collaboration für Unterlagen lernen
+
+## Weniger ist mehr
+
+TODO
+
+# Markup und Markdown
+
+## Was ist eine Markup Sprache?
+
+- Eine Markup-Sprache ist eine strukturierte, maschinenlesebare Sprache, die verwendet wird, um Texte zu kennzeichnen und zu strukturieren.
+- Durch die Verwendung von speziellen Tags oder Symbolen können verschiedene Teile des Textes markiert werden, um deren Bedeutung und Formatierung zu definieren.
+- Dies ermöglicht eine klare Organisation des Inhalts und verbessert die Lesbarkeit.
+
+## Warum eine Markup Sprachen?
+
+::: columns
+::: {.column width="50%"}
+**Vorteile**
+
+- Strukturierte Darstellung
+- Plattformunabhängigkeit
+- Leicht zu erlernen
+- Einfache Formatierung
+- Interoperabilität
+:::
+
+::: {.column width="50%"}
+**Nachteile**
+
+- Eingeschränkte Gestaltungsmöglichkeiten
+- Manuelle Bearbeitung
+- Komplexität bei grösseren Projekten
+:::
+:::
+
+## Was für Markup Sprachen gibt es?
+
+| Markup-Sprache | Beschreibung                                                                                      | Beispielcode                                            |
+|----------------|---------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| HTML           | (Hypertext Markup Language), Sprache zur Strukturierung von Webinhalten.                          | `<h1>Überschrift</h1>`                                  |
+| XML            | (Extensible Markup Language), Universelle Sprache zur Strukturierung und Kennzeichnung von Daten. | `<person>`<br> &nbsp; `<name>Max</name>`<br>`</person>` |
+| Markdown       | Leichtgewichtige Markup-Sprache zur einfachen Formatierung von Texten.                            | `**Fetter Text**`                                       |
+| LaTeX          | Hochwertige Markup-Sprache zur Erstellung von Dokumenten, insbesondere wissenschaftlicher.        | `\textbf{Fetter Text}`                                  |
+
+## Was ist Markdown?
+
+- Leichtgewichtige Markup-Sprache für einfaches Textformatieren.
+- Einfach zu erlernen und zu verwenden im Vergleich zu HTML oder LaTeX.
+- Schnelle Textformatierung mit speziellen Zeichen wie Sternchen oder Unterstrichen.
+- Klare Syntax für Überschriften, Listen, Links und Bilder.
+- Vielfältige Anwendungsbereiche: Dokumentation, Foren, Wikis, README-Dateien uvm.
+- Beliebt bei Entwicklern, Autoren und anderen für schnelles und effizientes Textformatieren.
+
+## Markdown Syntax
+
+- [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
+- [Abbildungen](https://quarto.org/docs/authoring/figures.html)
+- [Tabellen](https://quarto.org/docs/authoring/tables.html)
+
+## Texteditor
+
+## Übung Markdown
+
+Formatieren Sie folgenden Text in Markdown, sodass er die gleiche Struktur und Aussehen beibehält:
+
+TODO
+
+# Pandoc
+
+## Was ist Pandoc?
+
+- Open-Source-Tool zur Dateikonvertierung zwischen verschiedenen Formaten.
+- Unterstützt vielfältige Ein- und Ausgabeformate wie Markdown, HTML, LaTeX, PDF, Word, ePUB und mehr.
+- Nahtlose Umwandlung von Inhalten zwischen verschiedenen Formaten ohne Formatierungs- oder Inhaltsverlust.
+
+## Übung Pandoc
+
+1. Installieren Sie Pandoc von [hier](https://pandoc.org/installing.html).
+2. Öffnen Sie ein Terminal
+3. md File konvertieren mit folgendem Command: `pandoc test1.md -f markdown -t html test1.html`
+
+# Quarto
+
+## Was ist Quarto?
+
+Quarto ist ein Open-Source-Werkzeug und eine Plattform zur Erstellung von Dokumenten, die auf Markdown basiert. Es ermöglicht Benutzern, Inhalte in Markdown zu schreiben und dann mit Hilfe von Vorlagen und Themes in verschiedene Ausgabeformate zu konvertieren.
+
+![Quarto: How it works!](images/rstudio-qmd-how-it-works.png)
+
+## Warum Quarto?
+
+TODO
+
+## Ausgabeformate
+
+- `html`: Für die Veröffentlichung von Webseiten und Online-Dokumentationen.
+- `pdf`: Für die Erstellung von druckbaren Dokumenten und Berichten.
+- `epub`: Für die Erstellung von E-Books, die auf E-Book-Readern gelesen werden können.
+- `latex`: Für die Erstellung von Dokumenten, die mit LaTeX weiterverarbeitet werden sollen.
+- `word`: Für die Erstellung von Microsoft Word-Dokumenten.
+- `gh-pages`: Für die Veröffentlichung von Websites direkt auf GitHub Pages.
+
+## Übung Quarto
+
+TODO
+
+# Veröffentlichen von HTML Files mit Quarto
+
+## Was sind HTML Files eigentlich?
+
+TODO
+
+## Optionen
+
+- [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html)
+- [Netlify](https://quarto.org/docs/publishing/netlify.html)
+- [Posit Connect](https://quarto.org/docs/publishing/rstudio-connect.html)
+- [QuartoPub](https://quarto.org/docs/publishing/quarto-pub.html)
+- [Confluence](https://quarto.org/docs/publishing/confluence.html)
+
+## Übung HTML veröffentlichen
+
+1. Verwenden Sie ihr vorhin bearbeitetes Quarto Dokument
+2a. Veröffentlichen Sie es via GitHub Pages
+2b. Veröffentlichen Sie es via Posit Connect
+
+TODO
+
+# Quarto Projects
+
+## Quarto Projects
+
+::: columns
+::: {.column width="50%"}
+- Markdown-Dateien (*.qmd)
+- Bilder und Grafiken
+- Quarto-Konfigurationsdatei: _quarto.yml
+- Zusätzliche Ressourcen
+:::
+
+::: {.column width="50%"}
+![yml File Struktur](images/quarto_project_yml_structure.PNG)
+:::
+:::
+
+## Warum Quarto Projects?
+
+Vorlagen
+
+# Git(Hub)
+
+## Git(Hub)
+
+**Git**: Verteiltes Versionskontrollsystem für die Nachverfolgung von Änderungen im Quellcode während der Softwareentwicklung. Ermöglicht Zusammenarbeit, Verwaltung von Codeversionen und Änderungsverfolgung. Bekannt für Geschwindigkeit und Effizienz.
+
+--
+
+**GitHub**: Webplattform für Hosting von Git-Repositories. Bietet Tools für Zusammenarbeit, Codeüberprüfung und Projektverwaltung. Beliebt bei Entwicklern zur Teilung, Zusammenarbeit und Beitrag zu Open-Source-Projekten. Enthält Funktionen wie Issues und Pull Requests.
+
+## Plaintext Files & Versioncontrol
+
+TODO
+
+## Git Workflow
+
+::: columns
+::: {.column width="50%"}
+- Commit: Speichert eine Version mit Änderungen.
+- Push: Hochladen von lokalen Commits ins Remote Repository.
+- Pull: Abrufen und Einpflegen von Änderungen aus dem Remote Repository.
+- Merge Request: Anfrage zur Überführung von Änderungen zwischen Branches.
+- Merge Conflict: Problem bei der automatischen Zusammenführung von Branches.
+- Issue: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten.
+:::
+::: {.column width="50%"}
+![Git Workflow](images/git-workflow.PNG)
+:::
+:::
+
+## Übung
+
+1. Klonen Sie die Übungsunterlagen von [Fit-mit-Markdown](https://fit-mit-markdown.github.io/) 
+2. Erstellen Sie einen neuen Branch
+3. Bearbeiten Sie etwas im Dokument
+3. Commiten und Pushen Sie die Änderungen
+4. Erstellen Sie einen Merge Request auf GitHub
+
+TODO
