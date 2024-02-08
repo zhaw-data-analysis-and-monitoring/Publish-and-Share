@@ -1,6 +1,27 @@
 .reveal .slide-logo {
   height: 150px !important;
-  width: 300px !important;
+  /* width: 300px !important; */
   max-width: unset !important;
   max-height: unset !important;
+}
+
+#complete{
+  background-color: #bef9c6;
+  color: #0f4a21;
+  border-radius: 2px;
+  font-size: 50%;
+  padding: 2px;
+}
+
+#open{
+  background-color: #8efbf7;
+  color: #014847;
+  border-radius: 2px;
+  font-size: 50%;
+  padding: 2px;
+}
+
+.hl{
+  border: 1px solid red;
+  padding: 1px;
 }

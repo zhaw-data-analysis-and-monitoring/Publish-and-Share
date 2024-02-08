@@ -5,154 +5,434 @@ date: 02/13/2024
 format: 
   revealjs:
     theme: dark
-    logo: images/zhaw_lsfm_iunr_blau.jpg
+    logo: images/zhaw_sw_neg.png
     smaller: true
     css: style.css
+    navigation-mode: vertical
 ---
+
+# Heute
 
 ## Ablauf
 
-- Einführung Markup und Markdown
-- Einführung Pandoc und Quarto
-- HTML publizieren
-- Collaboration
+
+1. Markup und Markdown
+2. Pandoc und Quarto
+3. HTML outpus publizieren
+4. Kollaboration mit Textfiles
 
 ## Ziele
 
-- Warum sollen wir Markdown und Quarto verwenden
-- Basics von Quarto kennenlernen
-- Collaboration für Unterlagen lernen
+::: {.incremental}
+- Vorteiler *einfacher Textdokumente* kennen
+- Basics von Markdown kennen
+- Basics von Quarto kennen
+- Kollaboration mit Git und GitHub
+:::
+
+
+
+# Plaintext, Markup und Markdown
 
 ## Weniger ist mehr
 
-TODO
+Vorteile reiner Textfiles (plain text)
 
-# Markup und Markdown
+::: {.incremental}
+1. Plattformunabhängigkeit
+2. Geringe Dateigröße
+3. Einfache Handhabung
+4. Versionskontrolle
+5. Langfristige Kompatibilität
+6. Suchbarkeit
+7. Leichte Integration
+
+:::
+
+
+::: {.notes}
+
+1. Plattformunabhängigkeit: Textdateien sind auf allen Betriebssystemen leicht zugänglich (Windows, macOS, Linux).
+2. Geringe Dateigröße: Textdateien sind in der Regel kleiner als ihre formatierten Gegenstücke, was den Speicherplatz spart.
+3. Einfache Handhabung: Textdateien können einfach in jedem Texteditor bearbeitet werden, ohne spezielle Software.
+4. Versionskontrolle: Einfache Textdateien erleichtern die Verwendung von Versionskontrollsystemen wie Git.
+5. Langfristige Kompatibilität: Textdateien haben eine höhere Wahrscheinlichkeit, auch in Zukunft von Software unterstützt zu werden.
+6. Suchbarkeit: Textdateien ermöglichen eine effiziente Suche nach Informationen.
+7. Leichte Integration: Einfache Textdateien lassen sich leicht in verschiedene Anwendungen und Workflows integrieren.
+
+:::
 
 ## Was ist eine Markup Sprache?
 
-- Eine Markup-Sprache ist eine strukturierte, maschinenlesebare Sprache, die verwendet wird, um Texte zu kennzeichnen und zu strukturieren.
-- Durch die Verwendung von speziellen Tags oder Symbolen können verschiedene Teile des Textes markiert werden, um deren Bedeutung und Formatierung zu definieren.
-- Dies ermöglicht eine klare Organisation des Inhalts und verbessert die Lesbarkeit.
+- Auszeichnungssprache zur Strukturierung von Texten
+- Maschinenlesebar (Verwendung von Tags / Symbolen)
+- Klare Trennung von Inhalt und Formatierung
+- *What you see is what you mean* (WYSIWYM)
 
-## Warum eine Markup Sprachen?
+::: {.notes}
 
-::: columns
-::: {.column width="50%"}
-**Vorteile**
+Fokus auf was wir schreiben wollen, nicht wie es aussieht. 
 
-- Strukturierte Darstellung
-- Plattformunabhängigkeit
-- Leicht zu erlernen
-- Einfache Formatierung
-- Interoperabilität
 :::
 
-::: {.column width="50%"}
-**Nachteile**
 
-- Eingeschränkte Gestaltungsmöglichkeiten
-- Manuelle Bearbeitung
-- Komplexität bei grösseren Projekten
-:::
-:::
 
 ## Was für Markup Sprachen gibt es?
 
-| Markup-Sprache | Beschreibung                                                                                      | Beispielcode                                            |
-|----------------|---------------------------------------------------------------------------------------------------|---------------------------------------------------------|
-| HTML           | (Hypertext Markup Language), Sprache zur Strukturierung von Webinhalten.                          | `<h1>Überschrift</h1>`                                  |
-| XML            | (Extensible Markup Language), Universelle Sprache zur Strukturierung und Kennzeichnung von Daten. | `<person>`<br> &nbsp; `<name>Max</name>`<br>`</person>` |
-| Markdown       | Leichtgewichtige Markup-Sprache zur einfachen Formatierung von Texten.                            | `**Fetter Text**`                                       |
-| LaTeX          | Hochwertige Markup-Sprache zur Erstellung von Dokumenten, insbesondere wissenschaftlicher.        | `\textbf{Fetter Text}`                                  |
+
+| Sprache        | Beispiel                                                |
+|----------------|---------------------------------------------------------|
+| HTML           | `<b>Fetter Text</b>`                                    |
+| LaTeX          | `\textbf{Fetter Text}`                                  |
+| Markdown       | `**Fetter Text**`                                       |
+
 
 ## Was ist Markdown?
 
 - Leichtgewichtige Markup-Sprache für einfaches Textformatieren.
-- Einfach zu erlernen und zu verwenden im Vergleich zu HTML oder LaTeX.
-- Schnelle Textformatierung mit speziellen Zeichen wie Sternchen oder Unterstrichen.
-- Klare Syntax für Überschriften, Listen, Links und Bilder.
-- Vielfältige Anwendungsbereiche: Dokumentation, Foren, Wikis, README-Dateien uvm.
-- Beliebt bei Entwicklern, Autoren und anderen für schnelles und effizientes Textformatieren.
+- Einfach zu erlernen 
+- Maschinenlesbar *und* Menschenlesbar
+- **Frontend** für Latex / HTML
+
 
 ## Markdown Syntax
 
+```
+
+# A story of a fox
+
+The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wiki/Dog).
+
+![](images/dogs.jpg)
+
+```
+
+<div style="height: 100px"></div>
+
+### A story of a fox
+
+The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wiki/Dog).
+
+![](images/dogs.jpg)
+
+
+::: {.notes}
 - [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
 - [Abbildungen](https://quarto.org/docs/authoring/figures.html)
 - [Tabellen](https://quarto.org/docs/authoring/tables.html)
 
+:::
+
+
 ## Texteditor
 
-## Übung Markdown
+- Ein guter Texteditor ist wichtig
+- Empfehlungen
+  - VSCode: [code.visualstudio.com](https://code.visualstudio.com/)
+  - RStudio [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+  - Pulsar [pulsar-edit.dev](https://pulsar-edit.dev/)
 
-Formatieren Sie folgenden Text in Markdown, sodass er die gleiche Struktur und Aussehen beibehält:
 
-TODO
+
+## Übung Markdown 🛠️
+
+- Konvertiere deinen mitgebrachten Text in Markdown.
+- Falls du keinen eigenen Text mitbebracht hast, nimm folgenden: [bit.ly/42vBKuu](https://bit.ly/42vBKuu)
+
+TODO: 
+  - Bei grösseren Texten nur die ersten paar Absätze verwenden
+  - Keine geheimen Texte!
+
 
 # Pandoc
 
 ## Was ist Pandoc?
 
-- Open-Source-Tool zur Dateikonvertierung zwischen verschiedenen Formaten.
-- Unterstützt vielfältige Ein- und Ausgabeformate wie Markdown, HTML, LaTeX, PDF, Word, ePUB und mehr.
-- Nahtlose Umwandlung von Inhalten zwischen verschiedenen Formaten ohne Formatierungs- oder Inhaltsverlust.
+- Open-Source-Tool zur Konvertierung von Markup sprachen
+- Vielfältige Ein- und Ausgabeformate 
+- Kein Grafisches Userinterface, wird über den Terminal bedient (cli-tool)
 
-## Übung Pandoc
 
-1. Installieren Sie Pandoc von [hier](https://pandoc.org/installing.html).
-2. Öffnen Sie ein Terminal
-3. md File konvertieren mit folgendem Command: `pandoc test1.md -f markdown -t html test1.html`
+> If you need to convert files from one markup format into another, pandoc is your *swiss-army knife*. Pandoc can convert between the following formats
+
+![](images/pandoc.png)
+
+
+## Übung Pandoc 🛠️
+
+:::{.incremental}
+1. Installiert Pandoc von [pandoc.org](https://pandoc.org/installing.html).
+2. Öffnet ein Terminal *im Folder, wo ihr das Markdown File erstellt habt*
+3. Konvertiert das Markdown File in html mit folgendem Command: 
+
+   ```bash
+   pandoc markdown.md 
+   ```
+:::
+
+:::{.incremental}
+- Der Befehl `pandoc` ruft das Commandline Tool *pandoc* auf
+- Das Argument `markdown.md`:
+  - ist ein sogenanntes Positionalargument (engl: *positional argument*)
+  - gilt als Input File
+- Die Markup Sprache des Input Files wird von der Dateierweiterung inferiert (`.md` = Markdown)
+- Da wir kein Output definiert haben, wird standartmässig `html` herausgegeben
+- Um ein PDF zu erstellen müsste eine zusätzliche Komponente installiert werden
+:::
+
+
+:::{.notes}
+TODO: MSI installer, wenn nur für den eigenen Nutzer interim admin nicht nötig
+
+:::
+
+## Übung Pandoc 🛠️
+
+
+```bash
+# pandoc markdown.md 
+
+pandoc -o output.html markdown.md 
+```
+
+<div style="height: 50px"></div>
+
+:::{.incremental}
+
+- `-o output.html`: 
+  - ist ein *named argument*
+  - definiert das Output File
+- Die Markup Sprache des Output files wird von der Dateierweiterung inferiert (`.html`)
+
+:::
+
+## Übung Pandoc 🛠️
+
+:::{.incremental}
+- Die Verwendung von Commandline-Programmen (cli) ist eine wichtige und nützliche Fähigkeit
+- cli Tools verfügen meist über eine eingebaute Hilfestellung (`-h` / `--help`)
+
+  ```bash
+  pandoc -h
+  pandoc --help
+  ```
+
+  <div style="height: 20px"></div>
+  ```
+  pandoc [OPTIONS] [FILES]
+    -f FORMAT, -r FORMAT  --from=FORMAT, --read=FORMAT                          
+    -t FORMAT, -w FORMAT  --to=FORMAT, --write=FORMAT                           
+    -o FILE               --output=FILE                                         
+                          --data-dir=DIRECTORY                                  
+    -M KEY[:VALUE]        --metadata=KEY[:VALUE]                                
+                          --metadata-file=FILE                                  
+    -d FILE               --defaults=FILE                                       
+                          --file-scope[=true|false]                             
+                          --sandbox[=true|false]                                
+    -s[true|false]        --standalone[=true|false]                             
+                          --template=FILE          
+  ...
+  ```
+- die Hilfestellungen sind etwas gewöhnungsbedürftig, dafür aber umfangreich
+
+:::
+
+:::{.notes}
+- Kurze form `-h` und lange Form `--help`
+
+:::
+
+
+## Übung Pandoc 🛠️
+
+Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
+
+:::{.incremental}
+
+- mit `cd` kann man *in Folders hinein* navigieren (`cd Documents`)
+- mit `cd ..` kann man *aus Folders hinaus* navigieren
+- das aktuelle Verzeichnis anzeigen lassen
+  - Windows: `echo %cd%`
+  - Linux / Mac: `pwd`
+- mit `mkdir` kann man ein Verzeichnis erstellen (`mkdir verzeichnis`)
+:::
+
+
 
 # Quarto
 
 ## Was ist Quarto?
 
-Quarto ist ein Open-Source-Werkzeug und eine Plattform zur Erstellung von Dokumenten, die auf Markdown basiert. Es ermöglicht Benutzern, Inhalte in Markdown zu schreiben und dann mit Hilfe von Vorlagen und Themes in verschiedene Ausgabeformate zu konvertieren.
 
-![Quarto: How it works!](images/rstudio-qmd-how-it-works.png)
+:::{.incremental}
+- Ebenfalls ein Open-Source *cli* tool
+- Baut auf Markdown und Pandoc auf
+  ![](images/rstudio-qmd-how-it-works.png)
+- Erweitert die standart Markdown-Sprache mit nützlichen Elementen
+- Integriert die Ausführung von Code (R, Python, Julia, SQL...)
+- Liefert ansprechende *out-of-the-box* Templates
 
-## Warum Quarto?
+:::
 
-TODO
+
 
 ## Ausgabeformate
 
-- `html`: Für die Veröffentlichung von Webseiten und Online-Dokumentationen.
-- `pdf`: Für die Erstellung von druckbaren Dokumenten und Berichten.
-- `epub`: Für die Erstellung von E-Books, die auf E-Book-Readern gelesen werden können.
-- `latex`: Für die Erstellung von Dokumenten, die mit LaTeX weiterverarbeitet werden sollen.
-- `word`: Für die Erstellung von Microsoft Word-Dokumenten.
-- `gh-pages`: Für die Veröffentlichung von Websites direkt auf GitHub Pages.
+- `html`: Books, Slides, Blogs...
+- `pdf`: Books, Slides
+- `epub`: Books
+- `word`: Books
+- `pptx`: Slides
 
-## Übung Quarto
 
-TODO
 
-# Veröffentlichen von HTML Files mit Quarto
+## Übung Quarto 🛠️
 
-## Was sind HTML Files eigentlich?
 
-TODO
+:::{.incremental}
+1. Installiert quarto [quarto.org](https://quarto.org)
+2. Öffnet ein Terminal *im Folder, wo ihr das Markdown File erstellt habt*
+3. Konvertiert das Markdown File in html mit folgendem Command: 
 
-## Optionen
+   ```bash
+   quarto render markdown.md
+   ```
+:::
 
-- [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html)
-- [Netlify](https://quarto.org/docs/publishing/netlify.html)
-- [Posit Connect](https://quarto.org/docs/publishing/rstudio-connect.html)
-- [QuartoPub](https://quarto.org/docs/publishing/quarto-pub.html)
-- [Confluence](https://quarto.org/docs/publishing/confluence.html)
+<div style="height: 40px"></div>
 
-## Übung HTML veröffentlichen
+:::{.incremental}
 
-1. Verwenden Sie ihr vorhin bearbeitetes Quarto Dokument
-2a. Veröffentlichen Sie es via GitHub Pages
-2b. Veröffentlichen Sie es via Posit Connect
+- `render` ist eine Funktion des Programms `quarto`
+- Auch hier ist `markdown.md` ein positionales Argument
+- Der Output ist (wenn nicht anders definiert) ein HTML-File
+:::
 
-TODO
 
-# Quarto Projects
+
+## Übung Quarto 🛠️
+
+
+- Interaktives entwickeln von Dokumenten mit `render` ist umständlich. 
+- `quarto preview` ermöglicht ein live-preview (bessere *user experience*)
+
+  ```bash
+  # quarto render markdown.md
+  quarto preview markdown.md
+  ```
+
+
+# HTML und das Web
+
+## HTML vs PDF
+
+- der bisherige *de facto* Standart für Lehrmaterialien: PDFs via Moodle
+- PDFs haben Vorteile, aber auch viele Limitierungen
+- Vorteile von PDFs:
+  - stabilie Formatierung (Drucken)
+  - ein eizige Datei (kann leicht gespeichert/kopiert werden)
+  - offline nutzbar
+- Nachteile von PDFs
+  - kaum öffentliche Wahrnehmung (OER)
+  - nicht responsiv für verschiedene devices (BYOD)
+  - keine interaktiven Elemente
+  - schlecht übersetzbar (Deutsch ↔ Englisch)
+  - schlechte Accessibility-Features (z.B. Screen Readers)
+
+
+## HTML veröffentlichen
+
+- HTML Files können zwar wie PDFs gespeichert und geteilt werden, dies ist jedoch unüblich und ungewohnt
+- Sinnvoller und üblicher: Webseiten erstellen. Dazu gibt es eine vielzahl von Optionen:
+  - GitHub Pages (ZHAW Internes GitHub)
+  - Netlify
+  - Posit Connect (ZHAW Internes Posit Connect)
+  - QuartoPub
+  - Confluence (ZHAW Internes Confluence)
+
+## Übung HTML veröffentlichen 🛠️
+
+### Netlify Drop
+
+:::{.incremental}
+1. Öffnet die Website [app.netlify.com/drop](https://app.netlify.com/drop) (kein Login nötig)
+2. Drag-and-drop *den Ordner* mit dem HTML Outputfile aus der *Übung Quarto*
+3. Wartet bis der Upload fertig ist und im *Deploy log* <span id="complete">Complete</span> angezeigt wird
+4. Klick auf <span id="open">Open production deploy</span>
+5. Die Website befindet sich auf [irgendwas.netlify.app/*filename.html*](irgendwas.netlify.app)
+   - *filename.html* muss noch hinzugefügt werden!
+   - dies kann vermieden werden, wenn statt filename.html *index.html* verwendet wird
+
+:::
+
+
+## Übung HTML veröffentlichen 🛠️
+
+### Netlify Drop
+
+Diese Methode ist zwar sehr einfach, aber:
+
+:::{.incremental}
+- ohne Login ist Veröffentlichung zeitlich beschränkt <span class="fragment hl">→ mit Login unbeschränkt</span>
+- benötigt drag-and-drop <span class="fragment hl">→ Kommandozeile `quarto publish netlify` </span>
+- URL ist wenig ansprechend <span class="fragment hl">→ Mit `CNAME` auf *eigene* Domain (siehe [dxi.ai](https://dxi.ai/))</span>
+:::
+
+:::{.notes}
+
+- ZHAW Domain noch nicht möglich
+- Take home messag: HTMLs lassen sich über herkömmliche Hosting Plattformen veröfentlichen
+:::
+
+
+## Übung HTML veröffentlichen 🛠️
+
+### ZHAW Posit Connect
+
+
+TODO luoe: Posit kurz erläutern und Übung vorstellen
+<https://statistik-ide.zhaw.ch/rsconnect/connect/>
+Disclaimer: keine Forschungslizenz
+
+
+
+# Markdown / Quarto Advanced
+
+
+## Übung YAML Header 🛠️
+
+TODO lueo
+
+- Output format and format options (html with toc number depth, pdf with TOC)
+- Language (english vs. german)
+- metadata (title, author, date)
+
+## Übung Quarto Features 🛠️
+
+TODO lueo
+
+- Bilder einpflegen (mit verschiedenen Layouts sowie Captions / Subcaptions)
+- Tabellen einpflegen (online Tables generator https://www.tablesgenerator.com/markdown_tables)
+- Crossreference
+  - Figures: <https://quarto.org/docs/authoring/cross-references.html#figures>
+  - Tables: <https://quarto.org/docs/authoring/cross-references.html#tables> 
+  - Sections: <https://quarto.org/docs/authoring/cross-references.html#sections>
+    - Limitierung: nicht section name, nur nummer
+- Literaturverzeichnis <https://quarto.org/docs/authoring/footnotes-and-citations.html> 
+- Callout Blocks
+
+
+- HTML Slides: <https://quarto.org/docs/reference/formats/presentations/revealjs.html>
 
 ## Quarto Projects
+
+
+TODO: 
+
+- von 1 file auf n files
+- yaml-header wandert von index.qmd zu _quarto.yml
+- index.qmd ist nicht mehr optional
+
 
 ::: columns
 ::: {.column width="50%"}
@@ -170,6 +450,10 @@ TODO
 ## Warum Quarto Projects?
 
 Vorlagen
+
+
+
+
 
 # Git(Hub)
 
