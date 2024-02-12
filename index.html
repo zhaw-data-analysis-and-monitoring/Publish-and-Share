@@ -415,7 +415,7 @@ Nils Ratnaweera, Dominic Lüönd
 <ol type="1">
 <li>Markup und Markdown</li>
 <li>Pandoc und Quarto</li>
-<li>HTML outpus publizieren</li>
+<li>HTML Outputs publizieren</li>
 <li>Kollaboration mit Textfiles</li>
 </ol>
 </section>
@@ -423,7 +423,7 @@ Nils Ratnaweera, Dominic Lüönd
 <h2>Ziele</h2>
 <div>
 <ul>
-<li class="fragment">Vorteiler <em>einfacher Textdokumente</em> kennen</li>
+<li class="fragment">Vorteile <em>einfacher Textdokumente</em> kennen</li>
 <li class="fragment">Basics von Markdown kennen</li>
 <li class="fragment">Basics von Quarto kennen</li>
 <li class="fragment">Kollaboration mit Git und GitHub</li>
@@ -496,10 +496,6 @@ Nils Ratnaweera, Dominic Lüönd
 <section id="was-für-markup-sprachen-gibt-es" class="slide level2">
 <h2>Was für Markup Sprachen gibt es?</h2>
 <table>
-<colgroup>
-<col style="width: 21%">
-<col style="width: 78%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Sprache</th>
@@ -525,7 +521,7 @@ Nils Ratnaweera, Dominic Lüönd
 <section id="was-ist-markdown" class="slide level2">
 <h2>Was ist Markdown?</h2>
 <ul>
-<li>Leichtgewichtige Markup-Sprache für einfaches Textformatieren.</li>
+<li>Leichtgewichtige Markup-Sprache für einfaches Textformatieren</li>
 <li>Einfach zu erlernen</li>
 <li>Maschinenlesbar <em>und</em> Menschenlesbar</li>
 <li><strong>Frontend</strong> für Latex / HTML</li>
@@ -533,13 +529,11 @@ Nils Ratnaweera, Dominic Lüönd
 </section>
 <section id="markdown-syntax" class="slide level2">
 <h2>Markdown Syntax</h2>
-<pre><code>
-# A story of a fox
+<pre><code># A story of a fox
 
 The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wiki/Dog).
 
-![](images/dogs.jpg)
-</code></pre>
+![](images/dogs.jpg)</code></pre>
 <div style="height: 100px">
 
 </div>
@@ -571,8 +565,8 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <li>Empfehlungen
 <ul>
 <li>VSCode: <a href="https://code.visualstudio.com/">code.visualstudio.com</a></li>
-<li>RStudio <a href="https://posit.co/download/rstudio-desktop/">posit.co/download/rstudio-desktop/</a></li>
-<li>Pulsar <a href="https://pulsar-edit.dev/">pulsar-edit.dev</a></li>
+<li>RStudio: <a href="https://posit.co/download/rstudio-desktop/">posit.co/download/rstudio-desktop/</a></li>
+<li>Pulsar: <a href="https://pulsar-edit.dev/">pulsar-edit.dev</a></li>
 </ul></li>
 </ul>
 </section>
@@ -582,8 +576,13 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <li>Konvertiere deinen mitgebrachten Text in Markdown.</li>
 <li>Falls du keinen eigenen Text mitbebracht hast, nimm folgenden: <a href="https://bit.ly/42vBKuu">bit.ly/42vBKuu</a></li>
 </ul>
-<p>TODO: - Bei grösseren Texten nur die ersten paar Absätze verwenden - Keine geheimen Texte!</p>
-</section></section>
+
+<aside><div>
+<ul>
+<li>Bei grösseren Texten nur die ersten paar Absätze verwenden</li>
+<li>Keine geheimen Texte!</li>
+</ul>
+</div></aside></section></section>
 <section>
 <section id="pandoc" class="title-slide slide level1 center">
 <h1>Pandoc</h1>
@@ -592,9 +591,9 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <section id="was-ist-pandoc" class="slide level2">
 <h2>Was ist Pandoc?</h2>
 <ul>
-<li>Open-Source-Tool zur Konvertierung von Markup sprachen</li>
+<li>Open-Source-Tool zur Konvertierung von Markup-Sprachen</li>
 <li>Vielfältige Ein- und Ausgabeformate</li>
-<li>Kein Grafisches Userinterface, wird über den Terminal bedient (cli-tool)</li>
+<li>Kein grafisches Userinterface (GUI), wird über den Terminal bedient (cli-tool)</li>
 </ul>
 <blockquote>
 <p>If you need to convert files from one markup format into another, pandoc is your <em>swiss-army knife</em>. Pandoc can convert between the following formats</p>
@@ -616,8 +615,8 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <li class="fragment">Der Befehl <code>pandoc</code> ruft das Commandline Tool <em>pandoc</em> auf</li>
 <li class="fragment">Das Argument <code>markdown.md</code>:
 <ul>
-<li class="fragment">ist ein sogenanntes Positionalargument (engl: <em>positional argument</em>)</li>
-<li class="fragment">gilt als Input File</li>
+<li class="fragment">Ist ein sogenanntes Positionalargument (engl: <em>positional argument</em>)</li>
+<li class="fragment">Gilt als Input File</li>
 </ul></li>
 <li class="fragment">Die Markup Sprache des Input Files wird von der Dateierweiterung inferiert (<code>.md</code> = Markdown)</li>
 <li class="fragment">Da wir kein Output definiert haben, wird standartmässig <code>html</code> herausgegeben</li>
@@ -686,7 +685,7 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 </div>
 <aside class="notes">
 <ul>
-<li>Kurze form <code>-h</code> und lange Form <code>--help</code></li>
+<li>Kurze Form <code>-h</code> und lange Form <code>--help</code></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -781,21 +780,21 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <section id="html-vs-pdf" class="slide level2">
 <h2>HTML vs PDF</h2>
 <ul>
-<li>der bisherige <em>de facto</em> Standart für Lehrmaterialien: PDFs via Moodle</li>
+<li>Der bisherige <em>de facto</em> Standart für Lehrmaterialien: PDFs via Moodle</li>
 <li>PDFs haben Vorteile, aber auch viele Limitierungen</li>
 <li>Vorteile von PDFs:
 <ul>
-<li>stabilie Formatierung (Drucken)</li>
-<li>ein eizige Datei (kann leicht gespeichert/kopiert werden)</li>
-<li>offline nutzbar</li>
+<li>Stabilie Formatierung (Drucken)</li>
+<li>Ein eizige Datei (kann leicht gespeichert/kopiert werden)</li>
+<li>Offline nutzbar</li>
 </ul></li>
 <li>Nachteile von PDFs
 <ul>
-<li>kaum öffentliche Wahrnehmung (OER)</li>
-<li>nicht responsiv für verschiedene devices (BYOD)</li>
-<li>keine interaktiven Elemente</li>
-<li>schlecht übersetzbar (Deutsch ↔︎ Englisch)</li>
-<li>schlechte Accessibility-Features (z.B. Screen Readers)</li>
+<li>Kaum öffentliche Wahrnehmung (OER)</li>
+<li>Nicht responsiv für verschiedene devices (BYOD)</li>
+<li>Keine interaktiven Elemente</li>
+<li>Schlecht übersetzbar (Deutsch ↔︎ Englisch)</li>
+<li>Schlechte Accessibility-Features (z.B. Screen Readers)</li>
 </ul></li>
 </ul>
 </section>
@@ -836,8 +835,8 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <p>Diese Methode ist zwar sehr einfach, aber:</p>
 <div>
 <ul>
-<li class="fragment">ohne Login ist Veröffentlichung zeitlich beschränkt <span class="fragment hl">→ mit Login unbeschränkt</span></li>
-<li class="fragment">benötigt drag-and-drop <span class="fragment hl">→ Kommandozeile <code>quarto publish netlify</code> </span></li>
+<li class="fragment">Ohne Login ist Veröffentlichung zeitlich beschränkt <span class="fragment hl">→ mit Login unbeschränkt</span></li>
+<li class="fragment">Benötigt drag-and-drop <span class="fragment hl">→ Kommandozeile <code>quarto publish netlify</code> </span></li>
 <li class="fragment">URL ist wenig ansprechend <span class="fragment hl">→ Mit <code>CNAME</code> auf <em>eigene</em> Domain (siehe <a href="https://dxi.ai/">dxi.ai</a>)</span></li>
 </ul>
 </div>
@@ -861,8 +860,37 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <section id="übung-html-veröffentlichen-2" class="slide level2">
 <h2>Übung HTML veröffentlichen 🛠️</h2>
 <h3 id="zhaw-posit-connect">ZHAW Posit Connect</h3>
-<p>TODO luoe: Posit kurz erläutern und Übung vorstellen <a href="https://statistik-ide.zhaw.ch/rsconnect/connect/" class="uri">https://statistik-ide.zhaw.ch/rsconnect/connect/</a> Disclaimer: keine Forschungslizenz</p>
-</section></section>
+<div>
+<ul>
+<li class="fragment">RStudio Publish
+<ol type="1">
+<li class="fragment">Klickt auf den Publish Knopf <img data-src="images/publish_button.jpg" alt="Publish Knopf"> und wählt “Posit Connect”</li>
+<li class="fragment">Folgt den Anweisungen und gebt den Posit Connect Server an -&gt; <code>statistik-ide.zhaw.ch/rsconnect</code></li>
+<li class="fragment">Überprüft die Files und den Title und klickt dann auf den Publish Button</li>
+<li class="fragment">Im Browser seht ihr nun euer html.</li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="übung-html-veröffentlichen-3" class="slide level2">
+<h2>Übung HTML veröffentlichen 🛠️</h2>
+<h3 id="zhaw-posit-connect-1">ZHAW Posit Connect</h3>
+<div>
+<ul>
+<li class="fragment">Konsole:
+<ol type="1">
+<li class="fragment">In der Kosole führt den Command <code>quarto publish connect</code> aus</li>
+<li class="fragment">Gebt den Link zum Posit Connect Server an -&gt; <code>https://statistik-ide.zhaw.ch/rsconnect/</code></li>
+<li class="fragment">Generiert einen API Key auf ZHAW Posit Connect und kopiert es in die Console</li>
+<li class="fragment">Mit Enter wird alles publiziert. Im _publish.yml sieht ihr eure Einstellungen.</li>
+<li class="fragment">Im Browser seht ihr nun euer html.</li>
+</ol></li>
+</ul>
+</div>
+
+<aside><div>
+<p>Disclaimer: Posit Connect hat keine Forschungslizenz (kann also nur für Lehre verwendet werden)</p>
+</div></aside></section></section>
 <section>
 <section id="markdown-quarto-advanced" class="title-slide slide level1 center">
 <h1>Markdown / Quarto Advanced</h1>
@@ -870,16 +898,30 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 </section>
 <section id="übung-yaml-header" class="slide level2">
 <h2>Übung YAML Header 🛠️</h2>
-<p>TODO lueo</p>
-<ul>
-<li>Output format and format options (html with toc number depth, pdf with TOC)</li>
-<li>Language (english vs.&nbsp;german)</li>
-<li>metadata (title, author, date)</li>
-</ul>
+<p>Wird benutzt um Metadaten für das Quarto File festzulegen, wie zum Beispiel Titel, Autor und Datum.</p>
+<p>Der Header wird ganz am anfang des Quarto Files beginnend und endend mit <code>---</code> hinzugefügt.</p>
+<div class="sourceCode" id="cb8" data-code-line-numbers="2-4"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href=""></a>---</span>
+<span id="cb8-2"><a href=""></a>title: "Test"</span>
+<span id="cb8-3"><a href=""></a>author: "Peter Mustermann"</span>
+<span id="cb8-4"><a href=""></a>date: 13/02/2024</span>
+<span id="cb8-5"><a href=""></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="übung-yaml-header-1" class="slide level2">
+<h2>Übung YAML Header 🛠️</h2>
+<p>Es können aber auch Information zu verschiedenen Ausgabeformaten festgelegt werden, wie etwa, dass wir im HTML Output keinen Table of Content haben wollen, während wir beim Generieren eines PDFs einen Table of Content haben wollen.</p>
+<div class="sourceCode" id="cb9" data-code-line-numbers="5-9"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href=""></a>---</span>
+<span id="cb9-2"><a href=""></a>title: "Test"</span>
+<span id="cb9-3"><a href=""></a>author: "Peter Mustermann"</span>
+<span id="cb9-4"><a href=""></a>date: 13/02/2024</span>
+<span id="cb9-5"><a href=""></a>format: </span>
+<span id="cb9-6"><a href=""></a>  html:</span>
+<span id="cb9-7"><a href=""></a>    toc: true</span>
+<span id="cb9-8"><a href=""></a>  pdf:</span>
+<span id="cb9-9"><a href=""></a>    toc: false</span>
+<span id="cb9-10"><a href=""></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="übung-quarto-features" class="slide level2">
 <h2>Übung Quarto Features 🛠️</h2>
-<p>TODO lueo</p>
 <ul>
 <li><p>Bilder einpflegen (mit verschiedenen Layouts sowie Captions / Subcaptions)</p></li>
 <li><p>Tabellen einpflegen (online Tables generator https://www.tablesgenerator.com/markdown_tables)</p></li>
@@ -897,21 +939,47 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <li><p>HTML Slides: <a href="https://quarto.org/docs/reference/formats/presentations/revealjs.html" class="uri">https://quarto.org/docs/reference/formats/presentations/revealjs.html</a></p></li>
 </ul>
 </section>
-<section id="quarto-projects" class="slide level2">
-<h2>Quarto Projects</h2>
-<p>TODO:</p>
-<ul>
-<li>von 1 file auf n files</li>
-<li>yaml-header wandert von index.qmd zu _quarto.yml</li>
-<li>index.qmd ist nicht mehr optional</li>
-</ul>
+<section id="übung-quarto-codes" class="slide level2">
+<h2>Übung Quarto Codes 🛠️</h2>
+<p>Eine grosse stärke sind die integrierten Computations von Programmiersprachen.</p>
+<h3 id="chunk-options">Chunk Options</h3>
+<p>Hier sind einige Beispiele wie Chunk Options aussehen können</p>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co">#| echo: true</span></span>
+<span id="cb10-2"><a href=""></a><span class="co">#| fig-cap: "Air Quality"</span></span>
+<span id="cb10-3"><a href=""></a><span class="co">#| eval: false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co">#| fig-width: 6</span></span>
+<span id="cb11-2"><a href=""></a><span class="co">#| bg: "lightgray"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="co">#| label: analysis</span></span>
+<span id="cb12-2"><a href=""></a><span class="co">#| font-size: 12pt</span></span>
+<span id="cb12-3"><a href=""></a><span class="co">#| ln: true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co">#| warn: false</span></span>
+<span id="cb13-2"><a href=""></a><span class="co">#| fig-height: 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="quarto-projects" class="slide level2">
+<h2>Quarto Projects</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Von einem File auf N+ Files</p></li>
+<li><p>Setup:</p>
 <ul>
 <li>Markdown-Dateien (*.qmd)</li>
 <li>Bilder und Grafiken</li>
 <li>Quarto-Konfigurationsdatei: _quarto.yml</li>
 <li>Zusätzliche Ressourcen</li>
+</ul></li>
+<li><p>Wichtige Anpassungen:</p>
+<ul>
+<li>yaml-header wandert von index.qmd zu _quarto.yml</li>
+<li>index.qmd ist nicht mehr optional</li>
+</ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -922,10 +990,6 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 </div>
 </div>
 </div>
-</section>
-<section id="warum-quarto-projects" class="slide level2">
-<h2>Warum Quarto Projects?</h2>
-<p>Vorlagen</p>
 </section></section>
 <section>
 <section id="github" class="title-slide slide level1 center">
@@ -940,12 +1004,12 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 </section>
 <section id="plaintext-files-versioncontrol" class="slide level2">
 <h2>Plaintext Files &amp; Versioncontrol</h2>
-<p>TODO</p>
+<p>TODO: <span class="citation" data-cites="Nils">@Nils</span> was willst du hier?</p>
 </section>
 <section id="git-workflow" class="slide level2">
 <h2>Git Workflow</h2>
 <div class="columns">
-<p>::: {.column width=“50%”}tdflkjd - Commit: Speichert eine Version mit Änderungen. - Push: Hochladen von lokalen Commits ins Remote Repository. - Pull: Abrufen und Einpflegen von Änderungen aus dem Remote Repository. - Merge Request: Anfrage zur Überführung von Änderungen zwischen Branches. - Merge Conflict: Problem bei der automatischen Zusammenführung von Branches. - Issue: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten.</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD ::: {.column width=“50%”}tdflkjd - Commit: Speichert eine Version mit Änderungen. - Push: Hochladen von lokalen Commits ins Remote Repository. - Pull: Abrufen und Einpflegen von Änderungen aus dem Remote Repository. - Merge Request: Anfrage zur Überführung von Änderungen zwischen Branches. - Merge Conflict: Problem bei der automatischen Zusammenführung von Branches. - Issue: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten. ======= ::: {.column width=“50%”} - <code>Commit</code>: Speichert eine Version mit Änderungen. - <code>Push</code>: Hochladen von lokalen Commits ins Remote Repository. - <code>Pull</code>: Abrufen und Einpflegen von Änderungen aus dem Remote Repository. - <code>Merge Request</code>: Anfrage zur Überführung von Änderungen zwischen Branches. - <code>Merge Conflict</code>: Problem bei der automatischen Zusammenführung von Branches. - <code>Issue</code>: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten. &gt;&gt;&gt;&gt;&gt;&gt;&gt; e729bead520f8c2537d89aef85ccb570ba9755e5</p>
 </div>
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -957,16 +1021,20 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 </div>
 <p>:::</p>
 </section>
+<section id="github-desktop" class="slide level2">
+<h2>GitHub Desktop</h2>
+</section>
 <section id="übung" class="slide level2">
 <h2>Übung</h2>
+<div>
 <ol type="1">
-<li>Klonen Sie die Übungsunterlagen von <a href="https://fit-mit-markdown.github.io/">Fit-mit-Markdown</a></li>
-<li>Erstellen Sie einen neuen Branch</li>
-<li>Bearbeiten Sie etwas im Dokument</li>
-<li>Commiten und Pushen Sie die Änderungen</li>
-<li>Erstellen Sie einen Merge Request auf GitHub</li>
+<li class="fragment">Klonen Sie die Übungsunterlagen von <a href="https://fit-mit-markdown.github.io/">Fit-mit-Markdown</a></li>
+<li class="fragment">Erstellen Sie einen neuen Branch</li>
+<li class="fragment">Bearbeiten Sie etwas im Dokument</li>
+<li class="fragment">Commiten und Pushen Sie die Änderungen</li>
+<li class="fragment">Erstellen Sie einen Merge Request auf GitHub</li>
 </ol>
-<p>TODO</p>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="images/zhaw_sw_neg.png" class="slide-logo"></p>
 <div class="footer footer-default">
