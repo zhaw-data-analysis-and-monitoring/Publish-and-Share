@@ -472,7 +472,7 @@ TODO
 ## Git Workflow
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="50%"}tdflkjd
 - Commit: Speichert eine Version mit Änderungen.
 - Push: Hochladen von lokalen Commits ins Remote Repository.
 - Pull: Abrufen und Einpflegen von Änderungen aus dem Remote Repository.
