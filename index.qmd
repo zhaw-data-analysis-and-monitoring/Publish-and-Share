@@ -15,22 +15,19 @@ format:
 
 ## Ablauf
 
-
 1. Markup und Markdown
 2. Pandoc und Quarto
-3. HTML outpus publizieren
+3. HTML Outputs publizieren
 4. Kollaboration mit Textfiles
 
 ## Ziele
 
 ::: {.incremental}
-- Vorteiler *einfacher Textdokumente* kennen
+- Vorteile *einfacher Textdokumente* kennen
 - Basics von Markdown kennen
 - Basics von Quarto kennen
 - Kollaboration mit Git und GitHub
 :::
-
-
 
 # Plaintext, Markup und Markdown
 
@@ -46,12 +43,9 @@ Vorteile reiner Textfiles (plain text)
 5. Langfristige Kompatibilität
 6. Suchbarkeit
 7. Leichte Integration
-
 :::
 
-
 ::: {.notes}
-
 1. Plattformunabhängigkeit: Textdateien sind auf allen Betriebssystemen leicht zugänglich (Windows, macOS, Linux).
 2. Geringe Dateigröße: Textdateien sind in der Regel kleiner als ihre formatierten Gegenstücke, was den Speicherplatz spart.
 3. Einfache Handhabung: Textdateien können einfach in jedem Texteditor bearbeitet werden, ohne spezielle Software.
@@ -59,7 +53,6 @@ Vorteile reiner Textfiles (plain text)
 5. Langfristige Kompatibilität: Textdateien haben eine höhere Wahrscheinlichkeit, auch in Zukunft von Software unterstützt zu werden.
 6. Suchbarkeit: Textdateien ermöglichen eine effiziente Suche nach Informationen.
 7. Leichte Integration: Einfache Textdateien lassen sich leicht in verschiedene Anwendungen und Workflows integrieren.
-
 :::
 
 ## Was ist eine Markup Sprache?
@@ -70,41 +63,32 @@ Vorteile reiner Textfiles (plain text)
 - *What you see is what you mean* (WYSIWYM)
 
 ::: {.notes}
-
 Fokus auf was wir schreiben wollen, nicht wie es aussieht. 
-
 :::
-
-
 
 ## Was für Markup Sprachen gibt es?
 
-
-| Sprache        | Beispiel                                                |
-|----------------|---------------------------------------------------------|
-| HTML           | `<b>Fetter Text</b>`                                    |
-| LaTeX          | `\textbf{Fetter Text}`                                  |
-| Markdown       | `**Fetter Text**`                                       |
-
+| Sprache  | Beispiel               |
+|----------|------------------------|
+| HTML     | `<b>Fetter Text</b>`   |
+| LaTeX    | `\textbf{Fetter Text}` |
+| Markdown | `**Fetter Text**`      |
 
 ## Was ist Markdown?
 
-- Leichtgewichtige Markup-Sprache für einfaches Textformatieren.
+- Leichtgewichtige Markup-Sprache für einfaches Textformatieren
 - Einfach zu erlernen 
 - Maschinenlesbar *und* Menschenlesbar
 - **Frontend** für Latex / HTML
 
-
 ## Markdown Syntax
 
 ```
-
 # A story of a fox
 
 The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wiki/Dog).
 
 ![](images/dogs.jpg)
-
 ```
 
 <div style="height: 100px"></div>
@@ -115,48 +99,41 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 
 ![](images/dogs.jpg)
 
-
 ::: {.notes}
 - [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
 - [Abbildungen](https://quarto.org/docs/authoring/figures.html)
 - [Tabellen](https://quarto.org/docs/authoring/tables.html)
-
 :::
-
 
 ## Texteditor
 
 - Ein guter Texteditor ist wichtig
 - Empfehlungen
   - VSCode: [code.visualstudio.com](https://code.visualstudio.com/)
-  - RStudio [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
-  - Pulsar [pulsar-edit.dev](https://pulsar-edit.dev/)
-
-
+  - RStudio: [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+  - Pulsar: [pulsar-edit.dev](https://pulsar-edit.dev/)
 
 ## Übung Markdown 🛠️
 
 - Konvertiere deinen mitgebrachten Text in Markdown.
 - Falls du keinen eigenen Text mitbebracht hast, nimm folgenden: [bit.ly/42vBKuu](https://bit.ly/42vBKuu)
 
-TODO: 
-  - Bei grösseren Texten nur die ersten paar Absätze verwenden
-  - Keine geheimen Texte!
-
+::: aside
+- Bei grösseren Texten nur die ersten paar Absätze verwenden
+- Keine geheimen Texte!
+:::
 
 # Pandoc
 
 ## Was ist Pandoc?
 
-- Open-Source-Tool zur Konvertierung von Markup sprachen
+- Open-Source-Tool zur Konvertierung von Markup-Sprachen
 - Vielfältige Ein- und Ausgabeformate 
-- Kein Grafisches Userinterface, wird über den Terminal bedient (cli-tool)
-
+- Kein grafisches Userinterface (GUI), wird über den Terminal bedient (cli-tool)
 
 > If you need to convert files from one markup format into another, pandoc is your *swiss-army knife*. Pandoc can convert between the following formats
 
 ![](images/pandoc.png)
-
 
 ## Übung Pandoc 🛠️
 
@@ -173,21 +150,18 @@ TODO:
 :::{.incremental}
 - Der Befehl `pandoc` ruft das Commandline Tool *pandoc* auf
 - Das Argument `markdown.md`:
-  - ist ein sogenanntes Positionalargument (engl: *positional argument*)
-  - gilt als Input File
+  - Ist ein sogenanntes Positionalargument (engl: *positional argument*)
+  - Gilt als Input File
 - Die Markup Sprache des Input Files wird von der Dateierweiterung inferiert (`.md` = Markdown)
 - Da wir kein Output definiert haben, wird standartmässig `html` herausgegeben
 - Um ein PDF zu erstellen müsste eine zusätzliche Komponente installiert werden
 :::
 
-
 :::{.notes}
 TODO: MSI installer, wenn nur für den eigenen Nutzer interim admin nicht nötig
-
 :::
 
 ## Übung Pandoc 🛠️
-
 
 ```bash
 # pandoc markdown.md 
@@ -198,12 +172,10 @@ pandoc -o output.html markdown.md
 <div style="height: 50px"></div>
 
 :::{.incremental}
-
 - `-o output.html`: 
   - ist ein *named argument*
   - definiert das Output File
 - Die Markup Sprache des Output files wird von der Dateierweiterung inferiert (`.html`)
-
 :::
 
 ## Übung Pandoc 🛠️
@@ -234,14 +206,11 @@ pandoc -o output.html markdown.md
   ...
   ```
 - die Hilfestellungen sind etwas gewöhnungsbedürftig, dafür aber umfangreich
-
 :::
 
 :::{.notes}
-- Kurze form `-h` und lange Form `--help`
-
+- Kurze Form `-h` und lange Form `--help`
 :::
-
 
 ## Übung Pandoc 🛠️
 
@@ -257,12 +226,9 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 - mit `mkdir` kann man ein Verzeichnis erstellen (`mkdir verzeichnis`)
 :::
 
-
-
 # Quarto
 
 ## Was ist Quarto?
-
 
 :::{.incremental}
 - Ebenfalls ein Open-Source *cli* tool
@@ -271,10 +237,7 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 - Erweitert die standart Markdown-Sprache mit nützlichen Elementen
 - Integriert die Ausführung von Code (R, Python, Julia, SQL...)
 - Liefert ansprechende *out-of-the-box* Templates
-
 :::
-
-
 
 ## Ausgabeformate
 
@@ -284,10 +247,7 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 - `word`: Books
 - `pptx`: Slides
 
-
-
 ## Übung Quarto 🛠️
-
 
 :::{.incremental}
 1. Installiert quarto [quarto.org](https://quarto.org)
@@ -302,16 +262,12 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 <div style="height: 40px"></div>
 
 :::{.incremental}
-
 - `render` ist eine Funktion des Programms `quarto`
 - Auch hier ist `markdown.md` ein positionales Argument
 - Der Output ist (wenn nicht anders definiert) ein HTML-File
 :::
 
-
-
 ## Übung Quarto 🛠️
-
 
 - Interaktives entwickeln von Dokumenten mit `render` ist umständlich. 
 - `quarto preview` ermöglicht ein live-preview (bessere *user experience*)
@@ -321,24 +277,22 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
   quarto preview markdown.md
   ```
 
-
 # HTML und das Web
 
 ## HTML vs PDF
 
-- der bisherige *de facto* Standart für Lehrmaterialien: PDFs via Moodle
+- Der bisherige *de facto* Standart für Lehrmaterialien: PDFs via Moodle
 - PDFs haben Vorteile, aber auch viele Limitierungen
 - Vorteile von PDFs:
-  - stabilie Formatierung (Drucken)
-  - ein eizige Datei (kann leicht gespeichert/kopiert werden)
-  - offline nutzbar
+  - Stabilie Formatierung (Drucken)
+  - Ein eizige Datei (kann leicht gespeichert/kopiert werden)
+  - Offline nutzbar
 - Nachteile von PDFs
-  - kaum öffentliche Wahrnehmung (OER)
-  - nicht responsiv für verschiedene devices (BYOD)
-  - keine interaktiven Elemente
-  - schlecht übersetzbar (Deutsch ↔ Englisch)
-  - schlechte Accessibility-Features (z.B. Screen Readers)
-
+  - Kaum öffentliche Wahrnehmung (OER)
+  - Nicht responsiv für verschiedene devices (BYOD)
+  - Keine interaktiven Elemente
+  - Schlecht übersetzbar (Deutsch ↔ Englisch)
+  - Schlechte Accessibility-Features (z.B. Screen Readers)
 
 ## HTML veröffentlichen
 
@@ -362,9 +316,7 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 5. Die Website befindet sich auf [irgendwas.netlify.app/*filename.html*](irgendwas.netlify.app)
    - *filename.html* muss noch hinzugefügt werden!
    - dies kann vermieden werden, wenn statt filename.html *index.html* verwendet wird
-
 :::
-
 
 ## Übung HTML veröffentlichen 🛠️
 
@@ -373,43 +325,79 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 Diese Methode ist zwar sehr einfach, aber:
 
 :::{.incremental}
-- ohne Login ist Veröffentlichung zeitlich beschränkt <span class="fragment hl">→ mit Login unbeschränkt</span>
-- benötigt drag-and-drop <span class="fragment hl">→ Kommandozeile `quarto publish netlify` </span>
+- Ohne Login ist Veröffentlichung zeitlich beschränkt <span class="fragment hl">→ mit Login unbeschränkt</span>
+- Benötigt drag-and-drop <span class="fragment hl">→ Kommandozeile `quarto publish netlify` </span>
 - URL ist wenig ansprechend <span class="fragment hl">→ Mit `CNAME` auf *eigene* Domain (siehe [dxi.ai](https://dxi.ai/))</span>
 :::
 
 :::{.notes}
-
 - ZHAW Domain noch nicht möglich
 - Take home messag: HTMLs lassen sich über herkömmliche Hosting Plattformen veröfentlichen
 :::
-
 
 ## Übung HTML veröffentlichen 🛠️
 
 ### ZHAW Posit Connect
 
+:::{.incremental}
+- RStudio Publish
+  1. Klickt auf den Publish Knopf ![Publish Knopf](images/publish_button.jpg) und wählt "Posit Connect"
+  2. Folgt den Anweisungen und gebt den Posit Connect Server an -> `statistik-ide.zhaw.ch/rsconnect`
+  3. Überprüft die Files und den Title und klickt dann auf den Publish Button
+  4. Im Browser seht ihr nun euer html.
+:::
 
-TODO luoe: Posit kurz erläutern und Übung vorstellen
-<https://statistik-ide.zhaw.ch/rsconnect/connect/>
-Disclaimer: keine Forschungslizenz
+## Übung HTML veröffentlichen 🛠️
 
+### ZHAW Posit Connect
 
+:::{.incremental}
+- Konsole:
+  1. In der Kosole führt den Command `quarto publish connect` aus 
+  2. Gebt den Link zum Posit Connect Server an -> `https://statistik-ide.zhaw.ch/rsconnect/`
+  3. Generiert einen API Key auf ZHAW Posit Connect und kopiert es in die Console
+  4. Mit Enter wird alles publiziert. Im _publish.yml sieht ihr eure Einstellungen.
+  5. Im Browser seht ihr nun euer html.
+:::
+
+::: aside
+Disclaimer: Posit Connect hat keine Forschungslizenz (kann also nur für Lehre verwendet werden)
+:::
 
 # Markdown / Quarto Advanced
 
+## Übung YAML Header 🛠️
+
+Wird benutzt um Metadaten für das Quarto File festzulegen, wie zum Beispiel Titel, Autor und Datum. 
+
+Der Header wird ganz am anfang des Quarto Files beginnend und endend mit `---` hinzugefügt.
+
+```{.default code-line-numbers="2-4"}
+---
+title: "Test"
+author: "Peter Mustermann"
+date: 13/02/2024
+---
+```
 
 ## Übung YAML Header 🛠️
 
-TODO lueo
+Es können aber auch Information zu verschiedenen Ausgabeformaten festgelegt werden, wie etwa, dass wir im HTML Output keinen Table of Content haben wollen, während wir beim Generieren eines PDFs einen Table of Content haben wollen. 
 
-- Output format and format options (html with toc number depth, pdf with TOC)
-- Language (english vs. german)
-- metadata (title, author, date)
+```{.default code-line-numbers="5-9"}
+---
+title: "Test"
+author: "Peter Mustermann"
+date: 13/02/2024
+format: 
+  html:
+    toc: true
+  pdf:
+    toc: false
+---
+```
 
 ## Übung Quarto Features 🛠️
-
-TODO lueo
 
 - Bilder einpflegen (mit verschiedenen Layouts sowie Captions / Subcaptions)
 - Tabellen einpflegen (online Tables generator https://www.tablesgenerator.com/markdown_tables)
@@ -421,39 +409,68 @@ TODO lueo
 - Literaturverzeichnis <https://quarto.org/docs/authoring/footnotes-and-citations.html> 
 - Callout Blocks
 
-
 - HTML Slides: <https://quarto.org/docs/reference/formats/presentations/revealjs.html>
+
+## Übung Quarto Codes 🛠️
+
+Eine grosse stärke sind die integrierten Computations von Programmiersprachen.
+
+### Chunk Options
+
+Hier sind einige Beispiele wie Chunk Options aussehen können
+
+:::: columns
+::: {.column width="50%"}
+```{.R}
+#| echo: true
+#| fig-cap: "Air Quality"
+#| eval: false
+```
+:::
+
+::: {.column width="50%"}
+```{.R}
+#| fig-width: 6
+#| bg: "lightgray"
+```
+:::
+
+::: {.column width="50%"}
+```{.R}
+#| label: analysis
+#| font-size: 12pt
+#| ln: true
+```
+:::
+
+::: {.column width="50%"}
+```{.R}
+#| warn: false
+#| fig-height: 5
+```
+:::
+::::
 
 ## Quarto Projects
 
-
-TODO: 
-
-- von 1 file auf n files
-- yaml-header wandert von index.qmd zu _quarto.yml
-- index.qmd ist nicht mehr optional
-
-
-::: columns
+:::: columns
 ::: {.column width="50%"}
-- Markdown-Dateien (*.qmd)
-- Bilder und Grafiken
-- Quarto-Konfigurationsdatei: _quarto.yml
-- Zusätzliche Ressourcen
-:::
+- Von einem File auf N+ Files
 
+- Setup:
+  - Markdown-Dateien (*.qmd)
+  - Bilder und Grafiken
+  - Quarto-Konfigurationsdatei: _quarto.yml
+  - Zusätzliche Ressourcen
+
+- Wichtige Anpassungen:
+  - yaml-header wandert von index.qmd zu _quarto.yml
+  - index.qmd ist nicht mehr optional
+:::
 ::: {.column width="50%"}
 ![yml File Struktur](images/quarto_project_yml_structure.PNG)
 :::
-:::
-
-## Warum Quarto Projects?
-
-Vorlagen
-
-
-
-
+::::
 
 # Git(Hub)
 
@@ -467,30 +484,34 @@ Vorlagen
 
 ## Plaintext Files & Versioncontrol
 
-TODO
+TODO: @Nils was willst du hier?
 
 ## Git Workflow
 
 ::: columns
 ::: {.column width="50%"}
-- Commit: Speichert eine Version mit Änderungen.
-- Push: Hochladen von lokalen Commits ins Remote Repository.
-- Pull: Abrufen und Einpflegen von Änderungen aus dem Remote Repository.
-- Merge Request: Anfrage zur Überführung von Änderungen zwischen Branches.
-- Merge Conflict: Problem bei der automatischen Zusammenführung von Branches.
-- Issue: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten.
+- `Commit`: Speichert eine Version mit Änderungen.
+- `Push`: Hochladen von lokalen Commits ins Remote Repository.
+- `Pull`: Abrufen und Einpflegen von Änderungen aus dem Remote Repository.
+- `Merge Request`: Anfrage zur Überführung von Änderungen zwischen Branches.
+- `Merge Conflict`: Problem bei der automatischen Zusammenführung von Branches.
+- `Issue`: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten.
 :::
 ::: {.column width="50%"}
 ![Git Workflow](images/git-workflow.PNG)
 :::
 :::
 
+## GitHub Desktop
+
+
+
 ## Übung
 
+:::{.incremental}
 1. Klonen Sie die Übungsunterlagen von [Fit-mit-Markdown](https://fit-mit-markdown.github.io/) 
 2. Erstellen Sie einen neuen Branch
 3. Bearbeiten Sie etwas im Dokument
 3. Commiten und Pushen Sie die Änderungen
 4. Erstellen Sie einen Merge Request auf GitHub
-
-TODO
+:::
