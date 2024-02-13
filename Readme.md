@@ -19,6 +19,7 @@
   - Einlage zu OER machen (krun!) 
 - Todo:
   - typst allenfalls erwähnen
+  - Cache und Freeze
   - welche tools verwenden markdown?
     - Threema / Signal / Telegramm?
     - Obsidian
