@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="de-CH"><head>
 <script src="index_files/libs/clipboard/clipboard.min.js"></script>
 <script src="index_files/libs/quarto-html/tabby.min.js"></script>
 <script src="index_files/libs/quarto-html/popper.min.js"></script>
@@ -95,7 +95,27 @@
     code span.va { color: #00e0e0; } /* Variable */
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="style.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -533,14 +553,15 @@ Nils Ratnaweera, Dominic Lüönd
 
 The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wiki/Dog).
 
-![](images/dogs.jpg)</code></pre>
+![](images/fox-over-dog.jpg)</code></pre>
+<div class="fragment">
 <div style="height: 100px">
 
 </div>
 <h3 id="a-story-of-a-fox">A story of a fox</h3>
 <p>The <em>quick</em> brown fox <strong>jumps</strong> over the lazy <a href="https://en.wikipedia.org/wiki/Dog">dog</a>.</p>
-
-<img data-src="images/dogs.jpg" class="r-stretch"><aside class="notes">
+<p><img data-src="images/fox-over-dog.jpg" width="400"></p>
+<aside class="notes">
 <ul>
 <li><a href="https://quarto.org/docs/authoring/markdown-basics.html">Markdown Basics</a></li>
 <li><a href="https://quarto.org/docs/authoring/figures.html">Abbildungen</a></li>
@@ -557,18 +578,18 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
 </section>
 <section id="texteditor" class="slide level2">
 <h2>Texteditor</h2>
+<p>Ein guter Texteditor ist wichtig!! Empfehlungen:</p>
+<div>
 <ul>
-<li>Ein guter Texteditor ist wichtig</li>
-<li>Empfehlungen
-<ul>
-<li>VSCode: <a href="https://code.visualstudio.com/">code.visualstudio.com</a></li>
-<li>RStudio: <a href="https://posit.co/download/rstudio-desktop/">posit.co/download/rstudio-desktop/</a></li>
-<li>Pulsar: <a href="https://pulsar-edit.dev/">pulsar-edit.dev</a></li>
-</ul></li>
+<li class="fragment">VSCode: <a href="https://code.visualstudio.com/">code.visualstudio.com</a> <span class="fragment"> ← Quarto Extension installieren!</span></li>
+<li class="fragment">RStudio: <a href="https://posit.co/download/rstudio-desktop/">posit.co/download/rstudio-desktop/</a></li>
+<li class="fragment">(Pulsar: <a href="https://pulsar-edit.dev/">pulsar-edit.dev</a>) <span class="fragment"> ← Keine Eigenen Erfahrungen </span></li>
 </ul>
+</div>
 </section>
 <section id="übung-markdown" class="slide level2">
 <h2>Übung Markdown 🛠️</h2>
@@ -576,13 +597,24 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <li>Konvertiere deinen mitgebrachten Text in Markdown.</li>
 <li>Falls du keinen eigenen Text mitbebracht hast, nimm folgenden: <a href="https://bit.ly/42vBKuu">bit.ly/42vBKuu</a></li>
 </ul>
-
-<aside><div>
+<aside class="notes">
 <ul>
 <li>Bei grösseren Texten nur die ersten paar Absätze verwenden</li>
 <li>Keine geheimen Texte!</li>
+<li>Falls sie Geheim sind, ggf. mit ein paar Search-and-replace operationen den Inhalt unkenntlich machen</li>
 </ul>
-</div></aside></section></section>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
 <section>
 <section id="pandoc" class="title-slide slide level1 center">
 <h1>Pandoc</h1>
@@ -590,24 +622,36 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 </section>
 <section id="was-ist-pandoc" class="slide level2">
 <h2>Was ist Pandoc?</h2>
+<div>
 <ul>
-<li>Open-Source-Tool zur Konvertierung von Markup-Sprachen</li>
-<li>Vielfältige Ein- und Ausgabeformate</li>
-<li>Kein grafisches Userinterface (GUI), wird über den Terminal bedient (cli-tool)</li>
+<li class="fragment">Open-Source-Tool zur Konvertierung von Markup-Sprachen</li>
+<li class="fragment">Kein grafisches Userinterface (GUI), wird über den Terminal bedient (cli-tool)</li>
+<li class="fragment">Vielfältige Ein- und Ausgabeformate</li>
 </ul>
+</div>
+<div class="fragment">
 <blockquote>
 <p>If you need to convert files from one markup format into another, pandoc is your <em>swiss-army knife</em>. Pandoc can convert between the following formats</p>
 </blockquote>
-
-<img data-src="images/pandoc.png" class="r-stretch"></section>
-<section id="übung-pandoc" class="slide level2">
-<h2>Übung Pandoc 🛠️</h2>
+</div>
+<div class="fragment">
+<p><img data-src="images/pandoc.png"></p>
+</div>
+<div class="fragment">
+<ul>
+<li>Input: docx, odt, epub, html, markdown, latex, rtf, typst, wiki</li>
+<li>Output: (Inputs plus:) pdf</li>
+</ul>
+</div>
+</section>
+<section id="übung-pandoc-1" class="slide level2">
+<h2>Übung Pandoc 1 🛠️</h2>
 <div>
 <ol type="1">
-<li class="fragment"><p>Installiert Pandoc von <a href="https://pandoc.org/installing.html">pandoc.org</a>.</p></li>
+<li class="fragment"><p>Installiert Pandoc von <a href="https://pandoc.org/installing.html">pandoc.org</a> (MSI installer).</p></li>
 <li class="fragment"><p>Öffnet ein Terminal <em>im Folder, wo ihr das Markdown File erstellt habt</em></p></li>
-<li class="fragment"><p>Konvertiert das Markdown File in html mit folgendem Command:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">pandoc</span> markdown.md </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li class="fragment"><p>Konvertiert das eben erstellte Markdown File in html mit folgendem Command:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">pandoc</span> markdown.md </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </div>
 <div>
@@ -619,12 +663,15 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <li class="fragment">Gilt als Input File</li>
 </ul></li>
 <li class="fragment">Die Markup Sprache des Input Files wird von der Dateierweiterung inferiert (<code>.md</code> = Markdown)</li>
-<li class="fragment">Da wir kein Output definiert haben, wird standartmässig <code>html</code> herausgegeben</li>
-<li class="fragment">Um ein PDF zu erstellen müsste eine zusätzliche Komponente installiert werden</li>
+<li class="fragment">Da wir kein Output-Format definiert haben, wird standartmässig <code>html</code> herausgegeben</li>
 </ul>
 </div>
 <aside class="notes">
-<p>TODO: MSI installer, wenn nur für den eigenen Nutzer interim admin nicht nötig</p>
+<ul>
+<li>Wenn nur für den eigenen Nutzer interim admin nicht nötig</li>
+<li>Um ein PDF zu erstellen müsste eine zusätzliche Komponente installiert werden</li>
+<li>Da wir kein Output-File definiert haben, wird der Output nur im Terminal dargestellt</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -637,11 +684,11 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
           display:block!important;
       }</style></aside>
 </section>
-<section id="übung-pandoc-1" class="slide level2">
-<h2>Übung Pandoc 🛠️</h2>
+<section id="übung-pandoc-2" class="slide level2">
+<h2>Übung Pandoc 2 🛠️</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="co"># pandoc markdown.md </span></span>
 <span id="cb3-2"><a href=""></a></span>
-<span id="cb3-3"><a href=""></a><span class="ex">pandoc</span> <span class="at">-o</span> output.html markdown.md </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href=""></a><span class="ex">pandoc</span> <span class="at">-o</span> output.html markdown.md </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div style="height: 50px">
 
 </div>
@@ -653,17 +700,26 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <li class="fragment">definiert das Output File</li>
 </ul></li>
 <li class="fragment">Die Markup Sprache des Output files wird von der Dateierweiterung inferiert (<code>.html</code>)</li>
+<li class="fragment">Betrachtet das html Files sowohl im Texteditor wie auch im Browser</li>
 </ul>
 </div>
 </section>
-<section id="übung-pandoc-2" class="slide level2">
-<h2>Übung Pandoc 🛠️</h2>
+<section id="übung-pandoc-3" class="slide level2">
+<h2>Übung Pandoc 3 🛠️</h2>
+<p>Konvertiert euer mitgebrachtes docx File</p>
+<ul>
+<li>1x in Markdown (Betrachten im Texteditor)</li>
+<li>1x in html (Betrachten im Texteditor und im Browser)</li>
+</ul>
+</section>
+<section id="terminal-und-cli-programme" class="slide level2">
+<h2>Terminal und cli-Programme</h2>
 <div>
 <ul>
 <li class="fragment"><p>Die Verwendung von Commandline-Programmen (cli) ist eine wichtige und nützliche Fähigkeit</p></li>
 <li class="fragment"><p>cli Tools verfügen meist über eine eingebaute Hilfestellung (<code>-h</code> / <code>--help</code>)</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="ex">pandoc</span> <span class="at">-h</span></span>
-<span id="cb4-2"><a href=""></a><span class="ex">pandoc</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href=""></a><span class="ex">pandoc</span> <span class="at">--help</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div style="height: 20px">
 
 </div>
@@ -699,8 +755,8 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
           display:block!important;
       }</style></aside>
 </section>
-<section id="übung-pandoc-3" class="slide level2">
-<h2>Übung Pandoc 🛠️</h2>
+<section id="terminal-und-cli-programme-1" class="slide level2">
+<h2>Terminal und cli-Programme</h2>
 <p>Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.</p>
 <div>
 <ul>
@@ -725,9 +781,9 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <div>
 <ul>
 <li class="fragment">Ebenfalls ein Open-Source <em>cli</em> tool</li>
-<li class="fragment">Baut auf Markdown und Pandoc auf <img data-src="images/rstudio-qmd-how-it-works.png"></li>
-<li class="fragment">Erweitert die standart Markdown-Sprache mit nützlichen Elementen</li>
-<li class="fragment">Integriert die Ausführung von Code (R, Python, Julia, SQL…)</li>
+<li class="fragment">Baut auf Markdown und Pandoc auf <img data-src="images/rstudio-qmd-how-it-works2.png"></li>
+<li class="fragment">Erweitert die standart Markdown-Sprache mit nützlichen Elementen (z.B. Callout Blocks)</li>
+<li class="fragment">Integriert die Integration von Code (R, Python, Julia, SQL…)</li>
 <li class="fragment">Liefert ansprechende <em>out-of-the-box</em> Templates</li>
 </ul>
 </div>
@@ -742,14 +798,14 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <li><code>pptx</code>: Slides</li>
 </ul>
 </section>
-<section id="übung-quarto" class="slide level2">
-<h2>Übung Quarto 🛠️</h2>
+<section id="übung-quarto-1" class="slide level2">
+<h2>Übung Quarto 1 🛠️</h2>
 <div>
 <ol type="1">
 <li class="fragment"><p>Installiert quarto <a href="https://quarto.org">quarto.org</a></p></li>
-<li class="fragment"><p>Öffnet ein Terminal <em>im Folder, wo ihr das Markdown File erstellt habt</em></p></li>
+<li class="fragment"><p>Öffnet ein Terminal im Folder, wo ihr mit Pandoc docx → md konvertiert habt</p></li>
 <li class="fragment"><p>Konvertiert das Markdown File in html mit folgendem Command:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="ex">quarto</span> render markdown.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="ex">quarto</span> render markdown.md</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </div>
 <div style="height: 40px">
@@ -763,13 +819,23 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 </ul>
 </div>
 </section>
-<section id="übung-quarto-1" class="slide level2">
-<h2>Übung Quarto 🛠️</h2>
+<section id="übung-quarto-2" class="slide level2">
+<h2>Übung Quarto 2 🛠️</h2>
+<div>
 <ul>
-<li><p>Interaktives entwickeln von Dokumenten mit <code>render</code> ist umständlich.</p></li>
-<li><p><code>quarto preview</code> ermöglicht ein live-preview (bessere <em>user experience</em>)</p>
+<li class="fragment"><p>Interaktives entwickeln mit <code>render</code>: 🫤</p></li>
+<li class="fragment"><p><code>quarto preview</code> ermöglicht ein live-preview (UX: 🥰)</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="co"># quarto render markdown.md</span></span>
-<span id="cb7-2"><a href=""></a><span class="ex">quarto</span> preview markdown.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb7-2"><a href=""></a><span class="ex">quarto</span> preview markdown.md</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li class="fragment"><p>versucht es aus!</p></li>
+</ul>
+</div>
+</section>
+<section id="übung-quarto-3" class="slide level2">
+<h2>Übung Quarto 3 🛠️</h2>
+<ul>
+<li>Erstellt ein pdf File aus eurem Markdown</li>
+<li>Installiert dafür (falls nötig) <code>tinytex</code></li>
 </ul>
 </section></section>
 <section>
@@ -782,38 +848,46 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 <ul>
 <li>Der bisherige <em>de facto</em> Standart für Lehrmaterialien: PDFs via Moodle</li>
 <li>PDFs haben Vorteile, aber auch viele Limitierungen</li>
-<li>Vorteile von PDFs:
-<ul>
-<li>Stabilie Formatierung (Drucken)</li>
-<li>Ein eizige Datei (kann leicht gespeichert/kopiert werden)</li>
-<li>Offline nutzbar</li>
-</ul></li>
-<li>Nachteile von PDFs
-<ul>
-<li>Kaum öffentliche Wahrnehmung (OER)</li>
-<li>Nicht responsiv für verschiedene devices (BYOD)</li>
-<li>Keine interaktiven Elemente</li>
-<li>Schlecht übersetzbar (Deutsch ↔︎ Englisch)</li>
-<li>Schlechte Accessibility-Features (z.B. Screen Readers)</li>
-</ul></li>
 </ul>
+<div class="columns">
+<div class="column fragment" style="width:40%;">
+<p><strong>Vorteile</strong></p>
+<ul>
+<li>✅ Formatierung (Drucken)</li>
+<li>✅ <em>single-file</em></li>
+<li>✅ Offline nutzbar</li>
+</ul>
+</div><div class="column fragment" style="width:60%;">
+<p><strong>Nachteile</strong></p>
+<ul>
+<li>🚫 öffentliche Wahrnehmung (OER)</li>
+<li>🚫 responsiv für verschiedene devices (BYOD)</li>
+<li>🚫 interaktiven Elemente</li>
+<li>🚫 Übersetzbarkeit (Deutsch ↔︎ Englisch)</li>
+<li>🚫 Accessibility-Features (z.B. Screen Readers)</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="html-veröffentlichen" class="slide level2">
 <h2>HTML veröffentlichen</h2>
+<div>
 <ul>
-<li>HTML Files können zwar wie PDFs gespeichert und geteilt werden, dies ist jedoch unüblich und ungewohnt</li>
-<li>Sinnvoller und üblicher: Webseiten erstellen. Dazu gibt es eine vielzahl von Optionen:
+<li class="fragment">HTML Files können offline gespeichert / geteilt werden <span class="fragment">→ unüblich und ungewohnt</span></li>
+<li class="fragment">Sinnvoller / üblicher: Gehostete Webseiten erstellen</li>
+<li class="fragment">Viele Möglichkeiten:
 <ul>
-<li>GitHub Pages (ZHAW Internes GitHub)</li>
-<li>Netlify</li>
-<li>Posit Connect (ZHAW Internes Posit Connect)</li>
-<li>QuartoPub</li>
-<li>Confluence (ZHAW Internes Confluence)</li>
+<li class="fragment">GitHub Pages (ZHAW Internes GitHub)</li>
+<li class="fragment">Netlify</li>
+<li class="fragment">Posit Connect (ZHAW Internes Posit Connect)</li>
+<li class="fragment">QuartoPub</li>
+<li class="fragment">Confluence (ZHAW Internes Confluence)</li>
 </ul></li>
 </ul>
+</div>
 </section>
-<section id="übung-html-veröffentlichen" class="slide level2">
-<h2>Übung HTML veröffentlichen 🛠️</h2>
+<section id="übung-html-veröffentlichen-1" class="slide level2">
+<h2>Übung HTML veröffentlichen 1 🛠️</h2>
 <h3 id="netlify-drop">Netlify Drop</h3>
 <div>
 <ol type="1">
@@ -829,21 +903,21 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 </ol>
 </div>
 </section>
-<section id="übung-html-veröffentlichen-1" class="slide level2">
-<h2>Übung HTML veröffentlichen 🛠️</h2>
+<section id="übung-html-veröffentlichen-1-1" class="slide level2">
+<h2>Übung HTML veröffentlichen 1 🛠️</h2>
 <h3 id="netlify-drop-1">Netlify Drop</h3>
 <p>Diese Methode ist zwar sehr einfach, aber:</p>
 <div>
 <ul>
 <li class="fragment">Ohne Login ist Veröffentlichung zeitlich beschränkt <span class="fragment hl">→ mit Login unbeschränkt</span></li>
 <li class="fragment">Benötigt drag-and-drop <span class="fragment hl">→ Kommandozeile <code>quarto publish netlify</code> </span></li>
-<li class="fragment">URL ist wenig ansprechend <span class="fragment hl">→ Mit <code>CNAME</code> auf <em>eigene</em> Domain (siehe <a href="https://dxi.ai/">dxi.ai</a>)</span></li>
+<li class="fragment">URL ist wenig ansprechend <span class="fragment hl">→ Mit <code>CNAME</code> <em>eigener</em> Domain (siehe <a href="https://dxi.ai/">dxi.ai</a>)</span></li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
-<li>ZHAW Domain noch nicht möglich</li>
-<li>Take home messag: HTMLs lassen sich über herkömmliche Hosting Plattformen veröfentlichen</li>
+<li>ZHAW Domain <em>noch</em> nicht möglich</li>
+<li>Take home message: HTMLs lassen sich über herkömmliche Hosting Plattformen veröfentlichen</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -858,187 +932,623 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
       }</style></aside>
 </section>
 <section id="übung-html-veröffentlichen-2" class="slide level2">
-<h2>Übung HTML veröffentlichen 🛠️</h2>
+<h2>Übung HTML veröffentlichen 2 🛠️</h2>
 <h3 id="zhaw-posit-connect">ZHAW Posit Connect</h3>
 <div>
-<ul>
-<li class="fragment">RStudio Publish
 <ol type="1">
-<li class="fragment">Klickt auf den Publish Knopf <img data-src="images/publish_button.jpg" alt="Publish Knopf"> und wählt “Posit Connect”</li>
-<li class="fragment">Folgt den Anweisungen und gebt den Posit Connect Server an -&gt; <code>statistik-ide.zhaw.ch/rsconnect</code></li>
-<li class="fragment">Überprüft die Files und den Title und klickt dann auf den Publish Button</li>
-<li class="fragment">Im Browser seht ihr nun euer html.</li>
-</ol></li>
-</ul>
+<li class="fragment"><p>Logged auch mit dem ZHAW Benutzername / Kürzel auf dem Server ein: <br> <a href="https://statistik-ide.zhaw.ch/rsconnect">statistik-ide.zhaw.ch/rsconnect</a></p></li>
+<li class="fragment"><p>Klickt auf eure Mailadresse rechts Oben und wählt “<em>API Keys</em>”</p></li>
+<li class="fragment"><p>Erstellt einen neuen API Key und gibt ihm einen sinnvollen Namen (z.B. <code>zhaw laptop</code>)</p></li>
+<li class="fragment"><p>Kopiert den API Key in die Zwischenablage</p></li>
+<li class="fragment"><p>Gebt im Terminal folgenden Befehl ein</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href=""></a><span class="ex">quarto</span> publish connect</span>
+<span id="cb8-2"><a href=""></a></span>
+<span id="cb8-3"><a href=""></a><span class="ex">Server</span> URL: › https://statistik-ide.zhaw.ch/rsconnect/  <span class="co"># URL eingeben </span></span>
+<span id="cb8-4"><a href=""></a><span class="ex">API</span> Key: › <span class="pp">********************************</span>             <span class="co"># API Key eingeben</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li class="fragment"><p>Danach sollte ein Browserfenster mit eurem Inhalt erscheinen</p>
+<ul>
+<li class="fragment">spezifische Freischaltung möglich</li>
+<li class="fragment">URL unschön → wenigstens ein ZHAW subdomain</li>
+</ul></li>
+</ol>
 </div>
+<aside class="notes">
+<ul>
+<li>Die ZHAW verfügt über einen Posit Connect Server</li>
+<li>Für Lehre kostenlos</li>
+<li>für Forschung nicht nutzbar (Lizenzkosten zu hoch)</li>
+<li>Inhalte können spezifisch freigeschaltet werden</li>
+<li>Inhalte sind über einen unschönen zhaw subdomain ersichtlich. Hier könnte der zhaw interne url shortener abhilfe leisten</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="quarto-advanced" class="title-slide slide level1 center">
+<h1>Quarto Advanced</h1>
+
 </section>
-<section id="übung-html-veröffentlichen-3" class="slide level2">
-<h2>Übung HTML veröffentlichen 🛠️</h2>
-<h3 id="zhaw-posit-connect-1">ZHAW Posit Connect</h3>
+<section id="yaml-header" class="slide level2">
+<h2>YAML Header</h2>
 <div>
 <ul>
-<li class="fragment">Konsole:
-<ol type="1">
-<li class="fragment">In der Kosole führt den Command <code>quarto publish connect</code> aus</li>
-<li class="fragment">Gebt den Link zum Posit Connect Server an -&gt; <code>https://statistik-ide.zhaw.ch/rsconnect/</code></li>
-<li class="fragment">Generiert einen API Key auf ZHAW Posit Connect und kopiert es in die Console</li>
-<li class="fragment">Mit Enter wird alles publiziert. Im _publish.yml sieht ihr eure Einstellungen.</li>
-<li class="fragment">Im Browser seht ihr nun euer html.</li>
-</ol></li>
+<li class="fragment"><p>YAML: <em>YAML Ain’t a Markup Language</em></p></li>
+<li class="fragment"><p>Eine maschinen- <em>und menschenlesbare</em> Art, strukturierte Daten zu speichern</p></li>
+<li class="fragment"><p>Ein Beispiel:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> A song of ice and fire</span></span>
+<span id="cb9-2"><a href=""></a><span class="fu">author</span><span class="kw">:</span><span class="at"> George R. R. Martin</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li class="fragment"><p>In Quarto: Metadaten festhalten (z.B. Titel, Autor und Datum)</p></li>
+<li class="fragment"><p>Wird zu Beginn des Dokuments eingefügt und mit <code>---</code> umschlossen</p></li>
 </ul>
 </div>
-
-<aside><div>
-<p>Disclaimer: Posit Connect hat keine Forschungslizenz (kann also nur für Lehre verwendet werden)</p>
-</div></aside></section></section>
-<section>
-<section id="markdown-quarto-advanced" class="title-slide slide level1 center">
-<h1>Markdown / Quarto Advanced</h1>
-
-</section>
-<section id="übung-yaml-header" class="slide level2">
-<h2>Übung YAML Header 🛠️</h2>
-<p>Wird benutzt um Metadaten für das Quarto File festzulegen, wie zum Beispiel Titel, Autor und Datum.</p>
-<p>Der Header wird ganz am anfang des Quarto Files beginnend und endend mit <code>---</code> hinzugefügt.</p>
-<div class="sourceCode" id="cb8" data-code-line-numbers="2-4"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href=""></a>---</span>
-<span id="cb8-2"><a href=""></a>title: "Test"</span>
-<span id="cb8-3"><a href=""></a>author: "Peter Mustermann"</span>
-<span id="cb8-4"><a href=""></a>date: 13/02/2024</span>
-<span id="cb8-5"><a href=""></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="übung-yaml-header-1" class="slide level2">
-<h2>Übung YAML Header 🛠️</h2>
-<p>Es können aber auch Information zu verschiedenen Ausgabeformaten festgelegt werden, wie etwa, dass wir im HTML Output keinen Table of Content haben wollen, während wir beim Generieren eines PDFs einen Table of Content haben wollen.</p>
-<div class="sourceCode" id="cb9" data-code-line-numbers="5-9"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href=""></a>---</span>
-<span id="cb9-2"><a href=""></a>title: "Test"</span>
-<span id="cb9-3"><a href=""></a>author: "Peter Mustermann"</span>
-<span id="cb9-4"><a href=""></a>date: 13/02/2024</span>
-<span id="cb9-5"><a href=""></a>format: </span>
-<span id="cb9-6"><a href=""></a>  html:</span>
-<span id="cb9-7"><a href=""></a>    toc: true</span>
-<span id="cb9-8"><a href=""></a>  pdf:</span>
-<span id="cb9-9"><a href=""></a>    toc: false</span>
-<span id="cb9-10"><a href=""></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h2>Übung YAML Header 1 🛠️</h2>
+<ul>
+<li>Fügt eurem Markdown File Metadaten mittels YAML Header hinzu</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb10-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> A song of ice and fire</span></span>
+<span id="cb10-3"><a href=""></a><span class="fu">author</span><span class="kw">:</span><span class="at"> George R. R. Martin</span></span>
+<span id="cb10-4"><a href=""></a><span class="pp">---</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="übung-quarto-features" class="slide level2">
-<h2>Übung Quarto Features 🛠️</h2>
+<section id="übung-yaml-header-2" class="slide level2">
+<h2>Übung YAML Header 2 🛠️</h2>
+<div class="sourceCode" id="cb11" data-code-line-numbers="5-9"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href=""></a>---</span>
+<span id="cb11-2"><a href=""></a>format: pdf   # default output: pdf</span>
+<span id="cb11-3"><a href=""></a>lang: de-CH   # Sprache: Deutsch</span>
+<span id="cb11-4"><a href=""></a>---</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="übung-yaml-header-3" class="slide level2">
+<h2>Übung YAML Header 3 🛠️</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb12-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb12-3"><a href=""></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span><span class="co">            # pdf-spezifische Optionen:</span></span>
+<span id="cb12-4"><a href=""></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">     # - soll eine Table of Contents herausgegeben werden?</span></span>
+<span id="cb12-5"><a href=""></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span><span class="co">  # - wie viele Ebenen sollen im TOC dargestellt werden?</span></span>
+<span id="cb12-6"><a href=""></a><span class="pp">---</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="übung-querverweise" class="slide level2">
+<h2>Übung Querverweise 🛠️</h2>
 <ul>
-<li><p>Bilder einpflegen (mit verschiedenen Layouts sowie Captions / Subcaptions)</p></li>
-<li><p>Tabellen einpflegen (online Tables generator https://www.tablesgenerator.com/markdown_tables)</p></li>
-<li><p>Crossreference</p>
+<li>Fügt ein Querverweis auf ein Bild ein. Z.B:</li>
+<li><em>siehe <a href="#/übung-querverweise" class="quarto-xref">Abbildung&nbsp;1</a></em></li>
+<li>(<a href="https://quarto.org/docs/authoring/cross-references.html">quarto.org</a> → Guide → Authoring → Scholarly Writing → Cross-References)</li>
+</ul>
+<div>
+<div id="fig-baratheon-0" class="quarto-figure quarto-figure-center quarto-float">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-baratheon-0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/baratheon.png" width="100">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-baratheon-0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;1: Das Wappen des Hauses Baratheon aus <em>A Song of Ice and Fire</em>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="fragment">
 <ul>
-<li>Figures: <a href="https://quarto.org/docs/authoring/cross-references.html#figures" class="uri">https://quarto.org/docs/authoring/cross-references.html#figures</a></li>
-<li>Tables: <a href="https://quarto.org/docs/authoring/cross-references.html#tables" class="uri">https://quarto.org/docs/authoring/cross-references.html#tables</a></li>
-<li>Sections: <a href="https://quarto.org/docs/authoring/cross-references.html#sections" class="uri">https://quarto.org/docs/authoring/cross-references.html#sections</a>
+<li><p>Für einen Querverweis braucht das Element, auf das man verweisen möchte es eine <em>ID</em></p></li>
+<li><p>Diese wird in <code>{}</code> gesetzt und beginnt mit <code>#</code>, bei Bilder folgt auf <code>#</code> ein <code>fig</code>. Z.B:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href=""></a><span class="al">![Das Wappen des Hauses Baratheon...](images/baratheon.png)</span>{#fig-baratheon}</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Um auf das Bild zu verweisen verwendet man <code>@fig-baratheon</code></p></li>
+</ul>
+<aside class="notes">
 <ul>
-<li>Limitierung: nicht section name, nur nummer</li>
+<li><code>#fig</code> macht aus der Referenz “Abbildung”</li>
+<li>auf <code>lang</code> achten!</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="sec-uebung-quarto-featuers-2" class="slide level2">
+<h2>Übung Querverweise 🛠️</h2>
+<ul>
+<li>Fügt ein Querverweise auf eine Kapitelmarke ein. Z.B.</li>
+<li><em>siehe <a href="#/sec-uebung-quarto-featuers-2" class="quarto-xref">Kapitel&nbsp;6.6</a></em></li>
+<li>(<a href="https://quarto.org/docs/authoring/cross-references.html">quarto.org</a> → Guide → Authoring → Scholarly Writing → Cross-References)</li>
+</ul>
+<div style="height: 100px">
+
+</div>
+<div class="fragment">
+<ul>
+<li>Kapitelmarken erhalten ein <code>{#sec-}</code></li>
+<li>Kapitel werden (aktuell) nur mit <em>Nummern</em> referenziert
+<ul>
+<li>im YAML header: <code>number-sections: true</code></li>
+<li>Siehe <a href="https://github.com/quarto-dev/quarto-cli/issues/1196" class="uri">https://github.com/quarto-dev/quarto-cli/issues/1196</a></li>
 </ul></li>
+</ul>
+</div>
+</section>
+<section id="übung-subfigures" class="slide level2">
+<h2>Übung Subfigures 🛠️</h2>
+<ul>
+<li>In Quarto können <em>Figures</em> aus <em>Subfigures</em> bestehen</li>
+<li>Siehe: <a href="https://quarto.org/docs/authoring/figures.html#subfigures">quarto.org</a> → Guide → Authoring → Figures → Subfigures</li>
+<li>Erstellt ein Subfigure Layout, ähnlich wie das folgende:</li>
+</ul>
+<div id="fig-houses" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-houses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-houses" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-barathon" class="quarto-figure quarto-figure-center quarto-float">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-barathon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/baratheon.png" data-ref-parent="fig-houses">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-barathon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) House Baratheon
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-houses" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-baylish" class="quarto-figure quarto-figure-center quarto-float">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-baylish-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/baylish.png" data-ref-parent="fig-houses">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-baylish-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) House Baylish
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-houses" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-arryn" class="quarto-figure quarto-figure-center quarto-float">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-arryn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/arryn.png" data-ref-parent="fig-houses">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-arryn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) House Arryn
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-houses" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div id="fig-bolton" class="quarto-figure quarto-figure-center quarto-float">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-bolton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/bolton.png" data-ref-parent="fig-houses">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-bolton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) House Bolton
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-houses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;2: Eine Sammlung verschiedener Wappen aus dem Buch “<em>A song of Ice and Fire</em>”, erstellt von <em>dezzzart</em> publiziert auf <a href="https://www.deviantart.com/dezzzart">deviantart.com</a>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="übung-tabellen" class="slide level2">
+<h2>Übung Tabellen 🛠️</h2>
+<ul>
+<li>Tabellen sind in Markup Sprachen etwas umständlich</li>
+<li>Vor allem, wenn sie häufig editiert / aktualisiert werden
+<ul>
+<li>→ In diesem Fall empfiehlt sich die Verwendung von R / Python Codeblocks</li>
 </ul></li>
-<li><p>Literaturverzeichnis <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html" class="uri">https://quarto.org/docs/authoring/footnotes-and-citations.html</a></p></li>
-<li><p>Callout Blocks</p></li>
-<li><p>HTML Slides: <a href="https://quarto.org/docs/reference/formats/presentations/revealjs.html" class="uri">https://quarto.org/docs/reference/formats/presentations/revealjs.html</a></p></li>
+<li>Für einfache bzw. sich nicht verändernde Tabellen ist der Markup Syntax ausreichend</li>
+<li>Für den Export aus Excel: <a href="https://www.tablesgenerator.com/markdown_tables">tablesgenerator.com</a></li>
+<li>Es gibt 3 Syntax Formen:
+<ul>
+<li>Pipe Tables</li>
+<li>Grid Tables</li>
+<li>HTML Tables</li>
+</ul></li>
 </ul>
 </section>
-<section id="übung-quarto-codes" class="slide level2">
-<h2>Übung Quarto Codes 🛠️</h2>
-<p>Eine grosse stärke sind die integrierten Computations von Programmiersprachen.</p>
-<h3 id="chunk-options">Chunk Options</h3>
-<p>Hier sind einige Beispiele wie Chunk Options aussehen können</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co">#| echo: true</span></span>
-<span id="cb10-2"><a href=""></a><span class="co">#| fig-cap: "Air Quality"</span></span>
-<span id="cb10-3"><a href=""></a><span class="co">#| eval: false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co">#| fig-width: 6</span></span>
-<span id="cb11-2"><a href=""></a><span class="co">#| bg: "lightgray"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="co">#| label: analysis</span></span>
-<span id="cb12-2"><a href=""></a><span class="co">#| font-size: 12pt</span></span>
-<span id="cb12-3"><a href=""></a><span class="co">#| ln: true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource R number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="co">#| warn: false</span></span>
-<span id="cb13-2"><a href=""></a><span class="co">#| fig-height: 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="übung-tabellen-1" class="slide level2">
+<h2>Übung Tabellen 🛠️</h2>
+<ul>
+<li>Sind sehr einfach im Syntax dafür etwas beschränkt in den Features</li>
+<li><a href="https://quarto.org/docs/authoring/tables.html">quarto.org</a> → Authoring → Tables</li>
+</ul>
+<h3 id="pipe-table">Pipe Table</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href=""></a>| fruit  | price   |</span>
+<span id="cb14-2"><a href=""></a>|:-------|--------:|</span>
+<span id="cb14-3"><a href=""></a>| apple  |  2.05   |</span>
+<span id="cb14-4"><a href=""></a>| pear   |  1.37   |</span>
+<span id="cb14-5"><a href=""></a>| orange | 30.09   |</span>
+<span id="cb14-6"><a href=""></a></span>
+<span id="cb14-7"><a href=""></a>: Eine "pipe" Tabelle {#tbl-pipe}</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-pipe" class="quarto-float">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-pipe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;1: Eine “pipe” Tabelle
+</figcaption>
+<div aria-describedby="tbl-pipe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">fruit</th>
+<th style="text-align: right;">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">apple</td>
+<td style="text-align: right;">2.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pear</td>
+<td style="text-align: right;">1.37</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">orange</td>
+<td style="text-align: right;">30.09</td>
+</tr>
+</tbody>
+</table>
 </div>
+</figure>
 </div>
+<aside class="notes">
+<ul>
+<li>Die Doppelpunkte legen die ausrichtung fest (link, rechts, zentriert)</li>
+<li>die “|” müssen nicht aneinander ausgerichtet sein (dies dient lediglich der lesbarkeit)</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="übung-tabellen-2" class="slide level2">
+<h2>Übung Tabellen 🛠️</h2>
+<h3 id="grid-tables">Grid Tables</h3>
+<ul>
+<li>Haben mehr features</li>
+<li>sind etwas umständlicher zu schreiben</li>
+<li><a href="https://quarto.org/docs/authoring/tables.html">quarto.org</a> → Authoring → Tables</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href=""></a>+-----------+-----------+--------------------+</span>
+<span id="cb15-2"><a href=""></a>| Fruit     | Price     | Advantages         |</span>
+<span id="cb15-3"><a href=""></a>+===========+===========+====================+</span>
+<span id="cb15-4"><a href=""></a>| Bananas   | $1.34     | - built-in wrapper |</span>
+<span id="cb15-5"><a href=""></a>|           |           | - bright color     |</span>
+<span id="cb15-6"><a href=""></a>+-----------+-----------+--------------------+</span>
+<span id="cb15-7"><a href=""></a>| Oranges   | $2.10     | - cures scurvy     |</span>
+<span id="cb15-8"><a href=""></a>|           |           | - tasty            |</span>
+<span id="cb15-9"><a href=""></a>+-----------+-----------+--------------------+</span>
+<span id="cb15-10"><a href=""></a></span>
+<span id="cb15-11"><a href=""></a>: Sample grid table.</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="übung-tabellen-3" class="slide level2">
+<h2>Übung Tabellen 🛠️</h2>
+<ul>
+<li>Fügt in eurem Bericht eine Tabelle ein</li>
+<li>Verwendet dazu (bei Bedarf) <a href="https://www.tablesgenerator.com/markdown_tables">tablesgenerator.com</a></li>
+</ul>
+</section>
+<section id="übung-zitieren" class="slide level2">
+<h2>Übung Zitieren 🛠️</h2>
+<ul>
+<li>Quarto erleichtet das Zitieren und Erstellen von Literaturverzeichnissen</li>
+<li>Die Metadaten der Literatur wird in sog. Bibtex-Keys gespeichert</li>
+<li>Bibtex-Keys können aus GoogleScholar usw. exportiert oder via Browseraddin generiert werden.</li>
+</ul>
+
+<img data-src="images/google-scholar-1.png" class="r-stretch"></section>
+<section id="übung-zitieren-1" class="slide level2">
+<h2>Übung Zitieren 🛠️</h2>
+
+<img data-src="images/google-scholar-2.png" class="r-stretch"></section>
+<section id="übung-zitieren-2" class="slide level2">
+<h2>Übung Zitieren 🛠️</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bibtex number-lines code-with-copy"><code class="sourceCode bibtex"><span id="cb16-1"><a href=""></a><span class="va">@article</span>{<span class="ot">einstein1905</span>,</span>
+<span id="cb16-2"><a href=""></a>  <span class="dt">title</span>={Zur Elektrodynamik bewegter Körper},</span>
+<span id="cb16-3"><a href=""></a>  <span class="dt">author</span>={Einstein, Albert},</span>
+<span id="cb16-4"><a href=""></a>  <span class="dt">journal</span>={Annalen der physik},</span>
+<span id="cb16-5"><a href=""></a>  <span class="dt">volume</span>={4},</span>
+<span id="cb16-6"><a href=""></a>  <span class="dt">year</span>={1905}</span>
+<span id="cb16-7"><a href=""></a>}</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
+<ul>
+<li class="fragment"><p>Dieser Bibtex-Keys werden in einem File abgespeichert, z.B <code>literatur.bib</code></p></li>
+<li class="fragment"><p>Das Bibtex-File wird über den YAML Header ins Quartodokument eingebunden:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href=""></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> literatur.bib</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li class="fragment"><p>Über die ID kann der Eintrag nun Zitiert werden:</p></li>
+<li class="fragment"><p>Folgender Eintrag:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href=""></a>@einstein1905 postulierte... </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li class="fragment"><p>Wird zu: <span class="citation" data-cites="einstein1905">Einstein (<a href="#/übung" role="doc-biblioref" onclick="">1905</a>)</span> postulierte…</p></li>
+<li class="fragment"><p>Viele Formen stehen zur Verfügung. Siehe: <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">quarto.org</a> → Guide → Authoring → Scholarly Writing → Citations and Footnotes</p></li>
+</ul>
+</div>
+</section>
+<section id="übung-zitieren-3" class="slide level2">
+<h2>Übung Zitieren 🛠️</h2>
+<ul>
+<li>Fügt eurem Dokument eine Referenz sowie ein Litearturverzeichnis hinzu</li>
+</ul>
+</section></section>
+<section>
+<section id="quato-professional" class="title-slide slide level1 center">
+<h1>Quato Professional</h1>
+
 </section>
 <section id="quarto-projects" class="slide level2">
 <h2>Quarto Projects</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
 <ul>
-<li><p>Von einem File auf N+ Files</p></li>
+<li><p>Von einem File auf <em>viele</em> Files</p></li>
 <li><p>Setup:</p>
 <ul>
-<li>Markdown-Dateien (*.qmd)</li>
-<li>Bilder und Grafiken</li>
-<li>Quarto-Konfigurationsdatei: _quarto.yml</li>
-<li>Zusätzliche Ressourcen</li>
-</ul></li>
-<li><p>Wichtige Anpassungen:</p>
-<ul>
-<li>yaml-header wandert von index.qmd zu _quarto.yml</li>
-<li>index.qmd ist nicht mehr optional</li>
+<li>Quarto-Konfigurationsdatei: <code>_quarto.yaml</code></li>
+<li><code>index.qmd</code> (ohne YAML Header)</li>
+<li>Optional: Weitere qmd-Files, die über <code>_quarto.yaml</code> eingebunden werden</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/quarto_project_yml_structure.PNG"></p>
-<figcaption>yml File Struktur</figcaption>
-</figure>
-</div>
-</div>
-</div>
+</section>
+<section id="quarto-projects-1" class="slide level2">
+<h2>Quarto Projects</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href=""></a><span class="fu">project</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb19-2"><a href=""></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> book</span></span>
+<span id="cb19-3"><a href=""></a><span class="at">  </span><span class="fu">preview</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb19-4"><a href=""></a><span class="at">      </span><span class="fu">port</span><span class="kw">:</span><span class="at"> </span><span class="dv">5678</span></span>
+<span id="cb19-5"><a href=""></a><span class="at">  </span><span class="fu">execute-dir</span><span class="kw">:</span><span class="at"> project</span></span>
+<span id="cb19-6"><a href=""></a><span class="at">  </span><span class="fu">pre-render</span><span class="kw">:</span><span class="at"> pre-render.r</span></span>
+<span id="cb19-7"><a href=""></a></span>
+<span id="cb19-8"><a href=""></a><span class="fu">lang</span><span class="kw">:</span><span class="at"> de</span></span>
+<span id="cb19-9"><a href=""></a></span>
+<span id="cb19-10"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb19-11"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb19-12"><a href=""></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb19-13"><a href=""></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">darkly</span><span class="kw">,</span><span class="at"> custom-dark.scss</span><span class="kw">]</span></span>
+<span id="cb19-14"><a href=""></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">flatly</span><span class="kw">,</span><span class="at"> custom-light.scss</span><span class="kw">]</span></span>
+<span id="cb19-15"><a href=""></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb19-16"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> custom.css</span></span>
+<span id="cb19-17"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> theme-custom.scss</span></span>
+<span id="cb19-18"><a href=""></a><span class="co">      #- presenter-mode.css</span></span>
+<span id="cb19-19"><a href=""></a><span class="at">    </span><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> bibliography.bib</span></span>
+<span id="cb19-20"><a href=""></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb19-21"><a href=""></a><span class="at">    </span><span class="fu">code-tools</span><span class="kw">:</span></span>
+<span id="cb19-22"><a href=""></a><span class="at">      </span><span class="fu">source</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb19-23"><a href=""></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
+<span id="cb19-24"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> script.html</span></span>
+<span id="cb19-25"><a href=""></a></span>
+<span id="cb19-26"><a href=""></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb19-27"><a href=""></a><span class="at">  </span><span class="fu">freeze</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb19-28"><a href=""></a><span class="at">  </span><span class="fu">error</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb19-29"><a href=""></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb19-30"><a href=""></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb19-31"><a href=""></a></span>
+<span id="cb19-32"><a href=""></a><span class="fu">knitr</span><span class="kw">:</span></span>
+<span id="cb19-33"><a href=""></a><span class="at">  </span><span class="fu">opts_chunk</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb19-34"><a href=""></a><span class="at">    </span><span class="fu">collapse</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb19-35"><a href=""></a><span class="co">    #tidy: true</span></span>
+<span id="cb19-36"><a href=""></a><span class="at">    </span></span>
+<span id="cb19-37"><a href=""></a><span class="fu">book</span><span class="kw">:</span></span>
+<span id="cb19-38"><a href=""></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Research Methods HS23"</span></span>
+<span id="cb19-39"><a href=""></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb19-40"><a href=""></a><span class="at">    </span><span class="fu">logo</span><span class="kw">:</span><span class="at"> images/zhaw_sw_neg.png</span></span>
+<span id="cb19-41"><a href=""></a><span class="at">    </span><span class="fu">collapse-level</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb19-42"><a href=""></a><span class="at">    </span><span class="fu">style</span><span class="kw">:</span><span class="at"> floating</span></span>
+<span id="cb19-43"><a href=""></a><span class="at">  </span><span class="fu">reader-mode</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="at">    </span></span>
+<span id="cb19-44"><a href=""></a><span class="co">  # globbing would be cool. Wait for</span></span>
+<span id="cb19-45"><a href=""></a><span class="co">  # https://github.com/quarto-dev/quarto-cli/issues/2120 or</span></span>
+<span id="cb19-46"><a href=""></a><span class="co">  # https://github.com/quarto-dev/quarto-cli/issues/1917 to be resolved </span></span>
+<span id="cb19-47"><a href=""></a></span>
+<span id="cb19-48"><a href=""></a><span class="at">  </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb19-49"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
+<span id="cb19-50"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> PrePro.qmd</span></span>
+<span id="cb19-51"><a href=""></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb19-52"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> prepro/Prepro1_Vorbereitung.qmd</span></span>
+<span id="cb19-53"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-54"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> prepro/Prepro1_Demo.qmd</span></span>
+<span id="cb19-55"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> prepro/Prepro1_Uebung.qmd</span></span>
+<span id="cb19-56"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-57"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> prepro/Prepro2_Demo.qmd</span></span>
+<span id="cb19-58"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> prepro/Prepro2_Uebung_A.qmd</span></span>
+<span id="cb19-59"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> prepro/Prepro2_Uebung_B.qmd</span></span>
+<span id="cb19-60"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-61"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> prepro/Prepro3_Demo.qmd</span></span>
+<span id="cb19-62"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> prepro/Prepro3_Uebung.qmd</span></span>
+<span id="cb19-63"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> InfoVis.qmd</span></span>
+<span id="cb19-64"><a href=""></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb19-65"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> infovis/Infovis1_Vorbereitung.qmd</span></span>
+<span id="cb19-66"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-67"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> infovis/Infovis1_Demo.qmd</span></span>
+<span id="cb19-68"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> infovis/Infovis1_Uebung.qmd</span></span>
+<span id="cb19-69"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> infovis/Infovis1_Script_eda.qmd</span></span>
+<span id="cb19-70"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-71"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> infovis/Infovis2_Uebung_A.qmd</span></span>
+<span id="cb19-72"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> infovis/Infovis2_Uebung_B.qmd</span></span>
+<span id="cb19-73"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> Stat1-4.qmd</span></span>
+<span id="cb19-74"><a href=""></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb19-75"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik1_Vorbereitung.qmd</span></span>
+<span id="cb19-76"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-77"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik1_Demo.qmd</span></span>
+<span id="cb19-78"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik1_Novanimal.qmd</span></span>
+<span id="cb19-79"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik1_Uebung.qmd</span></span>
+<span id="cb19-80"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik1_Loesung.qmd</span></span>
+<span id="cb19-81"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-82"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik2_Demo.qmd</span></span>
+<span id="cb19-83"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik2_Uebung.qmd</span></span>
+<span id="cb19-84"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik2_Loesung_Beispiel.qmd</span></span>
+<span id="cb19-85"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik2_Loesung_1.qmd</span></span>
+<span id="cb19-86"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik2_Loesung_2223s.qmd</span></span>
+<span id="cb19-87"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik2_Loesung_23n.qmd</span></span>
+<span id="cb19-88"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-89"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik3_Demo.qmd</span></span>
+<span id="cb19-90"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik3_Uebung.qmd</span></span>
+<span id="cb19-91"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik3_Loesung.qmd      </span></span>
+<span id="cb19-92"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-93"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik4_Demo.qmd</span></span>
+<span id="cb19-94"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik4_Uebung.qmd      </span></span>
+<span id="cb19-95"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik4_Loesung_1.qmd</span></span>
+<span id="cb19-96"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik4_Loesung_2n.qmd</span></span>
+<span id="cb19-97"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat1-4/Statistik4_Loesung_2s.qmd</span></span>
+<span id="cb19-98"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> Stat5-8.qmd</span></span>
+<span id="cb19-99"><a href=""></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb19-100"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik5_Vorbereitung.qmd</span></span>
+<span id="cb19-101"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-102"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik5_Demo.qmd</span></span>
+<span id="cb19-103"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik5_Uebung.qmd      </span></span>
+<span id="cb19-104"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik5_Loesung_1.qmd</span></span>
+<span id="cb19-105"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik5_Loesung_2.qmd</span></span>
+<span id="cb19-106"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-107"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik6_Demo.qmd</span></span>
+<span id="cb19-108"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik6_Uebung.qmd      </span></span>
+<span id="cb19-109"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik6_Loesung.qmd</span></span>
+<span id="cb19-110"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-111"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik7_Demo.qmd</span></span>
+<span id="cb19-112"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik7_Uebung.qmd      </span></span>
+<span id="cb19-113"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik7_Loesung.qmd</span></span>
+<span id="cb19-114"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-115"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik8_Demo.qmd</span></span>
+<span id="cb19-116"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik8_Uebung.qmd      </span></span>
+<span id="cb19-117"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> stat5-8/Statistik8_Loesung.qmd</span></span>
+<span id="cb19-118"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> StatKons.qmd</span></span>
+<span id="cb19-119"><a href=""></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb19-120"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> statKons/StatKons0_Vorbereitung.qmd</span></span>
+<span id="cb19-121"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-122"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> statKons/StatKons1_Demo_assoziationen.qmd</span></span>
+<span id="cb19-123"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> statKons/StatKons1_Demo_open_datasets.qmd</span></span>
+<span id="cb19-124"><a href=""></a><span class="co">      #- statKons/StatKons1_Demo_suggest_datasets.qmd</span></span>
+<span id="cb19-125"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-126"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> statKons/StatKons2_Demo_PCA.qmd</span></span>
+<span id="cb19-127"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-128"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> statKons/StatKons3_Demo_LM.qmd</span></span>
+<span id="cb19-129"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-130"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> statKons/StatKons4_Demo_GLM.qmd</span></span>
+<span id="cb19-131"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> RaumAn.qmd</span></span>
+<span id="cb19-132"><a href=""></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb19-133"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> rauman/Rauman0_Vorbereitung.qmd</span></span>
+<span id="cb19-134"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-135"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> rauman/Rauman1_Uebung_A.qmd</span></span>
+<span id="cb19-136"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> rauman/Rauman1_Uebung_B.qmd</span></span>
+<span id="cb19-137"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-138"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> rauman/Rauman2_Uebung_A.qmd</span></span>
+<span id="cb19-139"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> rauman/Rauman2_Uebung_B.qmd</span></span>
+<span id="cb19-140"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-141"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> rauman/Rauman3_Uebung_A.qmd</span></span>
+<span id="cb19-142"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> rauman/Rauman3_Uebung_B.qmd</span></span>
+<span id="cb19-143"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> rauman/Rauman3_Uebung_C.qmd</span></span>
+<span id="cb19-144"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-145"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> rauman/Rauman4_Uebung_A.qmd</span></span>
+<span id="cb19-146"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-147"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> rauman/Rauman5_Uebung_A.qmd </span></span>
+<span id="cb19-148"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> rauman/Rauman5_Uebung_B.qmd </span></span>
+<span id="cb19-149"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> </span><span class="st">"Fallstudie S"</span></span>
+<span id="cb19-150"><a href=""></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb19-151"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_s/0_Vorbereitung.qmd</span></span>
+<span id="cb19-152"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-153"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_s/1_Einführung.qmd</span></span>
+<span id="cb19-154"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_s/2_Besuchermonitoring.qmd</span></span>
+<span id="cb19-155"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-156"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_s/3_Aufgabenstellung_WPZ.qmd</span></span>
+<span id="cb19-157"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> --</span></span>
+<span id="cb19-158"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_s/4_Projektierung.qmd</span></span>
+<span id="cb19-159"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_s/5_Datenverarbeitung.qmd</span></span>
+<span id="cb19-160"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_s/6_Deskriptive_Analysen.qmd</span></span>
+<span id="cb19-161"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_s/7_Multivariate_Modelle.qmd</span></span>
+<span id="cb19-162"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> </span><span class="st">"Fallstudie N"</span></span>
+<span id="cb19-163"><a href=""></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb19-164"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_n/1_Vorbemerkung.qmd</span></span>
+<span id="cb19-165"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_n/2_Datenverarbeitung.qmd</span></span>
+<span id="cb19-166"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_n/3_Berechnung_Homeranges.qmd</span></span>
+<span id="cb19-167"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_n/4_Multivariate_Modelle.qmd</span></span>
+<span id="cb19-168"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_n/5_Variablenselektion.qmd</span></span>
+<span id="cb19-169"><a href=""></a><span class="at">      </span><span class="kw">-</span><span class="at"> fallstudie_n/6_Guete_und_Diagnostics.qmd</span></span>
+<span id="cb19-170"><a href=""></a><span class="co">      #- --</span></span>
+<span id="cb19-171"><a href=""></a><span class="co">      #- fallstudie_n/7_Modelle_mit_Nutzungsintensitaet.qmd</span></span>
+<span id="cb19-172"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"References.qmd"</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
-<section id="github" class="title-slide slide level1 center">
-<h1>Git(Hub)</h1>
+<section id="versionskontrolle-mit-git-und-github" class="title-slide slide level1 center">
+<h1>Versionskontrolle mit Git und GitHub</h1>
 
 </section>
-<section id="github-1" class="slide level2">
+<section id="github" class="slide level2">
 <h2>Git(Hub)</h2>
-<p><strong>Git</strong>: Verteiltes Versionskontrollsystem für die Nachverfolgung von Änderungen im Quellcode während der Softwareentwicklung. Ermöglicht Zusammenarbeit, Verwaltung von Codeversionen und Änderungsverfolgung. Bekannt für Geschwindigkeit und Effizienz.</p>
-<p>–</p>
-<p><strong>GitHub</strong>: Webplattform für Hosting von Git-Repositories. Bietet Tools für Zusammenarbeit, Codeüberprüfung und Projektverwaltung. Beliebt bei Entwicklern zur Teilung, Zusammenarbeit und Beitrag zu Open-Source-Projekten. Enthält Funktionen wie Issues und Pull Requests.</p>
-</section>
-<section id="plaintext-files-versioncontrol" class="slide level2">
-<h2>Plaintext Files &amp; Versioncontrol</h2>
-<p>TODO: <span class="citation" data-cites="Nils">@Nils</span> was willst du hier?</p>
+<ul>
+<li><strong>Git</strong>: Verteiltes Versionskontrollsystem</li>
+<li><strong>GitHub</strong>: Webplattform für Hosting von Git-Repositories.</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Git: für die Nachverfolgung von Änderungen im Quellcode während der Softwareentwicklung. Ermöglicht Zusammenarbeit, Verwaltung von Codeversionen und Änderungsverfolgung. Bekannt für Geschwindigkeit und Effizienz.</li>
+<li><h2 id="github-bietet-tools-für-zusammenarbeit-codeüberprüfung-und-projektverwaltung.-beliebt-bei-entwicklern-zur-teilung-zusammenarbeit-und-beitrag-zu-open-source-projekten.-enthält-funktionen-wie-issues-und-pull-requests.">GitHub: Bietet Tools für Zusammenarbeit, Codeüberprüfung und Projektverwaltung. Beliebt bei Entwicklern zur Teilung, Zusammenarbeit und Beitrag zu Open-Source-Projekten. Enthält Funktionen wie Issues und Pull Requests.</h2></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="git-workflow" class="slide level2">
 <h2>Git Workflow</h2>
-<div class="columns">
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD ::: {.column width=“50%”}tdflkjd - Commit: Speichert eine Version mit Änderungen. - Push: Hochladen von lokalen Commits ins Remote Repository. - Pull: Abrufen und Einpflegen von Änderungen aus dem Remote Repository. - Merge Request: Anfrage zur Überführung von Änderungen zwischen Branches. - Merge Conflict: Problem bei der automatischen Zusammenführung von Branches. - Issue: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten. ======= ::: {.column width=“50%”} - <code>Commit</code>: Speichert eine Version mit Änderungen. - <code>Push</code>: Hochladen von lokalen Commits ins Remote Repository. - <code>Pull</code>: Abrufen und Einpflegen von Änderungen aus dem Remote Repository. - <code>Merge Request</code>: Anfrage zur Überführung von Änderungen zwischen Branches. - <code>Merge Conflict</code>: Problem bei der automatischen Zusammenführung von Branches. - <code>Issue</code>: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten. &gt;&gt;&gt;&gt;&gt;&gt;&gt; e729bead520f8c2537d89aef85ccb570ba9755e5</p>
-</div>
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/git-workflow.PNG"></p>
-<figcaption>Git Workflow</figcaption>
-</figure>
-</div>
-</div>
-<p>:::</p>
+<ul>
+<li><code>Add</code>: Sammelt Änderungen</li>
+<li><code>Commit</code>: Speichert eine Version mit Änderungen.</li>
+<li><code>Push</code>: Hochladen von lokalen Commits ins Remote Repository.</li>
+<li><code>Pull</code>: Abrufen und Einpflegen von Änderungen aus dem Remote Repository.</li>
+<li><code>Pull Request</code>: Anfrage zur Überführung von Änderungen zwischen Branches.</li>
+<li><code>Merge Conflict</code>: Problem bei der automatischen Zusammenführung von Branches.</li>
+<li><code>Issue</code>: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten.</li>
+</ul>
 </section>
-<section id="github-desktop" class="slide level2">
-<h2>GitHub Desktop</h2>
-</section>
-<section id="übung" class="slide level2">
+<section id="übung" class="slide level2 smaller scrollable">
 <h2>Übung</h2>
 <div>
 <ol type="1">
-<li class="fragment">Klonen Sie die Übungsunterlagen von <a href="https://fit-mit-markdown.github.io/">Fit-mit-Markdown</a></li>
-<li class="fragment">Erstellen Sie einen neuen Branch</li>
-<li class="fragment">Bearbeiten Sie etwas im Dokument</li>
-<li class="fragment">Commiten und Pushen Sie die Änderungen</li>
+<li class="fragment"><code>Fork</code>t die Übungsunterlagen von <a href="https://fit-mit-markdown.github.io/">Fit-mit-Markdown</a></li>
+<li class="fragment">Bearbeitet etwas im einem Dokument</li>
+<li class="fragment"><code>Commit</code>et und <code>Push</code>t die Änderungen</li>
 <li class="fragment">Erstellen Sie einen Merge Request auf GitHub</li>
+<li class="fragment">Verwenden Sie dazu die Hilfe von <a href="https://fit-mit-markdown.github.io/">fit-mit-markdown.github.io/</a></li>
 </ol>
 </div>
 <div class="quarto-auto-generated-content">
 <p><img src="images/zhaw_sw_neg.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-einstein1905" class="csl-entry" role="listitem">
+Einstein, Albert. 1905. <span>«Zur Elektrodynamik bewegter Körper»</span>. <em>Annalen der physik</em> 4.
 </div>
 </div>
 </section></section>
@@ -1303,12 +1813,12 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
         // flash "checked"
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
+        button.setAttribute("title", "Kopiert");
         let tooltip;
         if (window.bootstrap) {
           button.setAttribute("data-bs-toggle", "tooltip");
           button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
+          button.setAttribute("data-bs-title", "Kopiert");
           tooltip = new bootstrap.Tooltip(button, 
             { trigger: "manual", 
               customClass: "code-copy-button-tooltip",
