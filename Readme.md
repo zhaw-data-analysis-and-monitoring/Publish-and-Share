@@ -16,4 +16,9 @@
   - Der Übergang von Markdown zu Quarto-Markdown war nicht explizit
   - Ggf sinnvoller, mehr in RStudio zu machen (falls ein grossteil RStudio braucht)
   - Einlage zu OER machen (krun!) 
-
+- Todo:
+  - typst allenfalls erwähnen
+  - welche tools verwenden markdown?
+    - Threema / Signal / Telegramm?
+    - Obsidian
+    - ...
