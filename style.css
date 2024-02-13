@@ -25,3 +25,16 @@
   border: 1px solid red;
   padding: 1px;
 }
+
+#posit-publish{
+  vertical-align: middle;
+}
+
+#fig-baratheon-0{
+  float: left;
+}
+
+
+#fig-houses img{
+  width: 150px;
+}

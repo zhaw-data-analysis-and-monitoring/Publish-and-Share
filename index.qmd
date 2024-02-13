@@ -9,6 +9,8 @@ format:
     smaller: true
     css: style.css
     navigation-mode: vertical
+lang: de-CH
+bibliography: literatur.bib
 ---
 
 # Heute
@@ -88,8 +90,10 @@ Fokus auf was wir schreiben wollen, nicht wie es aussieht.
 
 The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wiki/Dog).
 
-![](images/dogs.jpg)
+![](images/fox-over-dog.jpg)
 ```
+
+. . . 
 
 <div style="height: 100px"></div>
 
@@ -97,7 +101,7 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 
 The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wiki/Dog).
 
-![](images/dogs.jpg)
+![](images/fox-over-dog.jpg){width="400px"}
 
 ::: {.notes}
 - [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
@@ -107,40 +111,56 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 
 ## Texteditor
 
-- Ein guter Texteditor ist wichtig
-- Empfehlungen
-  - VSCode: [code.visualstudio.com](https://code.visualstudio.com/)
-  - RStudio: [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
-  - Pulsar: [pulsar-edit.dev](https://pulsar-edit.dev/)
+Ein guter Texteditor ist wichtig!! Empfehlungen: 
+
+:::{.incremental}
+- VSCode: [code.visualstudio.com](https://code.visualstudio.com/) <span class="fragment"> ← Quarto Extension installieren!</span>
+- RStudio: [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+- (Pulsar: [pulsar-edit.dev](https://pulsar-edit.dev/)) <span class="fragment"> ← Keine Eigenen Erfahrungen </span>
+:::
+
 
 ## Übung Markdown 🛠️
 
 - Konvertiere deinen mitgebrachten Text in Markdown.
 - Falls du keinen eigenen Text mitbebracht hast, nimm folgenden: [bit.ly/42vBKuu](https://bit.ly/42vBKuu)
 
-::: aside
+:::{.notes}
 - Bei grösseren Texten nur die ersten paar Absätze verwenden
-- Keine geheimen Texte!
+- Keine geheimen Texte! 
+- Falls sie Geheim sind, ggf. mit ein paar Search-and-replace operationen den Inhalt unkenntlich machen
 :::
 
 # Pandoc
 
 ## Was ist Pandoc?
 
+
+:::{.incremental}
 - Open-Source-Tool zur Konvertierung von Markup-Sprachen
-- Vielfältige Ein- und Ausgabeformate 
 - Kein grafisches Userinterface (GUI), wird über den Terminal bedient (cli-tool)
+- Vielfältige Ein- und Ausgabeformate 
+:::
+
+. . .
 
 > If you need to convert files from one markup format into another, pandoc is your *swiss-army knife*. Pandoc can convert between the following formats
 
+. . . 
+
 ![](images/pandoc.png)
 
-## Übung Pandoc 🛠️
+. . . 
+
+- Input: docx, odt, epub, html, markdown, latex, rtf, typst, wiki
+- Output: (Inputs plus:) pdf
+
+## Übung Pandoc 1 🛠️
 
 :::{.incremental}
-1. Installiert Pandoc von [pandoc.org](https://pandoc.org/installing.html).
+1. Installiert Pandoc von [pandoc.org](https://pandoc.org/installing.html) (MSI installer).
 2. Öffnet ein Terminal *im Folder, wo ihr das Markdown File erstellt habt*
-3. Konvertiert das Markdown File in html mit folgendem Command: 
+3. Konvertiert das eben erstellte Markdown File in html mit folgendem Command: 
 
    ```bash
    pandoc markdown.md 
@@ -153,15 +173,17 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
   - Ist ein sogenanntes Positionalargument (engl: *positional argument*)
   - Gilt als Input File
 - Die Markup Sprache des Input Files wird von der Dateierweiterung inferiert (`.md` = Markdown)
-- Da wir kein Output definiert haben, wird standartmässig `html` herausgegeben
-- Um ein PDF zu erstellen müsste eine zusätzliche Komponente installiert werden
+- Da wir kein Output-Format definiert haben, wird standartmässig `html` herausgegeben
+ 
 :::
 
 :::{.notes}
-TODO: MSI installer, wenn nur für den eigenen Nutzer interim admin nicht nötig
+- Wenn nur für den eigenen Nutzer interim admin nicht nötig
+- Um ein PDF zu erstellen müsste eine zusätzliche Komponente installiert werden
+- Da wir kein Output-File definiert haben, wird der Output nur im Terminal dargestellt
 :::
 
-## Übung Pandoc 🛠️
+## Übung Pandoc 2 🛠️
 
 ```bash
 # pandoc markdown.md 
@@ -176,9 +198,21 @@ pandoc -o output.html markdown.md
   - ist ein *named argument*
   - definiert das Output File
 - Die Markup Sprache des Output files wird von der Dateierweiterung inferiert (`.html`)
+- Betrachtet das html Files sowohl im Texteditor wie auch im Browser
 :::
 
-## Übung Pandoc 🛠️
+
+## Übung Pandoc 3 🛠️
+
+Konvertiert euer mitgebrachtes docx File
+
+- 1x in Markdown (Betrachten im Texteditor)
+- 1x in html (Betrachten im Texteditor und im Browser)
+
+
+
+
+## Terminal und cli-Programme
 
 :::{.incremental}
 - Die Verwendung von Commandline-Programmen (cli) ist eine wichtige und nützliche Fähigkeit
@@ -212,7 +246,7 @@ pandoc -o output.html markdown.md
 - Kurze Form `-h` und lange Form `--help`
 :::
 
-## Übung Pandoc 🛠️
+## Terminal und cli-Programme
 
 Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 
@@ -233,9 +267,9 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 :::{.incremental}
 - Ebenfalls ein Open-Source *cli* tool
 - Baut auf Markdown und Pandoc auf
-  ![](images/rstudio-qmd-how-it-works.png)
-- Erweitert die standart Markdown-Sprache mit nützlichen Elementen
-- Integriert die Ausführung von Code (R, Python, Julia, SQL...)
+  ![](images/rstudio-qmd-how-it-works2.png)
+- Erweitert die standart Markdown-Sprache mit nützlichen Elementen (z.B. Callout Blocks)
+- Integriert die Integration von Code (R, Python, Julia, SQL...)
 - Liefert ansprechende *out-of-the-box* Templates
 :::
 
@@ -247,11 +281,11 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 - `word`: Books
 - `pptx`: Slides
 
-## Übung Quarto 🛠️
+## Übung Quarto 1 🛠️
 
 :::{.incremental}
 1. Installiert quarto [quarto.org](https://quarto.org)
-2. Öffnet ein Terminal *im Folder, wo ihr das Markdown File erstellt habt*
+2. Öffnet ein Terminal im Folder, wo ihr mit Pandoc docx → md konvertiert habt
 3. Konvertiert das Markdown File in html mit folgendem Command: 
 
    ```bash
@@ -267,15 +301,23 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 - Der Output ist (wenn nicht anders definiert) ein HTML-File
 :::
 
-## Übung Quarto 🛠️
+## Übung Quarto 2 🛠️
 
-- Interaktives entwickeln von Dokumenten mit `render` ist umständlich. 
-- `quarto preview` ermöglicht ein live-preview (bessere *user experience*)
-
+:::{.incremental}
+- Interaktives entwickeln mit `render`: 🫤
+- `quarto preview` ermöglicht ein live-preview (UX: 🥰)
   ```bash
   # quarto render markdown.md
   quarto preview markdown.md
   ```
+- versucht es aus!
+:::
+
+
+## Übung Quarto 3 🛠️
+
+- Erstellt ein pdf File aus eurem Markdown
+- Installiert dafür (falls nötig) `tinytex`
 
 # HTML und das Web
 
@@ -283,28 +325,44 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 
 - Der bisherige *de facto* Standart für Lehrmaterialien: PDFs via Moodle
 - PDFs haben Vorteile, aber auch viele Limitierungen
-- Vorteile von PDFs:
-  - Stabilie Formatierung (Drucken)
-  - Ein eizige Datei (kann leicht gespeichert/kopiert werden)
-  - Offline nutzbar
-- Nachteile von PDFs
-  - Kaum öffentliche Wahrnehmung (OER)
-  - Nicht responsiv für verschiedene devices (BYOD)
-  - Keine interaktiven Elemente
-  - Schlecht übersetzbar (Deutsch ↔ Englisch)
-  - Schlechte Accessibility-Features (z.B. Screen Readers)
+
+
+:::: {.columns}
+
+::: {.column .fragment width="40%"}
+**Vorteile**
+
+- ✅ Formatierung (Drucken)
+- ✅ *single-file*
+- ✅ Offline nutzbar
+
+:::
+
+::: {.column .fragment width="60%"}
+**Nachteile**
+
+- 🚫 öffentliche Wahrnehmung (OER)
+- 🚫 responsiv für verschiedene devices (BYOD)
+- 🚫 interaktiven Elemente
+- 🚫 Übersetzbarkeit (Deutsch ↔ Englisch)
+- 🚫 Accessibility-Features (z.B. Screen Readers)
+:::
+::::
 
 ## HTML veröffentlichen
 
-- HTML Files können zwar wie PDFs gespeichert und geteilt werden, dies ist jedoch unüblich und ungewohnt
-- Sinnvoller und üblicher: Webseiten erstellen. Dazu gibt es eine vielzahl von Optionen:
+:::{.incremental}
+- HTML Files können offline gespeichert / geteilt werden <span class="fragment">→ unüblich und ungewohnt</span>
+- Sinnvoller / üblicher: Gehostete Webseiten erstellen
+- Viele Möglichkeiten:
   - GitHub Pages (ZHAW Internes GitHub)
   - Netlify
   - Posit Connect (ZHAW Internes Posit Connect)
   - QuartoPub
   - Confluence (ZHAW Internes Confluence)
+:::
 
-## Übung HTML veröffentlichen 🛠️
+## Übung HTML veröffentlichen 1 🛠️
 
 ### Netlify Drop
 
@@ -318,7 +376,7 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
    - dies kann vermieden werden, wenn statt filename.html *index.html* verwendet wird
 :::
 
-## Übung HTML veröffentlichen 🛠️
+## Übung HTML veröffentlichen 1 🛠️
 
 ### Netlify Drop
 
@@ -327,201 +385,506 @@ Diese Methode ist zwar sehr einfach, aber:
 :::{.incremental}
 - Ohne Login ist Veröffentlichung zeitlich beschränkt <span class="fragment hl">→ mit Login unbeschränkt</span>
 - Benötigt drag-and-drop <span class="fragment hl">→ Kommandozeile `quarto publish netlify` </span>
-- URL ist wenig ansprechend <span class="fragment hl">→ Mit `CNAME` auf *eigene* Domain (siehe [dxi.ai](https://dxi.ai/))</span>
+- URL ist wenig ansprechend <span class="fragment hl">→ Mit `CNAME` *eigener* Domain (siehe [dxi.ai](https://dxi.ai/))</span>
 :::
 
 :::{.notes}
-- ZHAW Domain noch nicht möglich
-- Take home messag: HTMLs lassen sich über herkömmliche Hosting Plattformen veröfentlichen
+- ZHAW Domain *noch* nicht möglich
+- Take home message: HTMLs lassen sich über herkömmliche Hosting Plattformen veröfentlichen
 :::
 
-## Übung HTML veröffentlichen 🛠️
+## Übung HTML veröffentlichen 2 🛠️
 
 ### ZHAW Posit Connect
 
 :::{.incremental}
-- RStudio Publish
-  1. Klickt auf den Publish Knopf ![Publish Knopf](images/publish_button.jpg) und wählt "Posit Connect"
-  2. Folgt den Anweisungen und gebt den Posit Connect Server an -> `statistik-ide.zhaw.ch/rsconnect`
-  3. Überprüft die Files und den Title und klickt dann auf den Publish Button
-  4. Im Browser seht ihr nun euer html.
+
+1. Logged auch mit dem ZHAW Benutzername / Kürzel auf dem Server ein: <br> [statistik-ide.zhaw.ch/rsconnect](https://statistik-ide.zhaw.ch/rsconnect)
+2. Klickt auf eure Mailadresse rechts Oben und wählt "*API Keys*"
+3. Erstellt einen neuen API Key und gibt ihm einen sinnvollen Namen (z.B. `zhaw laptop`)
+4. Kopiert den API Key in die Zwischenablage
+5. Gebt im Terminal folgenden Befehl ein 
+   ```bash
+   quarto publish connect
+
+   Server URL: › https://statistik-ide.zhaw.ch/rsconnect/  # URL eingeben 
+   API Key: › ********************************             # API Key eingeben
+   ```
+6. Danach sollte ein Browserfenster mit eurem Inhalt erscheinen
+   - spezifische Freischaltung möglich
+   - URL unschön → wenigstens ein ZHAW subdomain
+
 :::
 
-## Übung HTML veröffentlichen 🛠️
+:::{.notes}
 
-### ZHAW Posit Connect
+- Die ZHAW verfügt über einen Posit Connect Server
+- Für Lehre kostenlos
+- für Forschung nicht nutzbar (Lizenzkosten zu hoch)
+- Inhalte können spezifisch freigeschaltet werden
+- Inhalte sind über einen unschönen zhaw subdomain ersichtlich. Hier könnte der zhaw interne url shortener abhilfe leisten
+:::
+
+
+
+# Quarto Advanced
+
+## YAML Header
+
 
 :::{.incremental}
-- Konsole:
-  1. In der Kosole führt den Command `quarto publish connect` aus 
-  2. Gebt den Link zum Posit Connect Server an -> `https://statistik-ide.zhaw.ch/rsconnect/`
-  3. Generiert einen API Key auf ZHAW Posit Connect und kopiert es in die Console
-  4. Mit Enter wird alles publiziert. Im _publish.yml sieht ihr eure Einstellungen.
-  5. Im Browser seht ihr nun euer html.
+- YAML: *YAML Ain’t a Markup Language*
+- Eine maschinen- *und menschenlesbare* Art, strukturierte Daten zu speichern
+- Ein Beispiel:
+  ```yaml
+  title: A song of ice and fire
+  author: George R. R. Martin
+  ```
+- In Quarto: Metadaten festhalten (z.B. Titel, Autor und Datum)
+- Wird zu Beginn des Dokuments eingefügt und mit `---` umschlossen
 :::
 
-::: aside
-Disclaimer: Posit Connect hat keine Forschungslizenz (kann also nur für Lehre verwendet werden)
-:::
+## Übung YAML Header 1 🛠️
 
-# Markdown / Quarto Advanced
+- Fügt eurem Markdown File Metadaten mittels YAML Header hinzu
 
-## Übung YAML Header 🛠️
-
-Wird benutzt um Metadaten für das Quarto File festzulegen, wie zum Beispiel Titel, Autor und Datum. 
-
-Der Header wird ganz am anfang des Quarto Files beginnend und endend mit `---` hinzugefügt.
-
-```{.default code-line-numbers="2-4"}
+```yaml
 ---
-title: "Test"
-author: "Peter Mustermann"
-date: 13/02/2024
+title: A song of ice and fire
+author: George R. R. Martin
 ---
 ```
 
-## Übung YAML Header 🛠️
+## Übung YAML Header 2 🛠️
 
-Es können aber auch Information zu verschiedenen Ausgabeformaten festgelegt werden, wie etwa, dass wir im HTML Output keinen Table of Content haben wollen, während wir beim Generieren eines PDFs einen Table of Content haben wollen. 
 
 ```{.default code-line-numbers="5-9"}
 ---
-title: "Test"
-author: "Peter Mustermann"
-date: 13/02/2024
-format: 
-  html:
-    toc: true
-  pdf:
-    toc: false
+format: pdf   # default output: pdf
+lang: de-CH   # Sprache: Deutsch
 ---
 ```
 
-## Übung Quarto Features 🛠️
 
-- Bilder einpflegen (mit verschiedenen Layouts sowie Captions / Subcaptions)
-- Tabellen einpflegen (online Tables generator https://www.tablesgenerator.com/markdown_tables)
-- Crossreference
-  - Figures: <https://quarto.org/docs/authoring/cross-references.html#figures>
-  - Tables: <https://quarto.org/docs/authoring/cross-references.html#tables> 
-  - Sections: <https://quarto.org/docs/authoring/cross-references.html#sections>
-    - Limitierung: nicht section name, nur nummer
-- Literaturverzeichnis <https://quarto.org/docs/authoring/footnotes-and-citations.html> 
-- Callout Blocks
+## Übung YAML Header 3 🛠️
 
-- HTML Slides: <https://quarto.org/docs/reference/formats/presentations/revealjs.html>
-
-## Übung Quarto Codes 🛠️
-
-Eine grosse stärke sind die integrierten Computations von Programmiersprachen.
-
-### Chunk Options
-
-Hier sind einige Beispiele wie Chunk Options aussehen können
-
-:::: columns
-::: {.column width="50%"}
-```{.R}
-#| echo: true
-#| fig-cap: "Air Quality"
-#| eval: false
+```yaml
+---
+format: 
+  pdf:            # pdf-spezifische Optionen:
+    toc: true     # - soll eine Table of Contents herausgegeben werden?
+    toc-depth: 1  # - wie viele Ebenen sollen im TOC dargestellt werden?
+---
 ```
+
+## Übung Querverweise 🛠️
+
+- Fügt ein Querverweis auf ein Bild ein. Z.B:
+- *siehe @fig-baratheon-0*
+- ([quarto.org](https://quarto.org/docs/authoring/cross-references.html) → Guide → Authoring → Scholarly Writing → Cross-References)
+
+<div >
+![Das Wappen des Hauses Baratheon aus *A Song of Ice and Fire*](images/baratheon.png){#fig-baratheon-0 width="100px"}
+</div>
+
+. . . 
+
+- Für einen Querverweis braucht das Element, auf das man verweisen möchte es eine *ID*
+- Diese wird in `{}` gesetzt und beginnt mit `#`, bei Bilder folgt auf `#` ein `fig`. Z.B:
+
+  ```markdown
+  ![Das Wappen des Hauses Baratheon...](images/baratheon.png){#fig-baratheon}
+  ```
+- Um auf das Bild zu verweisen verwendet man `@fig-baratheon`
+
+
+:::{.notes}
+- `#fig` macht aus der Referenz "Abbildung"
+- auf `lang` achten!
 :::
 
-::: {.column width="50%"}
-```{.R}
-#| fig-width: 6
-#| bg: "lightgray"
-```
+## Übung Querverweise 🛠️ {#sec-uebung-quarto-featuers-2}
+
+- Fügt ein Querverweise auf eine Kapitelmarke ein. Z.B.
+- *siehe @sec-uebung-quarto-featuers-2*
+- ([quarto.org](https://quarto.org/docs/authoring/cross-references.html) → Guide → Authoring → Scholarly Writing → Cross-References)
+
+<div style="height: 100px"></div>
+. . . 
+
+- Kapitelmarken erhalten ein `{#sec-}`
+- Kapitel werden (aktuell) nur mit *Nummern* referenziert
+  - im YAML header: `number-sections: true`
+  - Siehe <https://github.com/quarto-dev/quarto-cli/issues/1196>
+
+
+## Übung Subfigures 🛠️
+
+- In Quarto können *Figures* aus *Subfigures* bestehen
+- Siehe: [quarto.org](https://quarto.org/docs/authoring/figures.html#subfigures) → Guide → Authoring → Figures → Subfigures
+- Erstellt ein Subfigure Layout, ähnlich wie das folgende:
+
+:::{#fig-houses layout-nrow="1"}
+
+![House Baratheon](images/baratheon.png){#fig-barathon}
+
+![House Baylish](images/baylish.png){#fig-baylish}
+
+![House Arryn](images/arryn.png){#fig-arryn}
+
+![House Bolton](images/bolton.png){#fig-bolton}
+
+
+Eine Sammlung verschiedener Wappen aus dem Buch "*A song of Ice and Fire*", erstellt von *dezzzart* publiziert auf [deviantart.com](https://www.deviantart.com/dezzzart)
 :::
 
-::: {.column width="50%"}
-```{.R}
-#| label: analysis
-#| font-size: 12pt
-#| ln: true
+## Übung Tabellen 🛠️
+
+- Tabellen sind in Markup Sprachen etwas umständlich
+- Vor allem, wenn sie häufig editiert / aktualisiert werden
+  - → In diesem Fall empfiehlt sich die Verwendung von R / Python Codeblocks
+- Für einfache bzw. sich nicht verändernde Tabellen ist der Markup Syntax ausreichend
+- Für den Export aus Excel: [tablesgenerator.com](https://www.tablesgenerator.com/markdown_tables)
+- Es gibt 3 Syntax Formen:
+  - Pipe Tables
+  - Grid Tables
+  - HTML Tables
+
+
+## Übung Tabellen 🛠️
+
+- Sind sehr einfach im Syntax dafür etwas beschränkt in den Features
+- [quarto.org](https://quarto.org/docs/authoring/tables.html) → Authoring → Tables
+
+
+### Pipe Table
+
+```markdown
+| fruit  | price   |
+|:-------|--------:|
+| apple  |  2.05   |
+| pear   |  1.37   |
+| orange | 30.09   |
+
+: Eine "pipe" Tabelle {#tbl-pipe}
 ```
+
+
+| fruit  | price   |
+|:-------|--------:|
+| apple  |  2.05   |
+| pear   |  1.37   |
+| orange | 30.09   |
+
+: Eine "pipe" Tabelle {#tbl-pipe}
+
+
+:::{.notes}
+- Die Doppelpunkte legen die ausrichtung fest (link, rechts, zentriert)
+- die "|" müssen nicht aneinander ausgerichtet sein (dies dient lediglich der lesbarkeit)
 :::
 
-::: {.column width="50%"}
-```{.R}
-#| warn: false
-#| fig-height: 5
+
+## Übung Tabellen 🛠️
+
+
+### Grid Tables
+
+- Haben mehr features
+- sind etwas umständlicher zu schreiben
+- [quarto.org](https://quarto.org/docs/authoring/tables.html) → Authoring → Tables
+
+```markdown
++-----------+-----------+--------------------+
+| Fruit     | Price     | Advantages         |
++===========+===========+====================+
+| Bananas   | $1.34     | - built-in wrapper |
+|           |           | - bright color     |
++-----------+-----------+--------------------+
+| Oranges   | $2.10     | - cures scurvy     |
+|           |           | - tasty            |
++-----------+-----------+--------------------+
+
+: Sample grid table.
 ```
+
+
+## Übung Tabellen 🛠️
+
+- Fügt in eurem Bericht eine Tabelle ein
+- Verwendet dazu (bei Bedarf) [tablesgenerator.com](https://www.tablesgenerator.com/markdown_tables)
+
+
+
+## Übung Zitieren 🛠️
+
+- Quarto erleichtet das Zitieren und Erstellen von Literaturverzeichnissen
+- Die Metadaten der Literatur wird in sog. Bibtex-Keys gespeichert
+- Bibtex-Keys können aus GoogleScholar usw. exportiert oder via Browseraddin generiert werden.
+
+![](images/google-scholar-1.png)
+
+## Übung Zitieren 🛠️
+
+![](images/google-scholar-2.png)
+
+## Übung Zitieren 🛠️
+
+
+```{.bibtex}
+@article{einstein1905,
+  title={Zur Elektrodynamik bewegter Körper},
+  author={Einstein, Albert},
+  journal={Annalen der physik},
+  volume={4},
+  year={1905}
+}
+
+```
+
+:::{.incremental}
+- Dieser Bibtex-Keys werden in einem File abgespeichert, z.B `literatur.bib`
+- Das Bibtex-File wird über den YAML Header ins Quartodokument eingebunden:
+  ```yaml
+  bibliography: literatur.bib
+  ```
+- Über die ID kann der Eintrag nun Zitiert werden:
+- Folgender Eintrag: 
+  ```{.markdown}
+  @einstein1905 postulierte... 
+  ```
+- Wird zu: @einstein1905 postulierte... 
+- Viele Formen stehen zur Verfügung. Siehe: [quarto.org](https://quarto.org/docs/authoring/footnotes-and-citations.html) → Guide → Authoring → Scholarly Writing → Citations and Footnotes
 :::
-::::
+
+
+## Übung Zitieren 🛠️
+
+- Fügt eurem Dokument eine Referenz sowie ein Litearturverzeichnis hinzu
+
+
+
+# Quato Professional
 
 ## Quarto Projects
 
-:::: columns
-::: {.column width="50%"}
-- Von einem File auf N+ Files
+- Von einem File auf *viele* Files
 
 - Setup:
-  - Markdown-Dateien (*.qmd)
-  - Bilder und Grafiken
-  - Quarto-Konfigurationsdatei: _quarto.yml
-  - Zusätzliche Ressourcen
+  - Quarto-Konfigurationsdatei: `_quarto.yaml` 
+  - `index.qmd` (ohne YAML Header)
+  - Optional: Weitere qmd-Files, die über `_quarto.yaml` eingebunden werden
 
-- Wichtige Anpassungen:
-  - yaml-header wandert von index.qmd zu _quarto.yml
-  - index.qmd ist nicht mehr optional
-:::
-::: {.column width="50%"}
-![yml File Struktur](images/quarto_project_yml_structure.PNG)
-:::
-::::
+## Quarto Projects
 
-# Git(Hub)
+```{.yaml}
+project: 
+  type: book
+  preview: 
+      port: 5678
+  execute-dir: project
+  pre-render: pre-render.r
+
+lang: de
+
+format: 
+  html:
+    theme:
+      dark: [darkly, custom-dark.scss]
+      light: [flatly, custom-light.scss]
+    css: 
+      - custom.css
+      - theme-custom.scss
+      #- presenter-mode.css
+    bibliography: bibliography.bib
+    number-sections: false
+    code-tools:
+      source: false
+    include-in-header:
+      - script.html
+
+execute:
+  freeze: true
+  error: false
+  message: false
+  warning: false
+
+knitr:
+  opts_chunk: 
+    collapse: true
+    #tidy: true
+    
+book:
+  title: "Research Methods HS23"
+  sidebar: 
+    logo: images/zhaw_sw_neg.png
+    collapse-level: 1
+    style: floating
+  reader-mode: true    
+  # globbing would be cool. Wait for
+  # https://github.com/quarto-dev/quarto-cli/issues/2120 or
+  # https://github.com/quarto-dev/quarto-cli/issues/1917 to be resolved 
+
+  chapters:
+    - index.qmd
+    - part: PrePro.qmd
+      chapters:
+      - prepro/Prepro1_Vorbereitung.qmd
+      - --
+      - prepro/Prepro1_Demo.qmd
+      - prepro/Prepro1_Uebung.qmd
+      - --
+      - prepro/Prepro2_Demo.qmd
+      - prepro/Prepro2_Uebung_A.qmd
+      - prepro/Prepro2_Uebung_B.qmd
+      - --
+      - prepro/Prepro3_Demo.qmd
+      - prepro/Prepro3_Uebung.qmd
+    - part: InfoVis.qmd
+      chapters:
+      - infovis/Infovis1_Vorbereitung.qmd
+      - --
+      - infovis/Infovis1_Demo.qmd
+      - infovis/Infovis1_Uebung.qmd
+      - infovis/Infovis1_Script_eda.qmd
+      - --
+      - infovis/Infovis2_Uebung_A.qmd
+      - infovis/Infovis2_Uebung_B.qmd
+    - part: Stat1-4.qmd
+      chapters:
+      - stat1-4/Statistik1_Vorbereitung.qmd
+      - --
+      - stat1-4/Statistik1_Demo.qmd
+      - stat1-4/Statistik1_Novanimal.qmd
+      - stat1-4/Statistik1_Uebung.qmd
+      - stat1-4/Statistik1_Loesung.qmd
+      - --
+      - stat1-4/Statistik2_Demo.qmd
+      - stat1-4/Statistik2_Uebung.qmd
+      - stat1-4/Statistik2_Loesung_Beispiel.qmd
+      - stat1-4/Statistik2_Loesung_1.qmd
+      - stat1-4/Statistik2_Loesung_2223s.qmd
+      - stat1-4/Statistik2_Loesung_23n.qmd
+      - --
+      - stat1-4/Statistik3_Demo.qmd
+      - stat1-4/Statistik3_Uebung.qmd
+      - stat1-4/Statistik3_Loesung.qmd      
+      - --
+      - stat1-4/Statistik4_Demo.qmd
+      - stat1-4/Statistik4_Uebung.qmd      
+      - stat1-4/Statistik4_Loesung_1.qmd
+      - stat1-4/Statistik4_Loesung_2n.qmd
+      - stat1-4/Statistik4_Loesung_2s.qmd
+    - part: Stat5-8.qmd
+      chapters:
+      - stat5-8/Statistik5_Vorbereitung.qmd
+      - --
+      - stat5-8/Statistik5_Demo.qmd
+      - stat5-8/Statistik5_Uebung.qmd      
+      - stat5-8/Statistik5_Loesung_1.qmd
+      - stat5-8/Statistik5_Loesung_2.qmd
+      - --
+      - stat5-8/Statistik6_Demo.qmd
+      - stat5-8/Statistik6_Uebung.qmd      
+      - stat5-8/Statistik6_Loesung.qmd
+      - --
+      - stat5-8/Statistik7_Demo.qmd
+      - stat5-8/Statistik7_Uebung.qmd      
+      - stat5-8/Statistik7_Loesung.qmd
+      - --
+      - stat5-8/Statistik8_Demo.qmd
+      - stat5-8/Statistik8_Uebung.qmd      
+      - stat5-8/Statistik8_Loesung.qmd
+    - part: StatKons.qmd
+      chapters:
+      - statKons/StatKons0_Vorbereitung.qmd
+      - --
+      - statKons/StatKons1_Demo_assoziationen.qmd
+      - statKons/StatKons1_Demo_open_datasets.qmd
+      #- statKons/StatKons1_Demo_suggest_datasets.qmd
+      - --
+      - statKons/StatKons2_Demo_PCA.qmd
+      - --
+      - statKons/StatKons3_Demo_LM.qmd
+      - --
+      - statKons/StatKons4_Demo_GLM.qmd
+    - part: RaumAn.qmd
+      chapters:
+      - rauman/Rauman0_Vorbereitung.qmd
+      - --
+      - rauman/Rauman1_Uebung_A.qmd
+      - rauman/Rauman1_Uebung_B.qmd
+      - --
+      - rauman/Rauman2_Uebung_A.qmd
+      - rauman/Rauman2_Uebung_B.qmd
+      - --
+      - rauman/Rauman3_Uebung_A.qmd
+      - rauman/Rauman3_Uebung_B.qmd
+      - rauman/Rauman3_Uebung_C.qmd
+      - --
+      - rauman/Rauman4_Uebung_A.qmd
+      - --
+      - rauman/Rauman5_Uebung_A.qmd 
+      - rauman/Rauman5_Uebung_B.qmd 
+    - part: "Fallstudie S"
+      chapters:
+      - fallstudie_s/0_Vorbereitung.qmd
+      - --
+      - fallstudie_s/1_Einführung.qmd
+      - fallstudie_s/2_Besuchermonitoring.qmd
+      - --
+      - fallstudie_s/3_Aufgabenstellung_WPZ.qmd
+      - --
+      - fallstudie_s/4_Projektierung.qmd
+      - fallstudie_s/5_Datenverarbeitung.qmd
+      - fallstudie_s/6_Deskriptive_Analysen.qmd
+      - fallstudie_s/7_Multivariate_Modelle.qmd
+    - part: "Fallstudie N"
+      chapters:
+      - fallstudie_n/1_Vorbemerkung.qmd
+      - fallstudie_n/2_Datenverarbeitung.qmd
+      - fallstudie_n/3_Berechnung_Homeranges.qmd
+      - fallstudie_n/4_Multivariate_Modelle.qmd
+      - fallstudie_n/5_Variablenselektion.qmd
+      - fallstudie_n/6_Guete_und_Diagnostics.qmd
+      #- --
+      #- fallstudie_n/7_Modelle_mit_Nutzungsintensitaet.qmd
+    - "References.qmd"
+```
+
+# Versionskontrolle mit Git und GitHub
 
 ## Git(Hub)
 
-**Git**: Verteiltes Versionskontrollsystem für die Nachverfolgung von Änderungen im Quellcode während der Softwareentwicklung. Ermöglicht Zusammenarbeit, Verwaltung von Codeversionen und Änderungsverfolgung. Bekannt für Geschwindigkeit und Effizienz.
+- **Git**: Verteiltes Versionskontrollsystem
+- **GitHub**: Webplattform für Hosting von Git-Repositories.
 
+:::{.notes}
+- Git: für die Nachverfolgung von Änderungen im Quellcode während der Softwareentwicklung. Ermöglicht Zusammenarbeit, Verwaltung von Codeversionen und Änderungsverfolgung. Bekannt für Geschwindigkeit und Effizienz.
+- GitHub: Bietet Tools für Zusammenarbeit, Codeüberprüfung und Projektverwaltung. Beliebt bei Entwicklern zur Teilung, Zusammenarbeit und Beitrag zu Open-Source-Projekten. Enthält Funktionen wie Issues und Pull Requests.
 --
 
-**GitHub**: Webplattform für Hosting von Git-Repositories. Bietet Tools für Zusammenarbeit, Codeüberprüfung und Projektverwaltung. Beliebt bei Entwicklern zur Teilung, Zusammenarbeit und Beitrag zu Open-Source-Projekten. Enthält Funktionen wie Issues und Pull Requests.
+:::
 
-## Plaintext Files & Versioncontrol
 
-TODO: @Nils was willst du hier?
 
 ## Git Workflow
 
-::: columns
-<<<<<<< HEAD
-::: {.column width="50%"}tdflkjd
-- Commit: Speichert eine Version mit Änderungen.
-- Push: Hochladen von lokalen Commits ins Remote Repository.
-- Pull: Abrufen und Einpflegen von Änderungen aus dem Remote Repository.
-- Merge Request: Anfrage zur Überführung von Änderungen zwischen Branches.
-- Merge Conflict: Problem bei der automatischen Zusammenführung von Branches.
-- Issue: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten.
-=======
-::: {.column width="50%"}
+- `Add`: Sammelt Änderungen
 - `Commit`: Speichert eine Version mit Änderungen.
 - `Push`: Hochladen von lokalen Commits ins Remote Repository.
 - `Pull`: Abrufen und Einpflegen von Änderungen aus dem Remote Repository.
-- `Merge Request`: Anfrage zur Überführung von Änderungen zwischen Branches.
+- `Pull Request`: Anfrage zur Überführung von Änderungen zwischen Branches.
 - `Merge Conflict`: Problem bei der automatischen Zusammenführung von Branches.
 - `Issue`: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten.
->>>>>>> e729bead520f8c2537d89aef85ccb570ba9755e5
-:::
-::: {.column width="50%"}
-![Git Workflow](images/git-workflow.PNG)
-:::
-:::
-
-## GitHub Desktop
-
 
 
 ## Übung
 
 :::{.incremental}
-1. Klonen Sie die Übungsunterlagen von [Fit-mit-Markdown](https://fit-mit-markdown.github.io/) 
-2. Erstellen Sie einen neuen Branch
-3. Bearbeiten Sie etwas im Dokument
-3. Commiten und Pushen Sie die Änderungen
+1. `Fork`t die Übungsunterlagen von [Fit-mit-Markdown](https://fit-mit-markdown.github.io/) 
+2. Bearbeitet etwas im einem Dokument
+3. `Commit`et und `Push`t die Änderungen
 4. Erstellen Sie einen Merge Request auf GitHub
+5. Verwenden Sie dazu die Hilfe von [fit-mit-markdown.github.io/](https://fit-mit-markdown.github.io/)
 :::
