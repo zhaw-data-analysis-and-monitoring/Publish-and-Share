@@ -192,7 +192,8 @@ Ein guter Texteditor ist wichtig!! Empfehlungen:
 :::{.incremental}
 - Open-Source-Tool zur Konvertierung von Markup-Sprachen
 - Kein grafisches Userinterface (GUI), wird über den Terminal bedient (cli-tool)
-- Vielfältige Ein- und Ausgabeformate 
+- Vielfältige Ein- und Ausgabeformate
+- Es gibt GUI Wrappers für Pandoc, z.B. [Pandoc-GUI](https://github.com/Ombrelin/pandoc-gui) oder [Pandwriter](https://panwriter.com/)
 :::
 
 . . .
