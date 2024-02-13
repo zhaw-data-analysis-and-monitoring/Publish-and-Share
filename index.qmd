@@ -17,10 +17,13 @@ bibliography: literatur.bib
 
 ## Ablauf
 
-1. Markup und Markdown
-2. Pandoc und Quarto
-3. HTML Outputs publizieren
-4. Kollaboration mit Textfiles
+1. Plaintext, Markup and Markdown
+2. Pandoc
+3. Quarto
+4. HTML und das Web
+5. Quarto Advanced
+6. Quarto Professional
+7. (Versionskontrolle mit Git und GitHub)
 
 ## Ziele
 
@@ -28,8 +31,58 @@ bibliography: literatur.bib
 - Vorteile *einfacher Textdokumente* kennen
 - Basics von Markdown kennen
 - Basics von Quarto kennen
-- Kollaboration mit Git und GitHub
+- Quarto Advanced Features
+- Quarto Professional Features
+- (Kollaboration mit Git und GitHub)
 :::
+
+## Links
+
+- [github.com/Fit-mit-Markdown/Quarto-Schulung](https://github.com/Fit-mit-Markdown/Quarto-Schulung)
+- [fit-mit-markdown.github.io/Quarto-Schulung](https://fit-mit-markdown.github.io/Quarto-Schulung)
+
+:::{.notes}
+
+- Der erste Link verweist auf den zweiten!
+
+
+:::
+
+## Origins
+
+![](images/knuth.jpg)
+
+:::{.notes}
+
+Literate programming is a programming paradigm introduced in 1984
+
+:::
+
+## Origins
+
+::::{.columns}
+
+::: {.column width="40%"}
+![](images/knuthweb.png)
+:::
+
+::: {.column width="60%"}
+
+<div class="r-stack">
+<div class="fragment fade-in fade-out">
+> I’ve stumbled across a method of composing programs that excites me very much.
+>
+> *In fact, my enthusiasm is so great that I must warn the reader to discount much of what I shall say as the ravings of a fanatic who thinks he has just seen a great light.*
+</div>
+
+<div class="fragment fade-in">
+> I chose the name WEB partly because it was one of the few three-letter words of English that hadn’t already been applied to computers.
+</div>
+
+</div>
+:::
+
+::::
 
 # Plaintext, Markup und Markdown
 
@@ -123,7 +176,7 @@ Ein guter Texteditor ist wichtig!! Empfehlungen:
 ## Übung Markdown 🛠️
 
 - Konvertiere deinen mitgebrachten Text in Markdown.
-- Falls du keinen eigenen Text mitbebracht hast, nimm folgenden: [bit.ly/42vBKuu](https://bit.ly/42vBKuu)
+
 
 :::{.notes}
 - Bei grösseren Texten nur die ersten paar Absätze verwenden
