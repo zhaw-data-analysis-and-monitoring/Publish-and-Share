@@ -11,6 +11,7 @@
   - die dritten 45min waren beim Kapitel *Quarto Advanced* fertig. Die ganzen Beispiele haben wir nur noch kurz besprochen, nicht mehr geübt
 - Weitere Erkentnisse:
   - HTML Veröffentlichen war etwas langwierig, besser kürzen
+  - die ersten beien Teile / Lektionen etwas straffen. Für Quarto Advanced reicht es kaum
   - Für Git / GitHub reicht es definitv nicht mehr
   - Ich sollte ein eigenes .docx-File haben um zu konvertieren
   - Der Übergang von Markdown zu Quarto-Markdown war nicht explizit
