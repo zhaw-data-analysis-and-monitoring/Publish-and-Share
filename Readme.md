@@ -1,32 +1,19 @@
 # Quarto Schulung
 
-## Ablauf
 
-- Begrüssung
-- Slides: Weniger ist mehr: Die Freunde der Plain-Text Files: 
-- Markdown und Markup
-  - Slides: Was ist eine Markup Sprache
-  - Slides: Was für Markup Sprachen gibt es
-  - Slides: Was ist Markdown
-  - (TBD: Texteditor installieren?)
-  - Übungen: Erste Berührungen mit Markdown (z.b. einen bestehenden Text in Markdown konvertieren)
-  - Übungen: Was mache ich mit einem Markdown File?
-- Markdown und Pandoc
-  - Slides: Was ist Pandoc?
-  - Übung: Installation von Pandoc
-  - Übung: Dokument konvertieren mit Pandoc (ggf nur in html, nicht pdf. Falls doch pdf, entsprechend pdflatex oder luatex installieren)
-- Pandoc und Quarto
-  - Slides: Was ist Quarto?
-  - Übung: Installation von Quarto
-  - Übung: Dokument konvertieren mit Quarto
-- Veröffentlichen von HTML Files
-  - Slides: Was sind HTML Files eigentlich
-  - Slides: Was für Optionen stehen zur Verfügung? GitHub, Netlify, RStudio Connect, QuartoPub, Confluence
-  - Übung: HTML Dokument veröffentlichen
-- Quarto Projects
-  - Slides: Warum Quarto projects (Websites, Bücher)
-  - Übung: Erstellen und veröffentlichen eines Quarto Projects
-- Quarto und Git(Hub)
-  - Slides: Plaintext Files und Versioncontrol
-  - Slides: Version Control und HTML-Outputs
-  - Übung: An einem Quarto Project Kollaborieren (z.B. an den Schulungsunterlagen selbst)
+
+## Lessons Learnt von der ersten Durchführung 2024-02-13
+
+
+- Zeitplan:
+  - die ersten 45min waren bei *Übung Pandoc 2* `pandoc -o ouput.html markdown.md` durch
+  - die zweiten 45min waren bei *Übung Quarto 2* `quarto preview markdown.md` durch
+  - die dritten 45min waren beim Kapitel *Quarto Advanced* fertig. Die ganzen Beispiele haben wir nur noch kurz besprochen, nicht mehr geübt
+- Weitere Erkentnisse:
+  - HTML Veröffentlichen war etwas langwierig, besser kürzen
+  - Für Git / GitHub reicht es definitv nicht mehr
+  - Ich sollte ein eigenes .docx-File haben um zu konvertieren
+  - Der Übergang von Markdown zu Quarto-Markdown war nicht explizit
+  - Ggf sinnvoller, mehr in RStudio zu machen (falls ein grossteil RStudio braucht)
+  - Einlage zu OER machen (krun!) 
+
