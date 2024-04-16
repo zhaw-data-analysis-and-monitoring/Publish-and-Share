@@ -1,7 +1,7 @@
 ---
-title: "Quarto Schulung"
-author: "Nils Ratnaweera, Dominic Lüönd"
-date: 02/13/2024
+title: "Collaboration, Sharing & Version Control"
+author: "Nils Ratnaweera"
+date: 22/04/2024
 format: 
   revealjs:
     theme: dark
@@ -20,33 +20,22 @@ bibliography: literatur.bib
 1. Plaintext, Markup and Markdown
 2. Pandoc
 3. Quarto
-4. HTML und das Web
+4. HTML and the Web
 5. Quarto Advanced
 6. Quarto Professional
-7. (Versionskontrolle mit Git und GitHub)
+7. (Versioncontrol with Git und GitHub)
 
 ## Ziele
 
 ::: {.incremental}
-- Vorteile *einfacher Textdokumente* kennen
-- Basics von Markdown kennen
-- Basics von Quarto kennen
+- Know the advantages of *simple text documents    
+- Know the basics of Markdown
+- Know the basics of Quarto
 - Quarto Advanced Features
 - Quarto Professional Features
-- (Kollaboration mit Git und GitHub)
+- (Collaboration with Git and GitHub)
 :::
 
-## Links
-
-- [github.com/Fit-mit-Markdown/Quarto-Schulung](https://github.com/Fit-mit-Markdown/Quarto-Schulung)
-- [fit-mit-markdown.github.io/Quarto-Schulung](https://fit-mit-markdown.github.io/Quarto-Schulung)
-
-:::{.notes}
-
-- Der erste Link verweist auf den zweiten!
-
-
-:::
 
 ## Origins
 
@@ -84,57 +73,56 @@ Literate programming is a programming paradigm introduced in 1984
 
 ::::
 
-# Plaintext, Markup und Markdown
+# Plaintext, Markup and Markdown
 
-## Weniger ist mehr
+## Less is more
 
-Vorteile reiner Textfiles (plain text)
+Advantages of plain text files    
 
 ::: {.incremental}
-1. Plattformunabhängigkeit
-2. Geringe Dateigröße
-3. Einfache Handhabung
-4. Versionskontrolle
-5. Langfristige Kompatibilität
-6. Suchbarkeit
-7. Leichte Integration
+1. platform independence    
+2. small file size
+3. easy handling
+4. version control
+5. long-term compatibility
+6. searchability
+7. easy integration
 :::
 
 ::: {.notes}
-1. Plattformunabhängigkeit: Textdateien sind auf allen Betriebssystemen leicht zugänglich (Windows, macOS, Linux).
-2. Geringe Dateigröße: Textdateien sind in der Regel kleiner als ihre formatierten Gegenstücke, was den Speicherplatz spart.
-3. Einfache Handhabung: Textdateien können einfach in jedem Texteditor bearbeitet werden, ohne spezielle Software.
-4. Versionskontrolle: Einfache Textdateien erleichtern die Verwendung von Versionskontrollsystemen wie Git.
-5. Langfristige Kompatibilität: Textdateien haben eine höhere Wahrscheinlichkeit, auch in Zukunft von Software unterstützt zu werden.
-6. Suchbarkeit: Textdateien ermöglichen eine effiziente Suche nach Informationen.
-7. Leichte Integration: Einfache Textdateien lassen sich leicht in verschiedene Anwendungen und Workflows integrieren.
+1. platform independence: text files are easily accessible on all operating systems (Windows, macOS, Linux).    
+2. small file size: text files are usually smaller than their formatted counterparts, which saves disk space.
+3. ease of use: text files can be easily edited in any text editor, without special software.
+4. version control: Simple text files facilitate the use of version control systems such as Git.
+5. long-term compatibility: text files are more likely to be supported by software in the future.
+6. searchability: text files enable efficient searches for information.
+7. ease of integration: simple text files can be easily integrated into various applications and workflows.
 :::
 
-## Was ist eine Markup Sprache?
+## What is a markup language?    
 
-- Auszeichnungssprache zur Strukturierung von Texten
-- Maschinenlesebar (Verwendung von Tags / Symbolen)
-- Klare Trennung von Inhalt und Formatierung
+- Markup language for structuring texts
+- Machine readable (use of tags / symbols)
+- Clear separation of content and formatting
 - *What you see is what you mean* (WYSIWYM)
 
 ::: {.notes}
-Fokus auf was wir schreiben wollen, nicht wie es aussieht. 
-:::
+Focus on what we want to write, not what it looks like. :::
 
 ## Was für Markup Sprachen gibt es?
 
-| Sprache  | Beispiel               |
+| Langauge | Example                |
 |----------|------------------------|
-| HTML     | `<b>Fetter Text</b>`   |
-| LaTeX    | `\textbf{Fetter Text}` |
-| Markdown | `**Fetter Text**`      |
+| HTML     | `<b>Hello World</b>`   |
+| LaTeX    | `\textbf{Hello World}` |
+| Markdown | `**Hello World**`      |
 
-## Was ist Markdown?
+## What is Markdown?
 
-- Leichtgewichtige Markup-Sprache für einfaches Textformatieren
-- Einfach zu erlernen 
-- Maschinenlesbar *und* Menschenlesbar
-- **Frontend** für Latex / HTML
+- Lightweight markup language for easy text formatting
+- Easy to learn 
+- Machine readable *and* human readable
+- **Frontend** for Latex / HTML
 
 ## Markdown Syntax
 
@@ -162,172 +150,31 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 - [Tabellen](https://quarto.org/docs/authoring/tables.html)
 :::
 
-## Texteditor
 
-Ein guter Texteditor ist wichtig!! Empfehlungen: 
+## Markdown Exercise 1 🛠️
 
-:::{.incremental}
-- VSCode: [code.visualstudio.com](https://code.visualstudio.com/) <span class="fragment"> ← Quarto Extension installieren!</span>
-- RStudio: [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
-- (Pulsar: [pulsar-edit.dev](https://pulsar-edit.dev/)) <span class="fragment"> ← Keine Eigenen Erfahrungen </span>
-:::
+:::{.callout-warning}
 
+## Todo
 
-## Übung Markdown 🛠️
+Write this exercise. Maybe provide an example text from *a song of ice and fire*?
 
-- Konvertiere deinen mitgebrachten Text in Markdown.
-
-
-:::{.notes}
-- Bei grösseren Texten nur die ersten paar Absätze verwenden
-- Keine geheimen Texte! 
-- Falls sie Geheim sind, ggf. mit ein paar Search-and-replace operationen den Inhalt unkenntlich machen
-:::
-
-# Pandoc
-
-## Was ist Pandoc?
-
-
-:::{.incremental}
-- Open-Source-Tool zur Konvertierung von Markup-Sprachen
-- Kein grafisches Userinterface (GUI), wird über den Terminal bedient (cli-tool)
-- Vielfältige Ein- und Ausgabeformate
-- Es gibt GUI Wrappers für Pandoc, z.B. [Pandoc-GUI](https://github.com/Ombrelin/pandoc-gui) oder [Pandwriter](https://panwriter.com/)
-:::
-
-. . .
-
-> If you need to convert files from one markup format into another, pandoc is your *swiss-army knife*. Pandoc can convert between the following formats
-
-. . . 
-
-![](images/pandoc.png)
-
-. . . 
-
-- Input: docx, odt, epub, html, markdown, latex, rtf, typst, wiki
-- Output: (Inputs plus:) pdf
-
-## Übung Pandoc 1 🛠️
-
-:::{.incremental}
-1. Installiert Pandoc von [pandoc.org](https://pandoc.org/installing.html) (MSI installer).
-2. Öffnet ein Terminal *im Folder, wo ihr das Markdown File erstellt habt*
-3. Konvertiert das eben erstellte Markdown File in html mit folgendem Command: 
-
-   ```bash
-   pandoc markdown.md 
-   ```
-:::
-
-:::{.incremental}
-- Der Befehl `pandoc` ruft das Commandline Tool *pandoc* auf
-- Das Argument `markdown.md`:
-  - Ist ein sogenanntes Positionalargument (engl: *positional argument*)
-  - Gilt als Input File
-- Die Markup Sprache des Input Files wird von der Dateierweiterung inferiert (`.md` = Markdown)
-- Da wir kein Output-Format definiert haben, wird standartmässig `html` herausgegeben
- 
-:::
-
-:::{.notes}
-- Wenn nur für den eigenen Nutzer interim admin nicht nötig
-- Um ein PDF zu erstellen müsste eine zusätzliche Komponente installiert werden
-- Da wir kein Output-File definiert haben, wird der Output nur im Terminal dargestellt
-:::
-
-## Übung Pandoc 2 🛠️
-
-```bash
-# pandoc markdown.md 
-
-pandoc -o output.html markdown.md 
-```
-
-<div style="height: 50px"></div>
-
-:::{.incremental}
-- `-o output.html`: 
-  - ist ein *named argument*
-  - definiert das Output File
-- Die Markup Sprache des Output files wird von der Dateierweiterung inferiert (`.html`)
-- Betrachtet das html Files sowohl im Texteditor wie auch im Browser
-:::
-
-
-## Übung Pandoc 3 🛠️
-
-Konvertiert euer mitgebrachtes docx File
-
-- 1x in Markdown (Betrachten im Texteditor)
-- 1x in html (Betrachten im Texteditor und im Browser)
-
-
-
-
-## Terminal und cli-Programme
-
-:::{.incremental}
-- Die Verwendung von Commandline-Programmen (cli) ist eine wichtige und nützliche Fähigkeit
-- cli Tools verfügen meist über eine eingebaute Hilfestellung (`-h` / `--help`)
-
-  ```bash
-  pandoc -h
-  pandoc --help
-  ```
-
-  <div style="height: 20px"></div>
-  ```
-  pandoc [OPTIONS] [FILES]
-    -f FORMAT, -r FORMAT  --from=FORMAT, --read=FORMAT                          
-    -t FORMAT, -w FORMAT  --to=FORMAT, --write=FORMAT                           
-    -o FILE               --output=FILE                                         
-                          --data-dir=DIRECTORY                                  
-    -M KEY[:VALUE]        --metadata=KEY[:VALUE]                                
-                          --metadata-file=FILE                                  
-    -d FILE               --defaults=FILE                                       
-                          --file-scope[=true|false]                             
-                          --sandbox[=true|false]                                
-    -s[true|false]        --standalone[=true|false]                             
-                          --template=FILE          
-  ...
-  ```
-- die Hilfestellungen sind etwas gewöhnungsbedürftig, dafür aber umfangreich
-:::
-
-:::{.notes}
-- Kurze Form `-h` und lange Form `--help`
-:::
-
-## Terminal und cli-Programme
-
-Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
-
-:::{.incremental}
-
-- mit `cd` kann man *in Folders hinein* navigieren (`cd Documents`)
-- mit `cd ..` kann man *aus Folders hinaus* navigieren
-- das aktuelle Verzeichnis anzeigen lassen
-  - Windows: `echo %cd%`
-  - Linux / Mac: `pwd`
-- mit `mkdir` kann man ein Verzeichnis erstellen (`mkdir verzeichnis`)
 :::
 
 # Quarto
 
-## Was ist Quarto?
+## What is Quarto?
 
 :::{.incremental}
-- Ebenfalls ein Open-Source *cli* tool
-- Baut auf Markdown und Pandoc auf
+- An open source *cli* tool
+- Based on Markdown and Pandoc
   ![](images/rstudio-qmd-how-it-works2.png)
-- Erweitert die standart Markdown-Sprache mit nützlichen Elementen (z.B. Callout Blocks)
-- Integriert die Integration von Code (R, Python, Julia, SQL...)
-- Liefert ansprechende *out-of-the-box* Templates
+- Extends the standard Markdown language with useful elements (e.g. callout blocks)
+- Integrates the integration of code (R, Python, Julia, SQL...)
+- Provides appealing *out-of-the-box* templates
 :::
 
-## Ausgabeformate
+## Output formats
 
 - `html`: Books, Slides, Blogs...
 - `pdf`: Books, Slides
@@ -335,12 +182,18 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 - `word`: Books
 - `pptx`: Slides
 
-## Übung Quarto 1 🛠️
+## Quarto Exercise 1 🛠️
+
+:::{.callout-note}
+## TODO
+
+Adapt this exercise (step 2 not current)
+:::
 
 :::{.incremental}
-1. Installiert quarto [quarto.org](https://quarto.org)
-2. Öffnet ein Terminal im Folder, wo ihr mit Pandoc docx → md konvertiert habt
-3. Konvertiert das Markdown File in html mit folgendem Command: 
+1. install quarto [quarto.org](https://quarto.org)
+2. open a terminal in your R-Project folder
+3. convert the markdown file to html with the following command: 
 
    ```bash
    quarto render markdown.md
@@ -350,35 +203,35 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 <div style="height: 40px"></div>
 
 :::{.incremental}
-- `render` ist eine Funktion des Programms `quarto`
-- Auch hier ist `markdown.md` ein positionales Argument
-- Der Output ist (wenn nicht anders definiert) ein HTML-File
+- `render` is a function of the program `quarto`
+- `markdown.md` is a positional argument
+- The output is (unless otherwise defined) an HTML file
 :::
 
-## Übung Quarto 2 🛠️
+## Quarto Exercise 2 🛠️
 
 :::{.incremental}
-- Interaktives entwickeln mit `render`: 🫤
-- `quarto preview` ermöglicht ein live-preview (UX: 🥰)
+- Interactive development with `render`: 🫤
+- `quarto preview` enables a live preview (UX: 🥰)
   ```bash
   # quarto render markdown.md
   quarto preview markdown.md
   ```
-- versucht es aus!
+- Try it!
 :::
 
 
-## Übung Quarto 3 🛠️
+## Quarto Exercise 2 3 🛠️
 
-- Erstellt ein pdf File aus eurem Markdown
-- Installiert dafür (falls nötig) `tinytex`
+- Create a pdf file from your Markdown
+- Install `tinytex` for this (if necessary)
 
-# HTML und das Web
+# HTML and the Web
 
 ## HTML vs PDF
 
-- Der bisherige *de facto* Standart für Lehrmaterialien: PDFs via Moodle
-- PDFs haben Vorteile, aber auch viele Limitierungen
+- The current *de facto* standard for text documents: PDF
+- PDFs have advantages, but also many limitations
 
 
 :::: {.columns}
@@ -386,99 +239,73 @@ Der Umgang mit dem Terminal ist eine wichtige und nützliche Fähigkeit.
 ::: {.column .fragment width="40%"}
 **Vorteile**
 
-- ✅ Formatierung (Drucken)
+- ✅ Formatting (printing)
 - ✅ *single-file*
-- ✅ Offline nutzbar
+- ✅ Can be used offline
 
 :::
 
 ::: {.column .fragment width="60%"}
 **Nachteile**
 
-- 🚫 öffentliche Wahrnehmung (OER)
-- 🚫 responsiv für verschiedene devices (BYOD)
-- 🚫 interaktiven Elemente
-- 🚫 Übersetzbarkeit (Deutsch ↔ Englisch)
-- 🚫 Accessibility-Features (z.B. Screen Readers)
+- 🚫 Public perception
+- 🚫 responsive for various devices (BYOD)
+- 🚫 Interactive elements
+- 🚫 Translatability (German ↔ English)
+- 🚫 Accessibility features (e.g. screen readers)
 :::
 ::::
 
-## HTML veröffentlichen
+## Publishing HTML Files
 
 :::{.incremental}
-- HTML Files können offline gespeichert / geteilt werden <span class="fragment">→ unüblich und ungewohnt</span>
-- Sinnvoller / üblicher: Gehostete Webseiten erstellen
-- Viele Möglichkeiten:
-  - GitHub Pages (ZHAW Internes GitHub)
+- HTML files can be saved / shared offline <span class="fragment">→ unusual and unfamiliar</span>
+- More useful / common: Create hosted websites
+- Many possibilities:
+  - GitHub Pages
   - Netlify
-  - Posit Connect (ZHAW Internes Posit Connect)
   - QuartoPub
-  - Confluence (ZHAW Internes Confluence)
 :::
 
-## Übung HTML veröffentlichen 1 🛠️
+## Exercise Publish HTML 1 🛠️
 
 ### Netlify Drop
 
 :::{.incremental}
-1. Öffnet die Website [app.netlify.com/drop](https://app.netlify.com/drop) (kein Login nötig)
-2. Drag-and-drop *den Ordner* mit dem HTML Outputfile aus der *Übung Quarto*
-3. Wartet bis der Upload fertig ist und im *Deploy log* <span id="complete">Complete</span> angezeigt wird
-4. Klick auf <span id="open">Open production deploy</span>
-5. Die Website befindet sich auf [irgendwas.netlify.app/*filename.html*](irgendwas.netlify.app)
-   - *filename.html* muss noch hinzugefügt werden!
-   - dies kann vermieden werden, wenn statt filename.html *index.html* verwendet wird
+1. open the website [app.netlify.com/drop](https://app.netlify.com/drop)(no login required)
+2. drag-and-drop *the folder* with the HTML output file from the *exercise Quarto
+3. wait until the upload is complete and <span id="complete">Complete</span> is displayed in the *Deploy log*  
+4. click on <span id="open">Open production deploy</span>
+5. the website is located at [something.netlify.app/*filename.html*](something.netlify.app)
+   - *filename.html* must still be added!
+   - this can be avoided if *index.html* is used instead of filename.html
 :::
 
-## Übung HTML veröffentlichen 1 🛠️
+## Exercise Publish HTML 1 🛠️
 
 ### Netlify Drop
 
-Diese Methode ist zwar sehr einfach, aber:
+This method is very simple, but:
 
 :::{.incremental}
-- Ohne Login ist Veröffentlichung zeitlich beschränkt <span class="fragment hl">→ mit Login unbeschränkt</span>
-- Benötigt drag-and-drop <span class="fragment hl">→ Kommandozeile `quarto publish netlify` </span>
-- URL ist wenig ansprechend <span class="fragment hl">→ Mit `CNAME` *eigener* Domain (siehe [dxi.ai](https://dxi.ai/))</span>
+- Without login, publication is limited in time <span class="fragment hl">→ with login unlimited</span>  
+- Requires drag-and-drop <span class="fragment hl">→ command line `quarto publish netlify` </span>
+- URL is not very appealing <span class="fragment hl">→ With `CNAME` *own* domain (see [https://www.ratnaweera.xyz/](ratnaweera.xyz))</span>
 :::
 
 :::{.notes}
-- ZHAW Domain *noch* nicht möglich
-- Take home message: HTMLs lassen sich über herkömmliche Hosting Plattformen veröfentlichen
+- ZHAW domain *not yet* possible
+- Take home message: HTMLs can be published via conventional hosting platforms
 :::
 
-## Übung HTML veröffentlichen 2 🛠️
+## Exercise Publish HTML 2 🛠️
 
-### ZHAW Posit Connect
+:::{.callout-important}
 
-:::{.incremental}
+## TODO
 
-1. Logged auch mit dem ZHAW Benutzername / Kürzel auf dem Server ein: <br> [statistik-ide.zhaw.ch/rsconnect](https://statistik-ide.zhaw.ch/rsconnect)
-2. Klickt auf eure Mailadresse rechts Oben und wählt "*API Keys*"
-3. Erstellt einen neuen API Key und gibt ihm einen sinnvollen Namen (z.B. `zhaw laptop`)
-4. Kopiert den API Key in die Zwischenablage
-5. Gebt im Terminal folgenden Befehl ein 
-   ```bash
-   quarto publish connect
-
-   Server URL: › https://statistik-ide.zhaw.ch/rsconnect/  # URL eingeben 
-   API Key: › ********************************             # API Key eingeben
-   ```
-6. Danach sollte ein Browserfenster mit eurem Inhalt erscheinen
-   - spezifische Freischaltung möglich
-   - URL unschön → wenigstens ein ZHAW subdomain
-
+GitHub Pages
 :::
-
-:::{.notes}
-
-- Die ZHAW verfügt über einen Posit Connect Server
-- Für Lehre kostenlos
-- für Forschung nicht nutzbar (Lizenzkosten zu hoch)
-- Inhalte können spezifisch freigeschaltet werden
-- Inhalte sind über einen unschönen zhaw subdomain ersichtlich. Hier könnte der zhaw interne url shortener abhilfe leisten
-:::
-
 
 
 # Quarto Advanced
@@ -487,20 +314,20 @@ Diese Methode ist zwar sehr einfach, aber:
 
 
 :::{.incremental}
-- YAML: *YAML Ain’t a Markup Language*
-- Eine maschinen- *und menschenlesbare* Art, strukturierte Daten zu speichern
-- Ein Beispiel:
+- YAML: *YAML Ain't a Markup Language*
+- A machine- *and human-readable* way of storing structured data
+- An example:  
   ```yaml
   title: A song of ice and fire
   author: George R. R. Martin
   ```
-- In Quarto: Metadaten festhalten (z.B. Titel, Autor und Datum)
-- Wird zu Beginn des Dokuments eingefügt und mit `---` umschlossen
+- In Quarto: Record metadata (e.g. title, author and date)
+- Is inserted at the beginning of the document and enclosed with `---`
 :::
 
-## Übung YAML Header 1 🛠️
+## Exercise YAML Header 1 🛠️
 
-- Fügt eurem Markdown File Metadaten mittels YAML Header hinzu
+- Add metadata to your Markdown file using YAML headers
 
 ```yaml
 ---
@@ -509,7 +336,10 @@ author: George R. R. Martin
 ---
 ```
 
-## Übung YAML Header 2 🛠️
+## Exercise YAML Header 2 🛠️
+
+
+- Add metadata to your Markdown file using YAML headers
 
 
 ```{.default code-line-numbers="5-9"}
@@ -520,18 +350,27 @@ lang: de-CH   # Sprache: Deutsch
 ```
 
 
-## Übung YAML Header 3 🛠️
+## Exercise YAML Header 3 🛠️
 
 ```yaml
 ---
 format: 
-  pdf:            # pdf-spezifische Optionen:
-    toc: true     # - soll eine Table of Contents herausgegeben werden?
-    toc-depth: 1  # - wie viele Ebenen sollen im TOC dargestellt werden?
+  pdf:            # pdf specific optons:
+    toc: true     # - should a Table of Contents be published?
+    toc-depth: 1  # - How many layers should be displayed in the TOC?
 ---
 ```
 
 ## Übung Querverweise 🛠️
+
+
+:::{.callout-important}
+
+- Translate the rest in english. 
+- Add R Code Chunks!!
+- Remove so much that the whole thing fits into two lessons
+
+:::
 
 - Fügt ein Querverweis auf ein Bild ein. Z.B:
 - *siehe @fig-baratheon-0*
