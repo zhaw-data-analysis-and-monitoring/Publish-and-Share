@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<script src="https://kit.fontawesome.com/53bd508d27.js" crossorigin="anonymous"></script>
+		<title>CMA: Introduction to Git</title>
+
+		<link rel="stylesheet" href="revealjs/dist/reset.css">
+		<link rel="stylesheet" href="revealjs/dist/reveal.css">
+		<link rel="stylesheet" href="revealjs/dist/theme/black.css">
+
+		<!-- CSS Plots (https://github.com/asciimoo/cssplot/)-->
+		<link media="all" rel="stylesheet" type="text/css" href="cssplot/build/cssplot.full.css" />
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
+
+		<style>
+			.graph{
+				height: 200px; 
+				width: 500px;
+			}
+			.svg-hline{
+				stroke: #fefce2; 
+				stroke-width: 1;
+			}
+
+			.svg-circle{
+				stroke: #fefce2;
+				fill: #8a8e96;
+			}
+
+			.svg-text{
+				font-family: Mono; 
+				font-size:20px; 
+				fill: #fefce2; 
+				dominant-baseline: middle
+			}
+			.svg-small{
+				font-size:15px; 
+			}
+
+			.svg-gray{
+				fill: 2A9D8F
+			}
+			.highlight{
+				color: #E76F51
+			}
+
+			.pull-left {
+                float: left;
+                width: 47%;
+            }
+            .pull-right {
+                float: right;
+                width: 47%;
+            }
+			
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			
+				<section>
+					<section>
+						<h2>Why use versioncontrol with <span class="highlight">git</span> and <span class="highlight">GitHub</span>?
+					</section>
+					<section> 
+						<ul> 
+							<li> <i class="fa-solid fa-user-lock fa-fw"></i> Safety and Control </li> 
+							<li> <i class="fa-solid fa-network-wired fa-fw"></i> Collaboration </li> 
+							<li> <i class="fa-solid fa-globe-americas fa-fw"></i> Community </li>
+						</ul> 
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2><i class="fa-solid fa-user-lock fa-fw"></i> Safety and Control</h2>
+					</section>
+
+				<section data-auto-animate>
+					<img class="r-stretch" data-src="images-git-github/phd101212s.gif">
+					<aside class="notes">
+						A typical project might look something like this. 
+					</aside>
+				</section>
+			
+				<section data-auto-animate>
+					<div class="r-hstack"> 
+						<div style="width: 30%;">
+							<img data-src="images-git-github/phd101212s.gif">
+						</div>
+						<div>
+							<svg class="graph" style="height: 200px; width: 500px;">
+								<g class="grid x-grid svg-hline">
+								  <line x1="10" x2="10" y1="030" y2="060" class="fragment" data-fragment-index="2"></line>
+								  <line x1="10" x2="10" y1="060" y2="090" class="fragment" data-fragment-index="3"></line>
+								  <line x1="10" x2="10" y1="090" y2="120" class="fragment" data-fragment-index="4"></line>
+								  <line x1="10" x2="10" y1="120" y2="150" class="fragment" data-fragment-index="5"></line>
+								  <line x1="10" x2="10" y1="150" y2="180" class="fragment" data-fragment-index="6"></line>
+								</g>
+								<g class="svg-circle">
+									<circle cx="10" cy="030" r="5" class="fragment" data-fragment-index="1"></circle>
+									<circle cx="10" cy="060" r="5" class="fragment" data-fragment-index="2"></circle>
+									<circle cx="10" cy="090" r="5" class="fragment" data-fragment-index="3"></circle>
+									<circle cx="10" cy="120" r="5" class="fragment" data-fragment-index="4"></circle>
+									<circle cx="10" cy="150" r="5" class="fragment" data-fragment-index="5"></circle>
+									<circle cx="10" cy="180" r="5" class="fragment" data-fragment-index="6"></circle>
+								</g>
+								  <g class="svg-text">
+									<text x="20" y="030" class="fragment" data-fragment-index="1">Final.doc</text>
+									<text x="20" y="060" class="fragment" data-fragment-index="2">Final_rev.2.doc</text>
+									<text x="20" y="090" class="fragment" data-fragment-index="3">FINAL_rev.6.COMMENTS.doc</text>
+									<text x="20" y="120" class="fragment" data-fragment-index="4">FINAL_rev.8.comments6.CORRECTIONS.doc</text>
+									<text x="20" y="150" class="fragment" data-fragment-index="5">FINAL_rev.18.comments7.corrections9.MORE.30.doc</text>
+									<text x="20" y="180" class="fragment" data-fragment-index="6">FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDICOMETOGRADSCHOOL????.doc</text>
+						
+								</g>				  
+							  </svg>
+						
+						</div>
+					</div>
+			
+					<aside class="notes">
+						What is lacking:
+						<ul>
+							<li> What changed? files must be manually compared</li>
+							<li> When was the change made? is implicitly captured by the system, but is not reliable</li>
+							<li> Who made the change? very important when collaborating	</li>								
+						</ul>
+					</aside>
+
+				</section>
+				
+							
+				<section data-auto-animate>
+					<div class="r-hstack"> 
+						<div style="width: 30%;">
+							<img data-src="images-git-github/phd101212s.gif">
+						</div>
+					<div>
+						<svg class="graph">
+							<g class="grid x-grid svg-hline">
+							  <line x1="10" x2="10" y1="030" y2="060"></line>
+							  <line x1="10" x2="10" y1="060" y2="090"></line>
+							  <line x1="10" x2="10" y1="090" y2="120"></line>
+							  <line x1="10" x2="10" y1="120" y2="150"></line>
+							  <line x1="10" x2="10" y1="150" y2="180"></line>
+							</g>
+							<g class="svg-circle">
+								<circle cx="10" cy="030" r="5"></circle>
+								<circle cx="10" cy="060" r="5"></circle>
+								<circle cx="10" cy="090" r="5"></circle>
+								<circle cx="10" cy="120" r="5"></circle>
+								<circle cx="10" cy="150" r="5"></circle>
+								<circle cx="10" cy="180" r="5"></circle>
+							</g>
+							  <g class="svg-text">
+								<text x="20" y="030">commit c84ef9</text>
+								<text x="20" y="060">commit 12e6d8</text>
+								<text x="20" y="090">commit be60d0</text>
+								<text x="20" y="120">commit 597dfe</text>
+								<text x="20" y="150">commit f79a85</text>
+								<text x="20" y="180">commit cf9253</text>
+							</g>				  
+							<g class="fragment">
+								<g class="grid x-grid svg-hline">
+									<line x1="180" x2="210" y1="25" y2="010"></line>
+								</g>
+								<g class="svg-circle svg-gray">
+									<circle cx="210" cy="010" r="3"></circle>
+								</g>
+								
+								<g class="svg-text svg-small">
+									<text x="220" y="010">Who made the commit?</text>
+								</g>
+							</g>
+							<g class="fragment">
+								<g class="grid x-grid svg-hline">
+									<line x1="180" x2="210" y1="25" y2="30"></line>
+								</g>
+								<g class="svg-circle svg-gray">
+									<circle cx="210" cy="030" r="3"></circle>
+								</g>
+								<g class="svg-text svg-small">
+									<text x="220" y="030">When was the commit made?</text>
+								</g>
+							</g>
+							<g class="fragment">
+								<g class="grid x-grid svg-hline">
+									<line x1="180" x2="210" y1="25" y2="50"></line>
+								</g>
+								<g class="svg-circle svg-gray">
+									<circle cx="210" cy="050" r="3"></circle>
+								</g>
+								<g class="svg-text svg-small">
+									<text x="220" y="050">What changed precisely?</text>
+								</g>
+							</g>
+							<g class="fragment">
+								<g class="grid x-grid svg-hline">
+									<line x1="180" x2="210" y1="25" y2="70"></line>
+								</g>
+								<g class="svg-circle svg-gray">
+									<circle cx="210" cy="070" r="3"></circle>
+								</g>
+								<g class="svg-text svg-small">
+									<text x="220" y="070">(Why was the commit made?)</text>
+								</g>
+							</g>
+						  </svg>
+					
+					</div>
+					</div>
+					<aside class="notes">
+						if we switch to Git for version control:
+						<ul>
+							<li>Changes are captured with commits</li>
+							<li>The filenames remain unchanged</li>
+							<li>Commits are identifed uniquely with automatically generated sha1 hashes, which are guaranteed to be unique</li>
+    						<li>these are usually abbreviated to the first 6 characters</li>
+						</ul>
+						
+						Each commit captures the following information automatically
+						<ul>
+						<li> Who made the commit?</li>
+						<li> When was the commit made?</li>
+						<li> What changed precisely ?</li>
+						<li> Optional: why? </li>
+					</ul>
+					Each commit requires the user to input information on why the change was made
+								
+					</aside>
+				</section>
+				<section>
+					<p> What about Dropbox, Googledrive et al.? </p>
+				</section>
+				<section data-auto-animate>
+
+					<p>These type of software are not designed for code since files are tracked:</p>
+					<ul style="display: block;">
+						<li>individually</li>
+						<li>continuously</li>
+						<li>uncommented</li>
+					
+					</ul>
+				</section>
+				<section data-auto-animate>
+
+					<p>These type of software are not designed for code since files are tracked:</p>
+					<ul style="display: block;">
+						<li><del>individually</del> <span class="highlight">individually and on a project basis</span></li>
+						<li>continuously</li>
+						<li>uncommented</li>
+					
+					</ul>
+				</section>
+				<section data-auto-animate>
+
+					<p>These type of software are not designed for code since files are tracked:</p>
+					<ul style="display: block;">
+						<li><del>individually</del> <span class="highlight">individually and on a project basis</span></li>
+						<li><del>continuously</del> <span class="highlight">with "snapshots"</span></li>
+						<li>uncommented</li>
+					
+					</ul>
+				</section>
+				<section data-auto-animate>
+
+					<p>These type of software are not designed for code since files are tracked:</p>
+					<ul style="display: block;">
+						<li><del>individually</del> <span class="highlight">individually and on a project basis</span></li>
+						<li><del>continuously</del> <span class="highlight">with "snapshots"</span></li>
+						<li><del>uncommented</del> <span class="highlight">with comments</span></li>
+					
+					</ul>
+				</section>
+				<aside class="notes">
+					This can be somewhat solved by using a software that automates this for you (e.g. Dropbox, GoogleDrive)
+				</aside>
+
+				<section data-background-image="images-git-github/rock-climbing-mod.jpg" data-background-opacity = "0.3">
+					Git is your safety rope, so that you don't fall (too far)
+				</section>
+				</section>
+				<section>
+					<section><h2><i class="fa-solid fa-network-wired fa-fw"></i> Collaboration</h2></section>
+					<section>
+						<ul>
+							<li>Git makes collaboration smoother</li>
+							<li>Git repositories can easily be synced with Git servers (e.g. GitHub, Bitbucket or Gitlab)</li>
+							<li>Track changes works online as well as offline</li> 
+							<li>Conflicts are rare <sup>1</sup> and very specific <sup>2</sup></li>
+						</ul>
+						<aside class="notes">
+
+							<ul>
+								<li>1 Conflicts only occur when the same line has been changed.</li>
+								<li>2 Conflicts are specific to that line</li>
+								<li>Note: Github != Git</li>
+							</ul>
+
+							
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section><h2><i class="fa-solid fa-globe-americas fa-fw"></i> Community</h2></section>
+					<section>
+						We will use Github for this course, which will give you access to a great community!
+
+					</section>
+					<section>
+						In addition to hosting Git repos, Github is a social media platform for geeks. You can:
+						<ul>
+						<li class="fragment"> <i class="fa-solid fa-thumbs-up fa-fw"></i> like repos</li>
+						<li class="fragment"> <i class="fa-solid fa-binoculars fa-fw"></i> follow developers</li>
+						<li class="fragment"> <i class="fa-solid fa-question-circle fa-fw"></i> ask questions</li>
+						<li class="fragment"> <i class="fa-solid fa-lightbulb fa-fw"></i> make suggestions</li>
+						<li class="fragment"> <i class="fa-solid fa-portrait fa-fw"></i> build your own portfolio on Github</li>
+					</ul>
+					</section>
+					<section>
+										
+						<a href="https://github.com/geopandas/geo-arrow-spec/issues/15">
+							<img data-src="images-git-github/gh-issues.png" style="object-fit: cover; object-position: 0px 0px;height: 800px; width: 500px;">
+						</a>
+
+					</section>
+					<section>
+						<img data-src="images-git-github/unnamed-chunk-6-1.png">
+						
+						<aside class="notes">
+							Does everyone know what CRAN is?
+						</aside>
+					</section>
+					
+
+				</section>
+				<section>
+					<section data-auto-animate><h2><i class="fa-solid fa-triangle-exclamation"></i> A few caveats</h2></section>
+					<section data-auto-animate>
+						<h2><i class="fa-solid fa-triangle-exclamation"></i> A few caveats</h2>
+						<ul style="font-size: smaller;">
+							<li class="fragment" data-fragment-index="1">Learning Git can cause some initial pain</li>
+							<li class="fragment" data-fragment-index="2">New workflow / new habits when coding</li>
+							<li class="fragment" data-fragment-index="3">New terminology (<code>stage</code>, <code>commit</code>, <code>push</code>, <code>pull</code>...)</li>
+							<li class="fragment" data-fragment-index="4">Further Reading: <a href="https://happygitwithr.com/">happygitwithr.com</a></li>
+						
+						</ul>
+					</section>
+					<section>
+						Todays goals:<br><br>
+
+						<ul>
+							<li class="fragment">Initialize an <span class="highlight">RStudio Project</span> with Git Version control</li>
+							<li class="fragment">Commit your work progress to your <span class="highlight">local</span> repository</li>
+						</ul>
+						<aside class="notes">
+							We recommend working in RStudio Projects, since this simplifies many problems (working directory, unsaved documents..)
+						</aside>
+						
+					</section>
+					<section>
+						<iframe title="Podlove Web Player: CRE: Technik, Kultur, Gesellschaft - CRE130 Verteilte Versionskontrollsysteme" width="320" height="400" src="https://cdn.podlove.org/web-player/share.html?episode=https%3A%2F%2Fcre.fm%2F%3Fpodlove_player4%3D481" frameborder="0" scrolling="no" tabindex="0"></iframe>
+					</section>
+				</section>
+				
+			
+				
+			</div>
+		</div>
+
+		<script src="revealjs/dist/reveal.js"></script>
+		<script src="revealjs/plugin/notes/notes.js"></script>
+		<script src="revealjs/plugin/markdown/markdown.js"></script>
+		<script src="revealjs/plugin/highlight/highlight.js"></script>
+	
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+							hash: true,
+							mouseWheel: true,
+
+							// Learn about plugins: https://revealjs.com/plugins/
+							plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+						});
+
+			
+		</script>
+	</body>
+</html>

@@ -1,9 +1,57 @@
+/* font start */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Gloria Hallelujah';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/gloria-hallelujah-v21-latin/gloria-hallelujah-v21-latin-regular.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* font end */
+.font200{
+  font-size: 200%;
+}
+
+/* blockquote start */
+
+/* .blockquote::before {
+  font-family: FontAwesome;
+  content: '\f10d';
+} */
+
+.blockquote {
+  font-family: "Gloria Hallelujah", "normal";
+}
+
+.attribution {
+  font-size: large;
+  padding-top: 20px;
+}
+
+
+
+/* blockquote end */
+
+
+kbd{
+  background-color:gray;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 5px;
+}
+
+/* logo start */
+
 .reveal .slide-logo {
   height: 150px !important;
   /* width: 300px !important; */
   max-width: unset !important;
   max-height: unset !important;
 }
+
+/* logo end */
 
 #complete{
   background-color: #bef9c6;

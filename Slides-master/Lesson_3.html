@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<script src="https://kit.fontawesome.com/53bd508d27.js" crossorigin="anonymous"></script>
+		<title>CMA: Introduction to Git</title>
+
+		<link rel="stylesheet" href="revealjs/dist/reset.css">
+		<link rel="stylesheet" href="revealjs/dist/reveal.css">
+		<link rel="stylesheet" href="revealjs/dist/theme/black.css">
+
+		<!-- CSS Plots (https://github.com/asciimoo/cssplot/)-->
+		<link media="all" rel="stylesheet" type="text/css" href="cssplot/build/cssplot.full.css" />
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
+
+		<style>
+			.graph{
+				height: 200px; 
+				width: 500px;
+			}
+			.svg-hline{
+				stroke: #fefce2; 
+				stroke-width: 1;
+			}
+
+			.svg-circle{
+				stroke: #fefce2;
+				fill: #8a8e96;
+			}
+
+			.svg-text{
+				font-family: Mono; 
+				font-size:20px; 
+				fill: #fefce2; 
+				dominant-baseline: middle
+			}
+			.svg-small{
+				font-size:15px; 
+			}
+
+			.svg-gray{
+				fill: 2A9D8F
+			}
+			.highlight{
+				color: #E76F51
+			}
+
+			.svg-rect{
+				fill:red;
+				stroke-width:5;
+				opacity:0.3;
+			}
+
+			.reveal .slides section .fragment.visible.svg-rect{
+				opacity:0.3;
+
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section>
+					<h3>Reminder: Semester Project</h3>
+						<ol style="font-size: x-large;">
+							<li  data-fragment-index="1" class="fragment">Build groups on Moodle</li>
+							<li  data-fragment-index="2" class="fragment">Decide if you want to join the DataChallenge & register if you do</li>
+							<li  data-fragment-index="3" class="fragment">Choose the right template & dataset</li>
+							<li  data-fragment-index="4" class="fragment">Develop a proposal until the 15<sup>th</sup> May</li>
+							<li  data-fragment-index="5" class="fragment">Provide us with the URL to your Github Repo</li>
+						</ol>
+						
+						<div style="background-image: url(images/moodle-groups0.png);width: 960px; height: 500px;background-size: contain; background-repeat: no-repeat;">
+							<svg width="100%" height = "100%">
+								<rect data-fragment-index="1" x="8" y = "15" width="600" height = "40" fill="none" class="svg-rect fragment" //>
+								<rect data-fragment-index="2" x="875" y = "100" width="50" height = "40" fill="none" class="svg-rect fragment" //>
+								<rect data-fragment-index="3" x="8" y = "60" width="600" height = "40" fill="none" class="svg-rect fragment" //>
+								<rect data-fragment-index="3" x="8" y = "170" width="600" height = "40" fill="none" class="svg-rect fragment" //>
+								<rect data-fragment-index="5" x="8" y = "290" width="600" height = "40" fill="none" class="svg-rect fragment" //>
+
+							  </svg>
+						</div>
+						
+
+
+				</section>
+
+			
+
+                <section data-visibility="hidden">
+                    
+                    <h3 class="r-fit-text">What do you gain from learning Git in CMA?</h3>
+
+                   <p class="fragment">We help you tackle the initial hurdles:</p> 
+
+                    <ul>
+                        <li class="fragment">Understanding Git's concept</li>
+                        <li class="fragment">Getting Git working locally</li>
+                        <li class="fragment">Setting up a workflow with Github</li>               
+                    </ul>
+
+                </section>         
+			
+                <section data-visibility="hidden">
+                    <h3 id="what"  class="r-fit-text">What are <span class="highlight">the most</span> important missing pieces?</h3>
+                    <ul>
+
+                        <li class="fragment">... Git from the commandline</li>
+						<li class="fragment">... branches & forks</li>
+
+                        <li class="fragment">... pulls and merges</li>
+
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Publishing your Analysis with Git</h3>
+
+                    <ol style="font-size: x-large;">
+                        <li class="fragment"><code>knit</code> your document to html (e.g. creates Analysis.html)</li>
+                        <li class="fragment">Push your html file to Github</li>
+                        <li class="fragment">On the GitHub Repo go to Settings > Pages</li>
+                        <div class="r-stack">
+                            <img data-src="images/gh-pages-1.png" alt="" class="fragment">
+                            <img data-src="images/gh-pages-2.png" alt="" class="fragment">
+                        </div>
+                        <li class="fragment">Choose <code>main/master</code>, <code>root</code> hit <code>save</code></li>
+                        <li class="fragment">Go to the provided URL, but append the name of your html-file (e.g. Analysis.html)</li>
+                    
+                    </ol>
+                   
+                </section>
+
+				<section>
+					<div class="r-stack">
+						<img data-src="images/gh-pages-3.png" alt="">
+						<img data-src="images/gh-pages-4.png" alt="" class="fragment">
+						<img data-src="images/gh-pages-5.png" alt="" class="fragment">
+
+					</div>
+				</section>
+
+
+           			
+				
+			</div>
+		</div>
+
+		<script src="revealjs/dist/reveal.js"></script>
+		<script src="revealjs/plugin/notes/notes.js"></script>
+		<script src="revealjs/plugin/markdown/markdown.js"></script>
+		<script src="revealjs/plugin/highlight/highlight.js"></script>
+	
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+							hash: true,
+							mouseWheel: true,
+
+							// Learn about plugins: https://revealjs.com/plugins/
+							plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+						});
+
+			
+		</script>
+	</body>
+</html>

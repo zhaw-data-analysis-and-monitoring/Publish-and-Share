@@ -1,0 +1,236 @@
+---
+title: "Going further with Git"
+subtitle: ""
+author: "Nils Ratnaweera"
+date: "2021-05-07"
+output:
+# https://stackoverflow.com/questions/51793049/xaringan-title-slide/51800826#51800826
+  xaringan::moon_reader:
+    css: ["default", "custom.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+layout: true
+
+
+# What do you gain from Git in this course?
+
+
+```{r, include=FALSE}
+xaringanExtra::use_share_again()
+```
+
+
+<!-- https://www.cash.ch/sites/default/files/public/styles/main/public/images/library/woman-3261425_1920.jpg?itok=SekCL_rq&c=73b79c82a262daca25c59646369c8e1f -->
+---
+class: middle
+
+background-image: url("images/lv23-1519417090.jpg")
+background-size: cover
+
+
+
+
+---
+
+
+## We help you tackle the initial hurdles
+
+- Understanding Git's concept
+- Getting Git working locally
+- Setting up a workflow with Github
+
+
+---
+background-image: url("images/AUGSTMATTHORN-HIKE-08827-1024x682.jpg.optimal.jpg")
+background-size: cover
+
+.footnote[Image credit: journeyera]
+
+???
+
+We only cover a fraction of Git's functionalities
+Enough to get you started on a journey
+
+---
+layout: false
+
+# What are the missing pieces?
+
+---
+layout: true
+
+# What are the <span class="highlight"> most important </span> missing pieces?
+
+---
+
+
+--
+
+Working with ...
+
+1. ... Git from the commandline <span class = "highlight"> (to learn the jargon) </span>
+2. ... pulls and merges <span class = "highlight"> (to collaborate) </span>
+3. ... branches & forks<span class = "highlight">(Git's *killer features*)</span>
+4. ... publishing reports with Github
+
+---
+layout: false
+
+# Git in the commandline (CLI)
+
+- all clicks in the Git pane evoke *Git* Commands in the background
+
+--
+
+- the same commands can be called directly in the CLI
+
+<!-- <span class = "highlight"> (and also switch back-and-forth between the GUI and the CLI) </span> -->
+--
+
+- e.g. `git push` pushes your changes to the repo
+
+--
+
+- Most Git tutorials assume you use Git in the CLI <span class = "highlight"> or at least know the appropriate commands</span>
+
+--
+
+- You should familiarize yourself with the most important Git terms
+
+???
+
+We will therefore cover the general git workflow including the terms
+
+---
+layout: false
+
+## Git <del>jargon</del> workflow
+
+---
+layout: true
+
+## Git workflow
+
+
+
+---
+![](images/gh1.jpg)
+---
+![](images/gh2.jpg)
+---
+
+![](images/gh3.jpg)
+---
+
+![](images/gh4.jpg)
+---
+![](images/gh5.jpg)
+---
+![](images/gh6.jpg)
+---
+![](images/gh7.jpg)
+---
+![](images/gh8.jpg)
+---
+![](images/gh9.jpg)
+
+???
+Especially important when you collaborate with others. Always "pull" before you "push"!
+
+---
+![](images/gh10.jpg)
+---
+
+
+# What are the <span class="highlight"> most important </span> missing pieces?
+
+
+Working with ...
+
+1. ... <del>Git from the commandline </del>
+2. ... <del>pulls and merges </del>
+3. ... branches & forks<span class = "highlight"> (Git's *killer features*) </span>
+4  ... publishing reports with Github
+
+
+---
+layout: true
+
+## Branches 
+
+---
+
+class: center, middle
+background-image: url("images/selective-focus-photo-of-brown-tree-trunk-and-branches-1481349.jpg")
+background-size: cover
+
+
+---
+
+<div class = "crop">
+<img class = "crop2" src="images/branches1_Page_55.jpg"></img>
+<div>
+
+
+<!-- ![](images/branches1_Page_55.jpg) -->
+
+.footnote[Credits: [Alice Bartlett](https://www.youtube.com/watch?v=eWxxfttcMts)]
+
+---
+
+<div class = "crop">
+<img class = "crop2" src="images/branches1_Page_56.jpg"></img>
+<div>
+---
+
+<div class = "crop">
+<img class = "crop2" src="images/branches1_Page_57.jpg"></img>
+<div>
+---
+
+<div class = "crop">
+<img class = "crop2" src="images/branches1_Page_58.jpg"></img>
+<div>
+
+---
+
+<div class = "crop">
+<img class = "crop2" src="images/branches1_Page_64.jpg"></img>
+<div>
+
+
+---
+layout: true
+
+## Forks 
+
+---
+class: center, middle
+background-image: url("images/forks.png")
+background-size: cover
+
+
+---
+<a href="https://github.com/ComputationalMovementAnalysis/FS21"><img loading="lazy" width="300" height="300" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+
+
+<ForkMeOnGithub
+  repo="https://github.com/ComputationalMovementAnalysis/FS21"
+  colorBackground="black"
+  colorOctocat="white"
+/>
+
+---
+class: center, middle
+layout: true
+
+## Publishing reports with Github
+
+
+
+

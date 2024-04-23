@@ -9,23 +9,20 @@ format:
     smaller: true
     css: style.css
     navigation-mode: vertical
-lang: de-CH
+    number-sections: true
+    number-depth: 1
+    center: true
+    toc: true
+    toc-depth: 1
+lang: en-GB
 bibliography: literatur.bib
+suppress-bibliography: true # otherwise, a bibliography is appended
 ---
 
-# Heute
+# Today{.unnumbered .unlisted}
 
-## Ablauf
 
-1. Plaintext, Markup and Markdown
-2. Pandoc
-3. Quarto
-4. HTML and the Web
-5. Quarto Advanced
-6. Quarto Professional
-7. (Versioncontrol with Git und GitHub)
-
-## Ziele
+## Goals
 
 ::: {.incremental}
 - Know the advantages of *simple text documents    
@@ -37,7 +34,20 @@ bibliography: literatur.bib
 :::
 
 
-## Origins
+# Literate Programming
+
+## {data-background-image="images/pexels-anete-lusina-7256682.jpg"}
+
+:::{.blockquote .font200}
+When was the last time you spent a pleasant evening in a comfortable chair, reading a good R Script?
+:::
+
+:::{.blockquote .attribution}
+-- Adapted from John Bentley (1986) "Communications of the ACM"
+:::
+
+
+## Donald Knuth 1984
 
 ![](images/knuth.jpg)
 
@@ -47,69 +57,96 @@ Literate programming is a programming paradigm introduced in 1984
 
 :::
 
-## Origins
+## Donald Knuth 1984
 
-::::{.columns}
 
-::: {.column width="40%"}
+
+::::::{.columns}
+
+::::: {.column width="40%"}
 ![](images/knuthweb.png)
-:::
+:::::
 
-::: {.column width="60%"}
+::::: {.column width="60%"}
 
-<div class="r-stack">
-<div class="fragment fade-in fade-out">
+::::{.r-stack}
+
+:::{.fragment .frade-in .fade-out}
 > I’ve stumbled across a method of composing programs that excites me very much.
 >
-> *In fact, my enthusiasm is so great that I must warn the reader to discount much of what I shall say as the ravings of a fanatic who thinks he has just seen a great light.*
-</div>
+> In fact, my enthusiasm is so great that I must warn the reader to discount much of what I shall say as the ravings of a fanatic who thinks he has just seen a great light.
 
-<div class="fragment fade-in">
-> I chose the name WEB partly because it was one of the few three-letter words of English that hadn’t already been applied to computers.
-</div>
+:::
 
-</div>
+:::{.fragment .frade-in-then-out}
+
+> Let us change our traditional attitude to the construction of programs:
+>
+> *Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.*
+
 :::
 
 ::::
+:::::
 
-# Plaintext, Markup and Markdown
+::::::
 
-## Less is more
 
-Advantages of plain text files    
+:::{.notes}
 
-::: {.incremental}
-1. platform independence    
-2. small file size
-3. easy handling
-4. version control
-5. long-term compatibility
-6. searchability
-7. easy integration
+- Donald Knuth invented this method for Programs. But we can replace the word "program" with R Script. 
+- Check if the sound works (next up: video)
+
 :::
 
-::: {.notes}
-1. platform independence: text files are easily accessible on all operating systems (Windows, macOS, Linux).    
-2. small file size: text files are usually smaller than their formatted counterparts, which saves disk space.
-3. ease of use: text files can be easily edited in any text editor, without special software.
-4. version control: Simple text files facilitate the use of version control systems such as Git.
-5. long-term compatibility: text files are more likely to be supported by software in the future.
-6. searchability: text files enable efficient searches for information.
-7. ease of integration: simple text files can be easily integrated into various applications and workflows.
+
+## {data-background-video="video/knuth.mp4" data-background-size="contain"}
+
+
+## Exercise 🛠️
+
+*Make your R-Script literate*
+
+1. Download the File `GOT.zip` from moodle (*Game of Thrones Dataset*)
+2. Unzip the File in a reasonable location
+3. Open the .RProj File with RStudio
+4. Run the RScript got-1.R and try to undestand what is happening
+5. Make the R-Script literate by 
+
+   > explaining to human beings what we want a computer to do
+
+
+
+:::{.notes}
+
+Do this as well via sharing the screen
+
+:::
+
+# Markup and Markdown
+
+:::{.notes}
+- Using RComments to explain your code is great, but very limiting
+- We cannot properly structure our comments: Highlight words, work with images, hyperlinks etc
+- This is where Markup and markdown comes into play
 :::
 
 ## What is a markup language?    
 
-- Markup language for structuring texts
+- Language for structuring texts
 - Machine readable (use of tags / symbols)
 - Clear separation of content and formatting
 - *What you see is what you mean* (WYSIWYM)
 
 ::: {.notes}
-Focus on what we want to write, not what it looks like. :::
 
-## Was für Markup Sprachen gibt es?
+Focus on what we want to write, not what it looks like. 
+
+:::
+
+## Some existing markup languages
+
+Making a text **bold** in HTML, LaTex and Markdown:
 
 | Langauge | Example                |
 |----------|------------------------|
@@ -122,11 +159,10 @@ Focus on what we want to write, not what it looks like. :::
 - Lightweight markup language for easy text formatting
 - Easy to learn 
 - Machine readable *and* human readable
-- **Frontend** for Latex / HTML
 
 ## Markdown Syntax
 
-```
+```{.markdown}
 # A story of a fox
 
 The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wiki/Dog).
@@ -151,27 +187,16 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 :::
 
 
-## Markdown Exercise 1 🛠️
-
-:::{.callout-warning}
-
-## Todo
-
-Write this exercise. Maybe provide an example text from *a song of ice and fire*?
-
-:::
-
 # Quarto
 
 ## What is Quarto?
 
 :::{.incremental}
 - An open source *cli* tool
-- Based on Markdown and Pandoc
+- Based on Markdown
   ![](images/rstudio-qmd-how-it-works2.png)
 - Extends the standard Markdown language with useful elements (e.g. callout blocks)
 - Integrates the integration of code (R, Python, Julia, SQL...)
-- Provides appealing *out-of-the-box* templates
 :::
 
 ## Output formats
@@ -184,36 +209,36 @@ Write this exercise. Maybe provide an example text from *a song of ice and fire*
 
 ## Quarto Exercise 1 🛠️
 
-:::{.callout-note}
-## TODO
 
-Adapt this exercise (step 2 not current)
-:::
-
-:::{.incremental}
-1. install quarto [quarto.org](https://quarto.org)
-2. open a terminal in your R-Project folder
-3. convert the markdown file to html with the following command: 
-
-   ```bash
-   quarto render markdown.md
+1. Check if quarto is installed by running the following command *in your terminal*:
+   
+   ```{.bash}
+   quarto --version
    ```
-:::
+2. install quarto if necessary (➲ [quarto.org](https://quarto.org))
 
-<div style="height: 40px"></div>
-
-:::{.incremental}
-- `render` is a function of the program `quarto`
-- `markdown.md` is a positional argument
-- The output is (unless otherwise defined) an HTML file
-:::
 
 ## Quarto Exercise 2 🛠️
 
+
+1. Create a new text file (*File* → *New File* → *Text File*)
+2. Save as `got-2.qmd`
+3. Write some prose on the analysis done in `got1-R`
+4. Render the file to html by running the following code *in your terminal*
+
+   ```{.bash}
+   quarto render got-2.qmd
+   ```
+
+
+
+## Quarto Exercise 3 🛠️
+
 :::{.incremental}
-- Interactive development with `render`: 🫤
+- Iterative development with `render`: 🫤
 - `quarto preview` enables a live preview (UX: 🥰)
-  ```bash
+
+  ```{.bash}
   # quarto render markdown.md
   quarto preview markdown.md
   ```
@@ -221,109 +246,34 @@ Adapt this exercise (step 2 not current)
 :::
 
 
-## Quarto Exercise 2 3 🛠️
-
-- Create a pdf file from your Markdown
-- Install `tinytex` for this (if necessary)
-
-# HTML and the Web
-
-## HTML vs PDF
-
-- The current *de facto* standard for text documents: PDF
-- PDFs have advantages, but also many limitations
-
-
-:::: {.columns}
-
-::: {.column .fragment width="40%"}
-**Vorteile**
-
-- ✅ Formatting (printing)
-- ✅ *single-file*
-- ✅ Can be used offline
-
-:::
-
-::: {.column .fragment width="60%"}
-**Nachteile**
-
-- 🚫 Public perception
-- 🚫 responsive for various devices (BYOD)
-- 🚫 Interactive elements
-- 🚫 Translatability (German ↔ English)
-- 🚫 Accessibility features (e.g. screen readers)
-:::
-::::
-
-## Publishing HTML Files
+## Quarto Exercise 4 🛠️
 
 :::{.incremental}
-- HTML files can be saved / shared offline <span class="fragment">→ unusual and unfamiliar</span>
-- More useful / common: Create hosted websites
-- Many possibilities:
-  - GitHub Pages
-  - Netlify
-  - QuartoPub
+
+- Markdown talks to humans
+- R Code talks to humans & the computer
+- Let's add the R-Code from `got-1.R` with <kbd>Ctrl</kbd>+<kbd>Alt</kbd><kbd>I</kbd>
+- This adds a "fence" where we can add R-Code
+- Add the R-Code from `got-1.R` into the code block
+- Check your updated preview
 :::
 
-## Exercise Publish HTML 1 🛠️
-
-### Netlify Drop
-
-:::{.incremental}
-1. open the website [app.netlify.com/drop](https://app.netlify.com/drop)(no login required)
-2. drag-and-drop *the folder* with the HTML output file from the *exercise Quarto
-3. wait until the upload is complete and <span id="complete">Complete</span> is displayed in the *Deploy log*  
-4. click on <span id="open">Open production deploy</span>
-5. the website is located at [something.netlify.app/*filename.html*](something.netlify.app)
-   - *filename.html* must still be added!
-   - this can be avoided if *index.html* is used instead of filename.html
-:::
-
-## Exercise Publish HTML 1 🛠️
-
-### Netlify Drop
-
-This method is very simple, but:
-
-:::{.incremental}
-- Without login, publication is limited in time <span class="fragment hl">→ with login unlimited</span>  
-- Requires drag-and-drop <span class="fragment hl">→ command line `quarto publish netlify` </span>
-- URL is not very appealing <span class="fragment hl">→ With `CNAME` *own* domain (see [https://www.ratnaweera.xyz/](ratnaweera.xyz))</span>
-:::
-
-:::{.notes}
-- ZHAW domain *not yet* possible
-- Take home message: HTMLs can be published via conventional hosting platforms
-:::
-
-## Exercise Publish HTML 2 🛠️
-
-:::{.callout-important}
-
-## TODO
-
-GitHub Pages
-:::
-
-
-# Quarto Advanced
 
 ## YAML Header
 
 
 :::{.incremental}
 - YAML: *YAML Ain't a Markup Language*
-- A machine- *and human-readable* way of storing structured data
+- A machine- and human-readable way of storing structured data
 - An example:  
   ```yaml
-  title: A song of ice and fire
-  author: George R. R. Martin
+  title: Analysis of GOT Series
+  author: Nils Ratnaweera
   ```
 - In Quarto: Record metadata (e.g. title, author and date)
 - Is inserted at the beginning of the document and enclosed with `---`
 :::
+
 
 ## Exercise YAML Header 1 🛠️
 
@@ -332,7 +282,7 @@ GitHub Pages
 ```yaml
 ---
 title: A song of ice and fire
-author: George R. R. Martin
+author: Nils Ratnaweera 
 ---
 ```
 
@@ -340,12 +290,13 @@ author: George R. R. Martin
 
 
 - Add metadata to your Markdown file using YAML headers
+- This renders your file to pdf. You might need to install `tinytext` (see message in terminal)
 
-
-```{.default code-line-numbers="5-9"}
+```{.yaml code-line-numbers="5-9"}
 ---
-format: pdf   # default output: pdf
-lang: de-CH   # Sprache: Deutsch
+title: A song of ice and fire
+author: Nils Ratnaweera 
+format: pdf
 ---
 ```
 
@@ -361,423 +312,75 @@ format:
 ---
 ```
 
-## Übung Querverweise 🛠️
 
+# Publishing HTML / Websites
 
-:::{.callout-important}
-
-- Translate the rest in english. 
-- Add R Code Chunks!!
-- Remove so much that the whole thing fits into two lessons
-
-:::
-
-- Fügt ein Querverweis auf ein Bild ein. Z.B:
-- *siehe @fig-baratheon-0*
-- ([quarto.org](https://quarto.org/docs/authoring/cross-references.html) → Guide → Authoring → Scholarly Writing → Cross-References)
-
-<div >
-![Das Wappen des Hauses Baratheon aus *A Song of Ice and Fire*](images/baratheon.png){#fig-baratheon-0 width="100px"}
-</div>
-
-. . . 
-
-- Für einen Querverweis braucht das Element, auf das man verweisen möchte es eine *ID*
-- Diese wird in `{}` gesetzt und beginnt mit `#`, bei Bilder folgt auf `#` ein `fig`. Z.B:
-
-  ```markdown
-  ![Das Wappen des Hauses Baratheon...](images/baratheon.png){#fig-baratheon}
-  ```
-- Um auf das Bild zu verweisen verwendet man `@fig-baratheon`
-
-
-:::{.notes}
-- `#fig` macht aus der Referenz "Abbildung"
-- auf `lang` achten!
-:::
-
-## Übung Querverweise 🛠️ {#sec-uebung-quarto-featuers-2}
-
-- Fügt ein Querverweise auf eine Kapitelmarke ein. Z.B.
-- *siehe @sec-uebung-quarto-featuers-2*
-- ([quarto.org](https://quarto.org/docs/authoring/cross-references.html) → Guide → Authoring → Scholarly Writing → Cross-References)
-
-<div style="height: 100px"></div>
-. . . 
-
-- Kapitelmarken erhalten ein `{#sec-}`
-- Kapitel werden (aktuell) nur mit *Nummern* referenziert
-  - im YAML header: `number-sections: true`
-  - Siehe <https://github.com/quarto-dev/quarto-cli/issues/1196>
-
-
-## Übung Subfigures 🛠️
-
-- In Quarto können *Figures* aus *Subfigures* bestehen
-- Siehe: [quarto.org](https://quarto.org/docs/authoring/figures.html#subfigures) → Guide → Authoring → Figures → Subfigures
-- Erstellt ein Subfigure Layout, ähnlich wie das folgende:
-
-:::{#fig-houses layout-nrow="1"}
-
-![House Baratheon](images/baratheon.png){#fig-barathon}
-
-![House Baylish](images/baylish.png){#fig-baylish}
-
-![House Arryn](images/arryn.png){#fig-arryn}
-
-![House Bolton](images/bolton.png){#fig-bolton}
-
-
-Eine Sammlung verschiedener Wappen aus dem Buch "*A song of Ice and Fire*", erstellt von *dezzzart* publiziert auf [deviantart.com](https://www.deviantart.com/dezzzart)
-:::
-
-## Übung Tabellen 🛠️
-
-- Tabellen sind in Markup Sprachen etwas umständlich
-- Vor allem, wenn sie häufig editiert / aktualisiert werden
-  - → In diesem Fall empfiehlt sich die Verwendung von R / Python Codeblocks
-- Für einfache bzw. sich nicht verändernde Tabellen ist der Markup Syntax ausreichend
-- Für den Export aus Excel: [tablesgenerator.com](https://www.tablesgenerator.com/markdown_tables)
-- Es gibt 3 Syntax Formen:
-  - Pipe Tables
-  - Grid Tables
-  - HTML Tables
-
-
-## Übung Tabellen 🛠️
-
-- Sind sehr einfach im Syntax dafür etwas beschränkt in den Features
-- [quarto.org](https://quarto.org/docs/authoring/tables.html) → Authoring → Tables
-
-
-### Pipe Table
-
-```markdown
-| fruit  | price   |
-|:-------|--------:|
-| apple  |  2.05   |
-| pear   |  1.37   |
-| orange | 30.09   |
-
-: Eine "pipe" Tabelle {#tbl-pipe}
-```
-
-
-| fruit  | price   |
-|:-------|--------:|
-| apple  |  2.05   |
-| pear   |  1.37   |
-| orange | 30.09   |
-
-: Eine "pipe" Tabelle {#tbl-pipe}
-
-
-:::{.notes}
-- Die Doppelpunkte legen die ausrichtung fest (link, rechts, zentriert)
-- die "|" müssen nicht aneinander ausgerichtet sein (dies dient lediglich der lesbarkeit)
-:::
-
-
-## Übung Tabellen 🛠️
-
-
-### Grid Tables
-
-- Haben mehr features
-- sind etwas umständlicher zu schreiben
-- [quarto.org](https://quarto.org/docs/authoring/tables.html) → Authoring → Tables
-
-```markdown
-+-----------+-----------+--------------------+
-| Fruit     | Price     | Advantages         |
-+===========+===========+====================+
-| Bananas   | $1.34     | - built-in wrapper |
-|           |           | - bright color     |
-+-----------+-----------+--------------------+
-| Oranges   | $2.10     | - cures scurvy     |
-|           |           | - tasty            |
-+-----------+-----------+--------------------+
-
-: Sample grid table.
-```
-
-
-## Übung Tabellen 🛠️
-
-- Fügt in eurem Bericht eine Tabelle ein
-- Verwendet dazu (bei Bedarf) [tablesgenerator.com](https://www.tablesgenerator.com/markdown_tables)
-
-
-
-## Übung Zitieren 🛠️
-
-- Quarto erleichtet das Zitieren und Erstellen von Literaturverzeichnissen
-- Die Metadaten der Literatur wird in sog. Bibtex-Keys gespeichert
-- Bibtex-Keys können aus GoogleScholar usw. exportiert oder via Browseraddin generiert werden.
-
-![](images/google-scholar-1.png)
-
-## Übung Zitieren 🛠️
-
-![](images/google-scholar-2.png)
-
-## Übung Zitieren 🛠️
-
-
-```{.bibtex}
-@article{einstein1905,
-  title={Zur Elektrodynamik bewegter Körper},
-  author={Einstein, Albert},
-  journal={Annalen der physik},
-  volume={4},
-  year={1905}
-}
-
-```
+## Publishing HTML Files
 
 :::{.incremental}
-- Dieser Bibtex-Keys werden in einem File abgespeichert, z.B `literatur.bib`
-- Das Bibtex-File wird über den YAML Header ins Quartodokument eingebunden:
-  ```yaml
-  bibliography: literatur.bib
+- HTML can be shared publicly by creating a website
+- Some options:
+  - RPubs
+  - QuartoPub
+  - GitHub Pages
+  - Netlify
+
+:::
+
+## Exercise Publish HTML with RPubs 🛠️
+
+- Create a new account on [rpubs.com](https://rpubs.com/)
+- Click on the Blue Publish Button on the Top right of your script
+- Choose *RPubs*
+- Click on Publish
+
+
+## Exercise Publish HTML with QuartoPub 🛠️
+
+
+- Create a new account on [quartopub.com](https://quartopub.com/)
+- Run the following command in your terminal:
+
+  ```{.bash}
+  quarto publish quarto-pub got-2.qmd
   ```
-- Über die ID kann der Eintrag nun Zitiert werden:
-- Folgender Eintrag: 
-  ```{.markdown}
-  @einstein1905 postulierte... 
-  ```
-- Wird zu: @einstein1905 postulierte... 
-- Viele Formen stehen zur Verfügung. Siehe: [quarto.org](https://quarto.org/docs/authoring/footnotes-and-citations.html) → Guide → Authoring → Scholarly Writing → Citations and Footnotes
-:::
-
-
-## Übung Zitieren 🛠️
-
-- Fügt eurem Dokument eine Referenz sowie ein Litearturverzeichnis hinzu
 
 
 
-# Quato Professional
 
-## Quarto Projects
+## Exercise Publish HTML with GitHub 🛠️
 
-- Von einem File auf *viele* Files
+- Create a GitHub Account (➲ [github.com](https://github.com/))
+- Create a new Repo (`+` → *new repository*)
+  - Provide a reasonable name (e.g. GOT-Analysis)
+  - Set visibility to public
+  - Click on *Create repository*
 
-- Setup:
-  - Quarto-Konfigurationsdatei: `_quarto.yaml` 
-  - `index.qmd` (ohne YAML Header)
-  - Optional: Weitere qmd-Files, die über `_quarto.yaml` eingebunden werden
-
-## Quarto Projects
-
-```{.yaml}
-project: 
-  type: book
-  preview: 
-      port: 5678
-  execute-dir: project
-  pre-render: pre-render.r
-
-lang: de
-
-format: 
-  html:
-    theme:
-      dark: [darkly, custom-dark.scss]
-      light: [flatly, custom-light.scss]
-    css: 
-      - custom.css
-      - theme-custom.scss
-      #- presenter-mode.css
-    bibliography: bibliography.bib
-    number-sections: false
-    code-tools:
-      source: false
-    include-in-header:
-      - script.html
-
-execute:
-  freeze: true
-  error: false
-  message: false
-  warning: false
-
-knitr:
-  opts_chunk: 
-    collapse: true
-    #tidy: true
-    
-book:
-  title: "Research Methods HS23"
-  sidebar: 
-    logo: images/zhaw_sw_neg.png
-    collapse-level: 1
-    style: floating
-  reader-mode: true    
-  # globbing would be cool. Wait for
-  # https://github.com/quarto-dev/quarto-cli/issues/2120 or
-  # https://github.com/quarto-dev/quarto-cli/issues/1917 to be resolved 
-
-  chapters:
-    - index.qmd
-    - part: PrePro.qmd
-      chapters:
-      - prepro/Prepro1_Vorbereitung.qmd
-      - --
-      - prepro/Prepro1_Demo.qmd
-      - prepro/Prepro1_Uebung.qmd
-      - --
-      - prepro/Prepro2_Demo.qmd
-      - prepro/Prepro2_Uebung_A.qmd
-      - prepro/Prepro2_Uebung_B.qmd
-      - --
-      - prepro/Prepro3_Demo.qmd
-      - prepro/Prepro3_Uebung.qmd
-    - part: InfoVis.qmd
-      chapters:
-      - infovis/Infovis1_Vorbereitung.qmd
-      - --
-      - infovis/Infovis1_Demo.qmd
-      - infovis/Infovis1_Uebung.qmd
-      - infovis/Infovis1_Script_eda.qmd
-      - --
-      - infovis/Infovis2_Uebung_A.qmd
-      - infovis/Infovis2_Uebung_B.qmd
-    - part: Stat1-4.qmd
-      chapters:
-      - stat1-4/Statistik1_Vorbereitung.qmd
-      - --
-      - stat1-4/Statistik1_Demo.qmd
-      - stat1-4/Statistik1_Novanimal.qmd
-      - stat1-4/Statistik1_Uebung.qmd
-      - stat1-4/Statistik1_Loesung.qmd
-      - --
-      - stat1-4/Statistik2_Demo.qmd
-      - stat1-4/Statistik2_Uebung.qmd
-      - stat1-4/Statistik2_Loesung_Beispiel.qmd
-      - stat1-4/Statistik2_Loesung_1.qmd
-      - stat1-4/Statistik2_Loesung_2223s.qmd
-      - stat1-4/Statistik2_Loesung_23n.qmd
-      - --
-      - stat1-4/Statistik3_Demo.qmd
-      - stat1-4/Statistik3_Uebung.qmd
-      - stat1-4/Statistik3_Loesung.qmd      
-      - --
-      - stat1-4/Statistik4_Demo.qmd
-      - stat1-4/Statistik4_Uebung.qmd      
-      - stat1-4/Statistik4_Loesung_1.qmd
-      - stat1-4/Statistik4_Loesung_2n.qmd
-      - stat1-4/Statistik4_Loesung_2s.qmd
-    - part: Stat5-8.qmd
-      chapters:
-      - stat5-8/Statistik5_Vorbereitung.qmd
-      - --
-      - stat5-8/Statistik5_Demo.qmd
-      - stat5-8/Statistik5_Uebung.qmd      
-      - stat5-8/Statistik5_Loesung_1.qmd
-      - stat5-8/Statistik5_Loesung_2.qmd
-      - --
-      - stat5-8/Statistik6_Demo.qmd
-      - stat5-8/Statistik6_Uebung.qmd      
-      - stat5-8/Statistik6_Loesung.qmd
-      - --
-      - stat5-8/Statistik7_Demo.qmd
-      - stat5-8/Statistik7_Uebung.qmd      
-      - stat5-8/Statistik7_Loesung.qmd
-      - --
-      - stat5-8/Statistik8_Demo.qmd
-      - stat5-8/Statistik8_Uebung.qmd      
-      - stat5-8/Statistik8_Loesung.qmd
-    - part: StatKons.qmd
-      chapters:
-      - statKons/StatKons0_Vorbereitung.qmd
-      - --
-      - statKons/StatKons1_Demo_assoziationen.qmd
-      - statKons/StatKons1_Demo_open_datasets.qmd
-      #- statKons/StatKons1_Demo_suggest_datasets.qmd
-      - --
-      - statKons/StatKons2_Demo_PCA.qmd
-      - --
-      - statKons/StatKons3_Demo_LM.qmd
-      - --
-      - statKons/StatKons4_Demo_GLM.qmd
-    - part: RaumAn.qmd
-      chapters:
-      - rauman/Rauman0_Vorbereitung.qmd
-      - --
-      - rauman/Rauman1_Uebung_A.qmd
-      - rauman/Rauman1_Uebung_B.qmd
-      - --
-      - rauman/Rauman2_Uebung_A.qmd
-      - rauman/Rauman2_Uebung_B.qmd
-      - --
-      - rauman/Rauman3_Uebung_A.qmd
-      - rauman/Rauman3_Uebung_B.qmd
-      - rauman/Rauman3_Uebung_C.qmd
-      - --
-      - rauman/Rauman4_Uebung_A.qmd
-      - --
-      - rauman/Rauman5_Uebung_A.qmd 
-      - rauman/Rauman5_Uebung_B.qmd 
-    - part: "Fallstudie S"
-      chapters:
-      - fallstudie_s/0_Vorbereitung.qmd
-      - --
-      - fallstudie_s/1_Einführung.qmd
-      - fallstudie_s/2_Besuchermonitoring.qmd
-      - --
-      - fallstudie_s/3_Aufgabenstellung_WPZ.qmd
-      - --
-      - fallstudie_s/4_Projektierung.qmd
-      - fallstudie_s/5_Datenverarbeitung.qmd
-      - fallstudie_s/6_Deskriptive_Analysen.qmd
-      - fallstudie_s/7_Multivariate_Modelle.qmd
-    - part: "Fallstudie N"
-      chapters:
-      - fallstudie_n/1_Vorbemerkung.qmd
-      - fallstudie_n/2_Datenverarbeitung.qmd
-      - fallstudie_n/3_Berechnung_Homeranges.qmd
-      - fallstudie_n/4_Multivariate_Modelle.qmd
-      - fallstudie_n/5_Variablenselektion.qmd
-      - fallstudie_n/6_Guete_und_Diagnostics.qmd
-      #- --
-      #- fallstudie_n/7_Modelle_mit_Nutzungsintensitaet.qmd
-    - "References.qmd"
-```
-
-# Versionskontrolle mit Git und GitHub
-
-## Git(Hub)
-
-- **Git**: Verteiltes Versionskontrollsystem
-- **GitHub**: Webplattform für Hosting von Git-Repositories.
-
-:::{.notes}
-- Git: für die Nachverfolgung von Änderungen im Quellcode während der Softwareentwicklung. Ermöglicht Zusammenarbeit, Verwaltung von Codeversionen und Änderungsverfolgung. Bekannt für Geschwindigkeit und Effizienz.
-- GitHub: Bietet Tools für Zusammenarbeit, Codeüberprüfung und Projektverwaltung. Beliebt bei Entwicklern zur Teilung, Zusammenarbeit und Beitrag zu Open-Source-Projekten. Enthält Funktionen wie Issues und Pull Requests.
---
-
-:::
+## Exercise Publish HTML with GitHub 🛠️
 
 
+- Upload Files:
+  - Click on *uploading an existing file*
+  - Add the entire content of your RProject to the Repo
+  - Click, on *Commit changes*
+- Got to Settings → Pages: in *Branch*, select *Main* instead of *None* and click on *Save*
+- Got to the *Code* Tab
+  - Click on the settings symbol ⚙
+  - Choose *Use your GitHub Pages website*
+  - Click *Save changes*
+- Go to the *Actions* Tab and wait for the worflows to complete
 
-## Git Workflow
-
-- `Add`: Sammelt Änderungen
-- `Commit`: Speichert eine Version mit Änderungen.
-- `Push`: Hochladen von lokalen Commits ins Remote Repository.
-- `Pull`: Abrufen und Einpflegen von Änderungen aus dem Remote Repository.
-- `Pull Request`: Anfrage zur Überführung von Änderungen zwischen Branches.
-- `Merge Conflict`: Problem bei der automatischen Zusammenführung von Branches.
-- `Issue`: Verfolgung von Problemen, Vorschlägen oder Aufgaben in Projekten.
+## Exercise Publish HTML with GitHub 🛠️
 
 
-## Übung
+- Got back to the *Codes* Tab and Click on the URL
+  - The URL is incomplete: we have to append `got-2.html`
+  - We don't have to append the filename if it's called `index.html` → Rename `got-2.qmd` to `index.qmd` and re-render
 
-:::{.incremental}
-1. `Fork`t die Übungsunterlagen von [Fit-mit-Markdown](https://fit-mit-markdown.github.io/) 
-2. Bearbeitet etwas im einem Dokument
-3. `Commit`et und `Push`t die Änderungen
-4. Erstellen Sie einen Merge Request auf GitHub
-5. Verwenden Sie dazu die Hilfe von [fit-mit-markdown.github.io/](https://fit-mit-markdown.github.io/)
-:::
+# Versioncontrol with Git and GitHub{#sec-git-github}
+
+---
+
+[Git and GitHub](Git-GitHub.html)
+
+
