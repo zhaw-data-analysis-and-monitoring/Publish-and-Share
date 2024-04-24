@@ -1,26 +1,9 @@
-# Quarto Schulung
+## Publish and Share
 
+This Workshop is based on the [Quarto Workshop](https://github.com/Fit-mit-Markdown/Quarto-Schulung) we conducted 2024 in the Sustainable Impact Program Project "Students4OER II". We switched the focus on creating learning materials independant of R to mixing R with english *prose* (based on the literate programming paradigm).
 
+### Lessons Learned 2024
 
-## Lessons Learnt von der ersten Durchführung 2024-02-13
-
-
-- Zeitplan:
-  - die ersten 45min waren bei *Übung Pandoc 2* `pandoc -o ouput.html markdown.md` durch
-  - die zweiten 45min waren bei *Übung Quarto 2* `quarto preview markdown.md` durch
-  - die dritten 45min waren beim Kapitel *Quarto Advanced* fertig. Die ganzen Beispiele haben wir nur noch kurz besprochen, nicht mehr geübt
-- Weitere Erkentnisse:
-  - HTML Veröffentlichen war etwas langwierig, besser kürzen
-  - die ersten beien Teile / Lektionen etwas straffen. Für Quarto Advanced reicht es kaum
-  - Für Git / GitHub reicht es definitv nicht mehr
-  - Ich sollte ein eigenes .docx-File haben um zu konvertieren
-  - Der Übergang von Markdown zu Quarto-Markdown war nicht explizit
-  - Ggf sinnvoller, mehr in RStudio zu machen (falls ein grossteil RStudio braucht)
-  - Einlage zu OER machen (krun!) 
-- Todo:
-  - typst allenfalls erwähnen
-  - Cache und Freeze
-  - welche tools verwenden markdown?
-    - Threema / Signal / Telegramm?
-    - Obsidian
-    - ...
+- The pace was so slow, we only barely touched [4 Publishing HTML / Websites](https://zhaw-data-analysis-and-monitoring.github.io/Publish-and-Share/#/publishing-html-websites) and never came to the topic [5 Versioncontrol with Git and GitHub](https://zhaw-data-analysis-and-monitoring.github.io/Publish-and-Share/#/sec-git-github).
+- If we had 4 lessons, things would look very different
+- Next time, we have to make sure quarto *is installed* beforehand. Check this in PrePro3 and install if necessary
