@@ -86,3 +86,36 @@ kbd{
 #fig-houses img{
   width: 150px;
 }
+
+
+/* svg start */
+
+.graph{
+  height: 200px; 
+  width: 500px;
+}
+.svg-hline{
+  stroke: #fefce2; 
+  stroke-width: 1;
+}
+
+.svg-circle{
+  stroke: #fefce2;
+  fill: #8a8e96;
+}
+
+.svg-text{
+  font-family: Mono; 
+  font-size:20px; 
+  fill: #fefce2; 
+  dominant-baseline: middle
+}
+.svg-small{
+  font-size:15px; 
+}
+
+.svg-gray{
+  fill: 2A9D8F
+}
+
+/* svg end */
