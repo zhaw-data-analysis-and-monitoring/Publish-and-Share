@@ -29,8 +29,7 @@ suppress-bibliography: true # otherwise, a bibliography is appended
 - Know the basics of Markdown
 - Know the basics of Quarto
 - Quarto Advanced Features
-- Quarto Professional Features
-- (Collaboration with Git and GitHub)
+- Collaboration
 :::
 
 
@@ -207,46 +206,21 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 - `word`: Books
 - `pptx`: Slides
 
+
 ## Quarto Exercise 1 🛠️
-
-
-1. Check if quarto is installed by running the following command *in your terminal*:
-   
-   ```{.bash}
-   quarto --version
-   ```
-2. install quarto if necessary (➲ [quarto.org](https://quarto.org))
-
-
-## Quarto Exercise 2 🛠️
 
 
 1. Create a new text file (*File* → *New File* → *Text File*)
 2. Save as `got-2.qmd`
 3. Write some prose on the analysis done in `got1-R`
-4. Render the file to html by running the following code *in your terminal*
+4. Render the file to html by clicking on the [⇨ Render]{.btn} -Button
 
-   ```{.bash}
-   quarto render got-2.qmd
-   ```
+Try out the option [🗹Render on Save]{.btn}
 
 
 
-## Quarto Exercise 3 🛠️
 
-:::{.incremental}
-- Iterative development with `render`: 🫤
-- `quarto preview` enables a live preview (UX: 🥰)
-
-  ```{.bash}
-  # quarto render markdown.md
-  quarto preview markdown.md
-  ```
-- Try it!
-:::
-
-
-## Quarto Exercise 4 🛠️
+## Quarto Exercise 2 🛠️
 
 :::{.incremental}
 
@@ -266,7 +240,7 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 - YAML: *YAML Ain't a Markup Language*
 - A machine- and human-readable way of storing structured data
 - An example:  
-  ```yaml
+  ```{.yaml}
   title: Analysis of GOT Series
   author: Nils Ratnaweera
   ```
@@ -275,28 +249,30 @@ The *quick* brown fox **jumps** over the lazy [dog](https://en.wikipedia.org/wik
 :::
 
 
-## Exercise YAML Header 1 🛠️
+## YAML Header Exercise 1 🛠️
 
-- Add metadata to your Markdown file using YAML headers
+- Add metadata to your markdown file using YAML headers
+- Regard the output (`quarto preview`)
 
-```yaml
+```{.yaml}
 ---
-title: A song of ice and fire
-author: Nils Ratnaweera 
+title: Analysis of GOT Series
+author: Your Name
 ---
 ```
 
-## Exercise YAML Header 2 🛠️
+## YAML Header Exercise 2 🛠️
 
 
-- Add metadata to your Markdown file using YAML headers
-- This renders your file to pdf. You might need to install `tinytext` (see message in terminal)
+- Add a format specification to your YAML header: Either `typst` (recommended) or `pdf`
+- This renders your file to pdf
+- If you use `pdf`, you might need to install `tinytext` (see message in terminal)
 
-```{.yaml code-line-numbers="5-9"}
+```{.yaml}
 ---
-title: A song of ice and fire
+title: Analysis of GOT Series
 author: Nils Ratnaweera 
-format: pdf
+format: typst
 ---
 ```
 
@@ -312,6 +288,115 @@ format:
 ---
 ```
 
+# Quarto Advanced
+
+
+
+## Quarto Advanced Exercise 1 🛠️
+
+- Insert one of the images included in your folder into your document
+- ([quarto.org](https://quarto.org/docs/authoring/figures.html) → Guide → Authoring → Figures)
+
+## Quarto Advanced Exercise 2 🛠️
+
+- Insert an cross-reference to this image. E.G: *see @fig-baratheon-0*
+- ([quarto.org](https://quarto.org/docs/authoring/cross-references.html) → Guide → Authoring → Scholarly Writing → Cross-References)
+
+
+:::{}
+![The coat of arms of House Baratheon from *A Song of Ice and Fire*](images/baratheon.png){#fig-baratheon-0 width="100px"}
+:::
+
+
+:::{.notes}
+- For a cross-reference, the element to which you want to refer needs an ID
+- This is set in {} and begins with #, for images # is followed by a fig. e.g:
+
+  `![The coat of arms of the House of Baratheon...](images/baratheon.png){#fig-baratheon}`
+
+- To refer to the image, use `@fig-baratheon`
+::: 
+
+
+## Quarto Advanced Exercise 3 🛠️ {#sec-uebung-quarto-featuers-2}
+
+- Insert a crossreference to a chapter eg *see @sec-uebung-quarto-featuers-2*
+- ([quarto.org](https://quarto.org/docs/authoring/cross-references.html) → Guide → Authoring → Scholarly Writing → Cross-References)
+
+
+:::{.notes}
+
+- Chapter references get a `{#sec-}`
+- Chapters are (currently) only referenced with *numbers*
+  - in the YAML header set: `number-sections: true`
+  - See this open issue <https://github.com/quarto-dev/quarto-cli/issues/1196>
+
+:::
+
+## Quarto Advanced Exercise 4 🛠
+
+- In Quarto, *figures* can consist of *subfigures*
+- See: [quarto.org](https://quarto.org/docs/authoring/figures.html#subfigures) → Guide → Authoring → Figures → Subfigures
+- Creates a subfigure layout similar to the following:
+
+:::{#fig-houses layout-nrow="1"}
+
+![House Baratheon](images/baratheon.png){#fig-barathon}
+
+![House Baylish](images/baylish.png){#fig-baylish}
+
+![House Arryn](images/arryn.png){#fig-arryn}
+
+![House Bolton](images/bolton.png){#fig-bolton}
+
+
+A collection of different coats of arms from the book ‘*A song of Ice and Fire*’, created by *dezzzart* published on [deviantart.com](https://www.deviantart.com/dezzzart)
+:::
+
+
+## Quarto Advanced Exercise 5 🛠
+
+- Add a caption and a cross reference to your `ggplot`-figure
+
+
+## Quarto Advanced Exercise 6 🛠
+
+- Display a table with the top 10 characters in regard to screentime, displaying only the columns `name`, `screentime` and `episodes`.
+- Reference this table in your text
+- Add a caption to your table
+- [quarto.org](https://quarto.org/docs/authoring/tables.html#cross-references) → Guide → Authoring → Tables → Cross References
+- Hint: use `knitr::kable()`
+
+
+## Quarto Advanced Exercise 7 🛠
+
+- Add a (dummy) abstract
+- Make sure this abstract is not numbered and not in the TOC
+- [quarto.org](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents) → Guide → Documents → HTML → HTML Basics
+
+## Quarto Advanced Exercise 8 🛠
+
+Let's add a citation!
+
+1. Got to [scholar.google.com](https://scholar.google.com/) 
+2. Get the bibtex entry of a scientific paper
+3. Create a new text file named `bibliography.bib`
+4. Add the bibtex entry to this file
+5. Include the file in the YAML header: `bibliography: bibliography.bib`
+7. Now you can reference this entry using:
+   - `@knuth1984` for *@knuth1984*
+   - `see [@knuth1984]` for *see [@knuth1984]*
+
+---  
+
+- For more information see [quarto.org](https://quarto.org/docs/authoring/citations.html) → Guide → Authoring → Scholarly Writing → Citations
+- To include Zotero, see [quarto.org](https://quarto.org/docs/visual-editor/technical.html#citations-from-zotero) → Guide → Tools → RStudio IDE → Visual Editor → Technical Writing → Citations → Citations from Zotero
+
+:::{.notes}
+
+
+content
+:::
 
 # Publishing HTML / Websites
 
@@ -335,47 +420,17 @@ format:
 - Click on Publish
 
 
-## Exercise Publish HTML with QuartoPub 🛠️
+# Collaboration
+
+- To collaborate on coding projects, we recommend using Git with GitHub
+- However, Git / GitHub has a very steep learning curve
+- To collaborate on your projects, we recommend the following:
+  1. Use a GDPR compatible cloud service (e.g. switchdrive)
+  2. Use a cloud service that provides software for local syncing (e.g. switchdrive)
+  3. Always work within an R Project (to set your working directory)
+  4. Always use relative paths (never a path that starts with  `C:/`)
 
 
-- Create a new account on [quartopub.com](https://quartopub.com/)
-- Run the following command in your terminal:
-
-  ```{.bash}
-  quarto publish quarto-pub got-2.qmd
-  ```
-
-
-
-
-## Exercise Publish HTML with GitHub 🛠️
-
-- Create a GitHub Account (➲ [github.com](https://github.com/))
-- Create a new Repo (`+` → *new repository*)
-  - Provide a reasonable name (e.g. GOT-Analysis)
-  - Set visibility to public
-  - Click on *Create repository*
-
-## Exercise Publish HTML with GitHub 🛠️
-
-
-- Upload Files:
-  - Click on *uploading an existing file*
-  - Add the entire content of your RProject to the Repo
-  - Click, on *Commit changes*
-- Got to Settings → Pages: in *Branch*, select *Main* instead of *None* and click on *Save*
-- Got to the *Code* Tab
-  - Click on the settings symbol ⚙
-  - Choose *Use your GitHub Pages website*
-  - Click *Save changes*
-- Go to the *Actions* Tab and wait for the worflows to complete
-
-## Exercise Publish HTML with GitHub 🛠️
-
-
-- Got back to the *Codes* Tab and Click on the URL
-  - The URL is incomplete: we have to append `got-2.html`
-  - We don't have to append the filename if it's called `index.html` → Rename `got-2.qmd` to `index.qmd` and re-render
 
 # Versioncontrol with Git and GitHub{#sec-git-github}
 
